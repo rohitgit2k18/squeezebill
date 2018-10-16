@@ -24,7 +24,12 @@ namespace SqueezeBill.iOS
         {
             global::Xamarin.Forms.Forms.Init();
             LoadApplication(new App());
-
+            UINavigationBar.Appearance.BarTintColor = UIColor.FromRGB(243, 147, 28);
+            UIView statusBar = UIApplication.SharedApplication.ValueForKey(new NSString("statusBar")) as UIView;
+            if (statusBar.RespondsToSelector(new ObjCRuntime.Selector("setBackgroundColor:")))
+            {
+                statusBar.BackgroundColor = UIColor.FromRGB(224, 134, 22);
+            }
             return base.FinishedLaunching(app, options);
         }
     }

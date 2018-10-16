@@ -1,0 +1,151 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+              xmlns:local="clr-namespace:SqueezeBill" 
+             x:Class="SqueezeBill.Views.Accounts.UserRegistration.RegisterStepOnePage">
+    <ContentPage.Content>
+        <Grid x:Name="RootLayout" Margin="20">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <Grid Grid.Row="0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="1.5*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Grid Grid.Column="0">
+                    <Frame HeightRequest="-1" Margin="0" BackgroundColor="White" HasShadow="False" CornerRadius="5" Padding="5" BorderColor="LightGray">
+                        <Label Text="7.69c" 
+                               TextColor="LightGray" VerticalOptions="Center" HorizontalOptions="Center"
+                               FontSize="Micro" />
+                    </Frame>
+                </Grid>
+                <Grid Grid.Column="1">
+                    <Image VerticalOptions="Center" HorizontalOptions="Center" Source="publicpower.png"/>
+                </Grid>
+                <Grid Grid.Column="2">
+                    <Frame HeightRequest="-1" Margin="0" BackgroundColor="White" HasShadow="False" CornerRadius="5" Padding="5" BorderColor="LightGray">
+                        <Label Text="6 Month" 
+                               TextColor="LightGray" 
+                               FontSize="Micro" />
+                    </Frame>
+                </Grid>
+            </Grid>
+            <Grid Grid.Row="1" RowSpacing="0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <Grid Grid.Row="0">
+                    <Image Source="part1.png" HorizontalOptions="FillAndExpand" VerticalOptions="Center"/>
+                </Grid>
+                <Grid Grid.Row="1">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid Grid.Column="0">
+                        <Label VerticalOptions="Start"
+                               HorizontalOptions="Center" 
+                               Text="Personal Info." 
+                               TextColor="#FF9408"/>
+                    </Grid>
+                    <Grid Grid.Column="1">
+                        <Label VerticalOptions="Start"
+                               HorizontalOptions="Center" 
+                               Text="T And C" 
+                               TextColor="#4D4C49"/>
+                    </Grid>
+                    <Grid Grid.Column="2">
+                        <Label VerticalOptions="Start"
+                               HorizontalOptions="End" 
+                               Text="Enroll" 
+                               TextColor="#4D4C49"/>
+                    </Grid>
+                </Grid>
+            </Grid>
+            <Grid Grid.Row="2">
+                <Frame HasShadow="False" Padding="0" Margin="0" HeightRequest="-1" BackgroundColor="White">
+                    <local:BorderlessEntry Placeholder="Full Name"                                                                                    
+                                           PlaceholderColor="LightGray"                                          
+                                          />
+                </Frame>
+            </Grid>
+            <Grid Grid.Row="3">
+                <Frame HasShadow="False" Padding="0" Margin="0" HeightRequest="-1" BackgroundColor="White">
+                    <local:ImageEntry Placeholder="Email"
+                                          ImageAlignment="Right"
+                                          ImageHeight="20"
+                                          ImageWidth="20"
+                                          PlaceholderColor="LightGray"
+                                          LineColor="White"
+                                          Image="info"/>
+                </Frame>
+            </Grid>
+            <Grid Grid.Row="4">
+                <Frame HasShadow="False" Padding="0" Margin="0" HeightRequest="-1" BackgroundColor="White">
+                    <local:BorderlessEntry Placeholder="Mobile Number"                                                                                    
+                                           PlaceholderColor="LightGray"                                          
+                                          />
+                </Frame>
+            </Grid>
+            <Grid Grid.Row="5">
+                <Frame HasShadow="False" Padding="0" Margin="0" HeightRequest="-1" BackgroundColor="White">
+                    <local:ImageEntry Placeholder="Password"
+                                          ImageAlignment="Right"
+                                          ImageHeight="20"
+                                          ImageWidth="20"
+                                           IsPassword="True"
+                                          PlaceholderColor="LightGray"
+                                          LineColor="White"
+                                          Image="info"/>
+                </Frame>
+            </Grid>
+            <Grid Grid.Row="6">
+                <Frame HasShadow="False" Padding="0" Margin="0" HeightRequest="-1" BackgroundColor="White">
+                    <local:BorderlessEntry Placeholder="Zipcode"                                                                                    
+                                           PlaceholderColor="LightGray"                                          
+                                          />
+                </Frame>
+            </Grid>
+            <Grid Grid.Row="7">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Grid Grid.Column="0">
+                    <Frame HasShadow="False" Padding="0" Margin="0" HeightRequest="-1" BackgroundColor="White">
+                        <local:BorderlessEntry Placeholder="State"                                                                                    
+                                           PlaceholderColor="LightGray"                                          
+                                          />
+                    </Frame>
+                </Grid>
+                <Grid Grid.Column="1">
+                    <Frame HasShadow="False" Padding="0" Margin="0" HeightRequest="-1" BackgroundColor="White">
+                        <local:BorderlessEntry Placeholder="City"                                                                                    
+                                           PlaceholderColor="LightGray"                                          
+                                          />
+                    </Frame>
+                </Grid>
+            </Grid>
+            <Grid Grid.Row="8" Padding="0,20,10,0">
+                <Button CornerRadius="5" 
+                            BorderRadius="5" 
+                            Text="Continue" 
+                            TextColor="White"   
+                           Clicked="Button_Clicked"
+                            BackgroundColor="#FF9408"/>
+            </Grid>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

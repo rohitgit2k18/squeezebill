@@ -27,7 +27,7 @@
 	<key>CFBundleVersion</key>
 	<string>1.0</string>
 	<key>UILaunchStoryboardName</key>
-	<string>LaunchScreen</string>
+	<string>(not set)</string>
 	<key>CFBundleName</key>
 	<string>SqueezeBill</string>
 	<key>XSAppIconAssets</key>
@@ -36,7 +36,5 @@
 	<true/>
 	<key>XSLaunchImageAssets</key>
 	<string>Assets.xcassets/LaunchImage.launchimage</string>
-	<key>UIMainStoryboardFile</key>
-	<string>LaunchScreen</string>
 </dict>
 </plist>

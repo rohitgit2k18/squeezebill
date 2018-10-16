@@ -1,0 +1,134 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SqueezeBill.Views.Accounts.UserRegistration.RegisterStepTwoPage">
+    <ContentPage.Content>
+        <Grid x:Name="RootLayout" Margin="20">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="40"/>
+                <RowDefinition Height="60"/>
+            </Grid.RowDefinitions>
+            <Grid Grid.Row="0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="1.5*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Grid Grid.Column="0">
+                    <Frame HeightRequest="-1" Margin="0" BackgroundColor="White" HasShadow="False" CornerRadius="5" Padding="5" BorderColor="LightGray">
+                        <Label Text="7.69c" 
+                               TextColor="LightGray" VerticalOptions="Center" HorizontalOptions="Center"
+                               FontSize="Micro" />
+                    </Frame>
+                </Grid>
+                <Grid Grid.Column="1">
+                    <Image VerticalOptions="Center" HorizontalOptions="Center" Source="publicpower.png"/>
+                </Grid>
+                <Grid Grid.Column="2">
+                    <Frame HeightRequest="-1" Margin="0" BackgroundColor="White" HasShadow="False" CornerRadius="5" Padding="5" BorderColor="LightGray">
+                        <Label Text="6 Month" 
+                               TextColor="LightGray" 
+                               FontSize="Micro" />
+                    </Frame>
+                </Grid>
+            </Grid>
+            <Grid Grid.Row="1" RowSpacing="0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <Grid Grid.Row="0">
+                    <Image Source="part2.png" HorizontalOptions="FillAndExpand" VerticalOptions="Center"/>
+                </Grid>
+                <Grid Grid.Row="1">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid Grid.Column="0">
+                        <Label VerticalOptions="Start"
+                               HorizontalOptions="Center" 
+                               Text="Personal Info." 
+                               TextColor="#FF9408"/>
+                    </Grid>
+                    <Grid Grid.Column="1">
+                        <Label VerticalOptions="Start"
+                               HorizontalOptions="Center" 
+                               Text="T And C" 
+                               TextColor="#FF9408"/>
+                    </Grid>
+                    <Grid Grid.Column="2">
+                        <Label VerticalOptions="Start"
+                               HorizontalOptions="End" 
+                               Text="Enroll" 
+                               TextColor="#4D4C49"/>
+                    </Grid>
+                </Grid>
+            </Grid>
+            <ScrollView  Grid.Row="2">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <Grid Grid.Row="0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid Grid.Column="0">
+                        <Switch />
+                    </Grid>
+                    <Grid Grid.Column="1">
+                            <Label Text="Mein Name ist Roger Rabbit. Ich bin einundzwanzig Jahre alt. Ich wohne in Birmingham. Ich lebe in Birmingham fur drei Monate. Ich komme aus London in England. Ich bin studentin (I'm male is studentin correct?) und ich studiere Erdkunde. Ich studiere erst zwei Monate. Ich habe keine Kinder. Ich habe zwei Hobbys, sind sie Leichtathletik und Fußball spielen." VerticalOptions="Center" HorizontalOptions="Start" HorizontalTextAlignment="Start"/>
+                    </Grid>
+                </Grid>
+                <Grid Grid.Row="1">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid Grid.Column="0">
+                        <Switch/>
+                    </Grid>
+                    <Grid Grid.Column="1">
+                            <Label Text="Mein Name ist Roger Rabbit. Ich bin einundzwanzig Jahre alt. Ich wohne in Birmingham. Ich lebe in Birmingham fur drei Monate. Ich komme aus London in England. Ich bin studentin (I'm male is studentin correct?) und ich studiere Erdkunde. Ich studiere erst zwei Monate. Ich habe keine Kinder. Ich habe zwei Hobbys, sind sie Leichtathletik und Fußball spielen." VerticalOptions="Center" HorizontalOptions="Start" HorizontalTextAlignment="Start"/>
+                    </Grid>
+                </Grid>
+                <Grid Grid.Row="2">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid Grid.Column="0">
+                        <Switch/>
+                    </Grid>
+                    <Grid Grid.Column="1">
+                            <Label Text="Mein Name ist Roger Rabbit. Ich bin einundzwanzig Jahre alt. Ich wohne in Birmingham. Ich lebe in Birmingham fur drei Monate. Ich komme aus London in England. Ich bin studentin (I'm male is studentin correct?) und ich studiere Erdkunde. Ich studiere erst zwei Monate. Ich habe keine Kinder. Ich habe zwei Hobbys, sind sie Leichtathletik und Fußball spielen." VerticalOptions="Center" HorizontalOptions="Start" HorizontalTextAlignment="Start"/>
+                    </Grid>
+                </Grid>
+            </Grid>
+            </ScrollView>
+            <Grid Grid.Row="3">
+                <Label Text="Disclousers"  
+                       HorizontalOptions="Center"
+                       VerticalOptions="Center"
+                       TextColor="#FF9408"/>
+            </Grid>
+            <Grid Grid.Row="4" Padding="0,20,10,0">
+                <Button CornerRadius="5" 
+                            BorderRadius="5" 
+                            Text="Continue" 
+                        VerticalOptions="Start"
+                            TextColor="White"   
+                            Clicked="Button_Clicked"
+                            BackgroundColor="#FF9408"/>
+            </Grid>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

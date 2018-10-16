@@ -1,4 +1,4 @@
-﻿using SqueezeBill.Views.Accounts;
+﻿using SqueezeBill.Views.Accounts.UserRegistration;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,19 +8,19 @@ using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
-namespace SqueezeBill.Views.Home
+namespace SqueezeBill.Views.Accounts
 {
 	[XamlCompilation(XamlCompilationOptions.Compile)]
-	public partial class HomePage : ContentPage
+	public partial class ResetPasswordPage : ContentPage
 	{
-		public HomePage ()
+		public ResetPasswordPage ()
 		{
 			InitializeComponent ();
 		}
 
         private void Button_Clicked(object sender, EventArgs e)
         {
-            Navigation.PushAsync(new LoginPage());
+            Navigation.PushAsync(new RegisterStepOnePage());
         }
     }
 }

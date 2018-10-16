@@ -1,9 +1,9 @@
 D:\ClientProject\SqueezeBills\SqueezeBill\SqueezeBill.Services\bin\Debug\netstandard2.0\SqueezeBill.Services.deps.json
 D:\ClientProject\SqueezeBills\SqueezeBill\SqueezeBill.Services\bin\Debug\netstandard2.0\SqueezeBill.Services.dll
 D:\ClientProject\SqueezeBills\SqueezeBill\SqueezeBill.Services\bin\Debug\netstandard2.0\SqueezeBill.Services.pdb
+D:\ClientProject\SqueezeBills\SqueezeBill\SqueezeBill.Services\obj\Debug\netstandard2.0\SqueezeBill.Services.csprojAssemblyReference.cache
 D:\ClientProject\SqueezeBills\SqueezeBill\SqueezeBill.Services\obj\Debug\netstandard2.0\SqueezeBill.Services.csproj.CoreCompileInputs.cache
 D:\ClientProject\SqueezeBills\SqueezeBill\SqueezeBill.Services\obj\Debug\netstandard2.0\SqueezeBill.Services.AssemblyInfoInputs.cache
 D:\ClientProject\SqueezeBills\SqueezeBill\SqueezeBill.Services\obj\Debug\netstandard2.0\SqueezeBill.Services.AssemblyInfo.cs
 D:\ClientProject\SqueezeBills\SqueezeBill\SqueezeBill.Services\obj\Debug\netstandard2.0\SqueezeBill.Services.dll
 D:\ClientProject\SqueezeBills\SqueezeBill\SqueezeBill.Services\obj\Debug\netstandard2.0\SqueezeBill.Services.pdb
-D:\ClientProject\SqueezeBills\SqueezeBill\SqueezeBill.Services\obj\Debug\netstandard2.0\SqueezeBill.Services.csprojAssemblyReference.cache

@@ -1,0 +1,99 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:SqueezeBill"  
+             x:Class="SqueezeBill.Views.Accounts.LoginPage">
+    <ContentPage.Content>
+        <ScrollView>
+        <Grid x:Name="RootLayout" Margin="20">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="40"/>
+            </Grid.RowDefinitions>
+            <Grid Grid.Row="0" Padding="20">
+                <StackLayout Orientation="Vertical">
+                    <Image Source="idea.png" VerticalOptions="Start" HorizontalOptions="Center"/>
+                    <Label Text="SqueezeBill"
+                           FontSize="Large" 
+                           FontAttributes="Bold" 
+                           HorizontalOptions="Center" 
+                           HorizontalTextAlignment="Center" 
+                           TextColor="Black"/>
+                    <Label Text="Smart way to save"
+                           FontSize="Small" 
+                           FontAttributes="None" 
+                           Margin="40,0,-40,0"
+                           HorizontalOptions="Center" 
+                           HorizontalTextAlignment="Center"
+                           TextColor="Gray"/>
+                </StackLayout>
+            </Grid>
+            <Grid Grid.Row="1" RowSpacing="20">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <Grid Grid.Row="0">
+                    <Frame HasShadow="False" Padding="0" Margin="0" HeightRequest="-1" BackgroundColor="White">
+                        <local:ImageEntry Placeholder="Email"
+                                          ImageAlignment="Right"
+                                          ImageHeight="20"
+                                          ImageWidth="20"
+                                          PlaceholderColor="LightGray"
+                                          LineColor="White"
+                                          Image="info"/>
+                    </Frame>
+                </Grid>
+                <Grid Grid.Row="1">
+                    <Frame HasShadow="False" Padding="0" Margin="0" HeightRequest="-1" BackgroundColor="White">
+                        <local:ImageEntry Placeholder="Password"
+                                          ImageAlignment="Right"
+                                          ImageHeight="20"
+                                          ImageWidth="20"
+                                          PlaceholderColor="LightGray"
+                                          LineColor="White"
+                                          Image="info"/>
+                    </Frame>
+                </Grid>
+
+                <Grid Grid.Row="2">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid Grid.Column="0">
+                        <StackLayout Orientation="Horizontal">
+                            <Switch IsToggled="False" VerticalOptions="Center"/>
+                            <Label Text="Remember me" TextColor="#35414C" FontSize="Small" VerticalOptions="Center" />
+                        </StackLayout>
+                    </Grid>
+                    <Grid Grid.Column="1">
+                        <Label Text="Forgot Password ?" TextColor="#35414C" FontSize="Small" HorizontalOptions="EndAndExpand" VerticalOptions="Center" />
+                    </Grid>
+                </Grid>
+                <Grid Grid.Row="3">
+                    <Button CornerRadius="5" 
+                            BorderRadius="5" 
+                            Text="Login" 
+                            TextColor="White"
+                            Clicked="Button_Clicked"
+                            BackgroundColor="#FF9408"/>
+                </Grid>
+            </Grid>
+            <Grid Grid.Row="2">
+                <Label VerticalOptions="Center" HorizontalOptions="Center" HorizontalTextAlignment="Center">
+                    <Label.FormattedText>
+                        <FormattedString>
+                            <Span Text="New User? " ForegroundColor="#35414C" FontSize="Small" />
+                            <Span Text="Create an account" ForegroundColor="#FF9408" FontSize="Small"/>
+                        </FormattedString>
+                    </Label.FormattedText>
+                </Label>
+            </Grid>
+        </Grid>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

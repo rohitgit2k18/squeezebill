@@ -1,4 +1,4 @@
-﻿using SqueezeBill.Views.Electricity;
+﻿using SqueezeBill.Views.ElectricityAndGas;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -20,7 +20,7 @@ namespace SqueezeBill.Views.Accounts.UserRegistration
 
         private void Button_Clicked(object sender, EventArgs e)
         {
-            Navigation.PushAsync(new ElectricityListingPage());
+           // Navigation.PushAsync(new ElectricityAndGasListing());
         }
     }
 }

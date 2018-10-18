@@ -28,15 +28,21 @@
                     <ColumnDefinition Width="*"/>
                 </Grid.ColumnDefinitions>
                 <Grid Grid.Column="0">
-                    <Image VerticalOptions="Center" HorizontalOptions="EndAndExpand" Source="residencewhite.png"/>
+                    <Image VerticalOptions="Center" x:Name="ImgResidence" HorizontalOptions="EndAndExpand" Source="residenceyellow.png"/>
+                        <Grid.GestureRecognizers>
+                            <TapGestureRecognizer NumberOfTapsRequired="1" x:Name="XFGridResidence" Tapped="XFGridResidence_Tapped"/>
+                        </Grid.GestureRecognizers>
                 </Grid>
                 <Grid Grid.Column="1">
-                    <Image VerticalOptions="Center" HorizontalOptions="StartAndExpand" Source="commercialwhite.png"/>
-                </Grid>
+                    <Image VerticalOptions="Center" x:Name="ImgCommercial" HorizontalOptions="StartAndExpand" Source="commercial.png"/>
+                        <Grid.GestureRecognizers>
+                            <TapGestureRecognizer NumberOfTapsRequired="1" x:Name="XFGridCommercial" Tapped="XFGridCommercial_Tapped"/>
+                        </Grid.GestureRecognizers>
+                    </Grid>
             </Grid>
             <Grid Grid.Row="2">
                 <Frame HasShadow="False" Padding="5" Margin="0" HeightRequest="-1" BorderColor="#f4941c" CornerRadius="5" BackgroundColor="White">
-                    <local:ImageEntry Placeholder="Enter your zipcode" LineColor="White" PlaceholderColor="Black" Image="zipcode" ImageAlignment="Right" ImageHeight="20" ImageWidth="20" />
+                    <local:ImageEntry Placeholder="Enter your zipcode" x:Name="XFEntryZipCode" LineColor="White" PlaceholderColor="Black" Image="zipcode" ImageAlignment="Right" ImageHeight="20" ImageWidth="20" />
                 </Frame>
             </Grid>
             <Grid Grid.Row="3" ColumnSpacing="20">
@@ -45,14 +51,26 @@
                     <ColumnDefinition Width="*"/>
                 </Grid.ColumnDefinitions>
                 <Grid Grid.Column="0">
-                    <Image VerticalOptions="Center" HorizontalOptions="EndAndExpand" Source="electicitywhite.png"/>
-                </Grid>
+                    <Image VerticalOptions="Center" x:Name="ImgElctricity" HorizontalOptions="EndAndExpand" Source="electicityyellow.png"/>
+                        <Grid.GestureRecognizers>
+                            <TapGestureRecognizer NumberOfTapsRequired="1" x:Name="XFGridElectricity" Tapped="XFGridElectricity_Tapped"/>
+                        </Grid.GestureRecognizers>
+                    </Grid>
                 <Grid Grid.Column="1">
-                    <Image VerticalOptions="Center" HorizontalOptions="StartAndExpand" Source="gaswhite.png"/>
-                </Grid>
+                    <Image VerticalOptions="Center" x:Name="ImgGas" HorizontalOptions="StartAndExpand" Source="gas.png"/>
+                        <Grid.GestureRecognizers>
+                            <TapGestureRecognizer NumberOfTapsRequired="1" x:Name="XFGridGas" Tapped="XFGridGas_Tapped"/>
+                        </Grid.GestureRecognizers>
+                    </Grid>
             </Grid>
                 <Grid Grid.Row="4" Padding="0,10,0,10">
-                <Button HorizontalOptions="FillAndExpand" VerticalOptions="Center" Text="Get Rates" TextColor="White"  BackgroundColor="#f4941c" Clicked="Button_Clicked"/>
+                <Button HorizontalOptions="FillAndExpand"
+                        x:Name="XFBtnCompareRates"
+                        VerticalOptions="Center" 
+                        Text="Get Rates"
+                        TextColor="White" 
+                        BackgroundColor="#f4941c"
+                        Clicked="XFBtnCompareRates_Clicked"/>
             </Grid>
         </Grid>
         </ScrollView>

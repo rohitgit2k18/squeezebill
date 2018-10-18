@@ -98,7 +98,7 @@
                     <Button CornerRadius="5" 
                             BorderRadius="5" 
                             Text="Yes" 
-                            TextColor="White" 
+                            TextColor="#FF9408" 
                             BorderWidth="2"
                             BorderColor="#FF9408"
                             BackgroundColor="White"/>
@@ -107,7 +107,7 @@
                     <Button CornerRadius="5" 
                             BorderRadius="5" 
                             Text="No" 
-                            TextColor="White" 
+                            TextColor="#FF9408" 
                             BorderWidth="2"
                             BorderColor="#FF9408"
                             BackgroundColor="White"/>

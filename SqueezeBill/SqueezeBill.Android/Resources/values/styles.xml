@@ -14,8 +14,9 @@
     <item name="colorPrimary">#f4941c</item>
     <!-- colorPrimaryDark is used for the status bar -->
     <item name="colorPrimaryDark">#e08614</item>
-    <!-- colorAccent is used as the default value for colorControlActivated
+    <!-- colorAccent is used as the default value for colorControlActivated   
          which is used to tint widgets -->
+    <item name="android:textAllCaps">false</item>
     <item name="colorAccent">#FF4081</item>
     <!-- You can also set colorControlNormal, colorControlActivated
          colorControlHighlight and colorSwitchThumbNormal. -->

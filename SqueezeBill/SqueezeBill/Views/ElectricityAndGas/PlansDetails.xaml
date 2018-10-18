@@ -1,0 +1,169 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SqueezeBill.Views.ElectricityAndGas.PlansDetails">
+    <ContentPage.Content>
+        <Grid x:Name="RootLayout">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <Grid Grid.Row="0" Padding="15">
+                <Image VerticalOptions="Center" HorizontalOptions="Center" Source="publicpower.png"/>
+            </Grid>
+            <Grid Grid.Row="1">
+                <Button Text="6 Months" 
+                        FontSize="Micro"                                   
+                        BorderRadius="10"
+                        TextColor="#AB9A9A" 
+                        BackgroundColor="#C5C5C3"
+                        CornerRadius="10"
+                        HorizontalOptions="Center"
+                        VerticalOptions="Center"                                                
+                        BorderWidth="1" 
+                        BorderColor="#AB9A9A"/>
+            </Grid>
+            <ScrollView Grid.Row="2">
+                <Grid  BackgroundColor="LightGray" RowSpacing="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <Grid Grid.Row="0" BackgroundColor="White">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+                    <Grid Grid.Row="0" Padding="10">
+                        <Label Text="Company Name" 
+                               HorizontalOptions="StartAndExpand"
+                               TextColor="#AA9C9C"
+                               FontSize="Small"
+                               VerticalOptions="Center"/>
+                    </Grid>
+                    <Grid Grid.Row="1" Padding="10">
+                        <Label Text="Public Power" 
+                               HorizontalOptions="StartAndExpand"
+                               TextColor="#B7C0C7"
+                               FontSize="Micro"
+                               VerticalOptions="Center"/>
+                    </Grid>
+                </Grid>
+                <Grid Grid.Row="1" BackgroundColor="White">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+                    <Grid Grid.Row="0" Padding="10">
+                        <Label Text="Per Kwh" 
+                               HorizontalOptions="StartAndExpand"
+                               TextColor="#AA9C9C"
+                               FontSize="Small"
+                               VerticalOptions="Center"/>
+                    </Grid>
+                    <Grid Grid.Row="1" Padding="10">
+                        <Label Text="7.69c" 
+                               HorizontalOptions="StartAndExpand"
+                               TextColor="#B7C0C7"
+                               FontSize="Micro"
+                               VerticalOptions="Center"/>
+                    </Grid>
+                </Grid>
+                <Grid Grid.Row="2" BackgroundColor="White">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+                    <Grid Grid.Row="0" Padding="10">
+                        <Label Text="Fees" 
+                               HorizontalOptions="StartAndExpand"
+                               TextColor="#AA9C9C"
+                               FontSize="Small"
+                               VerticalOptions="Center"/>
+                    </Grid>
+                    <Grid Grid.Row="1" Padding="10">
+                        <Label Text="$100 - Early Termination Fee" 
+                               HorizontalOptions="StartAndExpand"
+                               TextColor="#B7C0C7"
+                               FontSize="Micro"
+                               VerticalOptions="Center"/>
+                    </Grid>
+                </Grid>
+                <Grid Grid.Row="3" BackgroundColor="White">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+                    <Grid Grid.Row="0" Padding="10">
+                        <Label Text="Green Energy" 
+                               HorizontalOptions="StartAndExpand"
+                               TextColor="#AA9C9C"
+                               FontSize="Small"
+                               VerticalOptions="Center"/>
+                    </Grid>
+                    <Grid Grid.Row="1" Padding="10">
+                        <Label Text="0 %" 
+                               HorizontalOptions="StartAndExpand"
+                               TextColor="#B7C0C7"
+                               FontSize="Micro"
+                               VerticalOptions="Center"/>
+                    </Grid>
+                </Grid>
+                <Grid Grid.Row="4" BackgroundColor="White">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+                    <Grid Grid.Row="0" Padding="10">
+                        <Label Text="Terms" 
+                               HorizontalOptions="StartAndExpand"
+                               TextColor="#AA9C9C"
+                               FontSize="Small"
+                               VerticalOptions="Center"/>
+                    </Grid>
+                    <Grid Grid.Row="1" Padding="10">
+                        <Label Text="6 Monts Fixed" 
+                               HorizontalOptions="StartAndExpand"
+                               TextColor="#B7C0C7"
+                               FontSize="Micro"
+                               VerticalOptions="Center"/>
+                    </Grid>
+                </Grid>
+                <Grid Grid.Row="5" BackgroundColor="White">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+                    <Grid Grid.Row="0" Padding="10">
+                        <Label Text="Offers" 
+                               HorizontalOptions="StartAndExpand"
+                               TextColor="#AA9C9C"
+                               FontSize="Small"
+                               VerticalOptions="Center"/>
+                    </Grid>
+                    <Grid Grid.Row="1" Padding="10">
+                        <Label Text="No Offers" 
+                               HorizontalOptions="StartAndExpand"
+                               TextColor="#B7C0C7"
+                               FontSize="Micro"
+                               VerticalOptions="Center"/>
+                    </Grid>
+                </Grid>
+            </Grid>
+            </ScrollView>
+            <Grid Grid.Row="3" Padding="20,0,20,30">
+                <Button CornerRadius="5" 
+                            BorderRadius="5" 
+                            Text="Select" 
+                            TextColor="White"                            
+                            BackgroundColor="#FF9408"/>
+            </Grid>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

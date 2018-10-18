@@ -1,0 +1,139 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SqueezeBill.Views.ElectricityAndGas.ElectricityAndGasListing">
+    <ContentPage.Content>
+        <Grid x:Name="RootLayout" Margin="10" RowSpacing="20">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <Grid Grid.Row="0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1.2*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Grid Grid.Column="0">
+                    <Label Text="Your Utility Company"
+                           TextColor="Black"
+                           FontAttributes="Bold"
+                           VerticalOptions="Center"
+                           HorizontalOptions="Center"
+                           FontSize="Small"/>
+                </Grid>
+                <Grid Grid.Column="1" ColumnSpacing="15">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid Grid.Column="0">
+                        <Frame Padding="5" Margin="0" BackgroundColor="LightGray" CornerRadius="5" HeightRequest="-1">
+                            <Label Text="8.50c" TextColor="White" HorizontalOptions="Center" VerticalOptions="Center"/>
+                        </Frame>
+                    </Grid>
+                    <Grid Grid.Column="1">
+                        <Frame Padding="5" Margin="0" BackgroundColor="White" BorderColor="LightGray" CornerRadius="5" HeightRequest="-1">
+                            <Label Text="8.50c" TextColor="Gray" HorizontalOptions="Center" VerticalOptions="Center"/>
+                        </Frame>
+                    </Grid>
+                </Grid>
+            </Grid>
+            <Grid Grid.Row="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="0.15*"/>
+                    <ColumnDefinition Width="0.60*"/>
+                    <ColumnDefinition Width="0.25*"/>
+                </Grid.ColumnDefinitions>
+                <Grid Grid.Column="0">
+                    
+                </Grid>
+                <Grid Grid.Column="1">
+                    <BoxView HeightRequest="1" BackgroundColor="Yellow" HorizontalOptions="FillAndExpand" VerticalOptions="Start"/>
+                    <Label Text="Future annual savings  $480"  Margin="0,10,0,10"/>
+                    <BoxView HeightRequest="1" BackgroundColor="Yellow" HorizontalOptions="FillAndExpand" VerticalOptions="End"/>
+                </Grid>
+                <Grid Grid.Column="2">
+                    <Image VerticalOptions="Center" HorizontalOptions="Center" Source="info.png"/>
+                </Grid>
+            </Grid>
+            <Grid Grid.Row="2">
+                <Label Text="Our Best Picks" TextColor="Gray" VerticalOptions="Center" HorizontalOptions="Center"/>
+            </Grid>
+            <Grid Grid.Row="3">
+                <ListView x:Name="RateComparisionList"  HasUnevenRows="True" SeparatorColor="Transparent" >
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <Frame HasShadow="True" Padding="10" Margin="0" BackgroundColor="White" HeightRequest="-1" CornerRadius="5">
+                                    <Grid>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="0.4*"/>
+                                            <ColumnDefinition Width="0.4*"/>
+                                            <ColumnDefinition Width="0.2*"/>
+                                        </Grid.ColumnDefinitions>
+                                        <Grid Grid.Column="0" Padding="10">
+                                            <Image VerticalOptions="Center" HorizontalOptions="Center" Aspect="AspectFit" Source="publicpower.png"/>
+                                        </Grid>
+                                        <Grid Grid.Column="1">
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition Height="*"/>
+                                                <RowDefinition Height="*"/>
+                                            </Grid.RowDefinitions>
+                                            <Grid Grid.Row="0">
+                                                <Label Text="Public Power" TextColor="#AB9A9A" VerticalOptions="Center" HorizontalOptions="Center" FontSize="Small"/>
+                                            </Grid>
+                                            <Grid Grid.Row="1">
+                                                <Label Text="7.69c" TextColor="#AB9A9A" VerticalOptions="Center" HorizontalOptions="Center" FontSize="Small"/>
+                                            </Grid>
+                                        </Grid>
+                                        <Grid Grid.Column="2">
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition Height="*"/>
+                                                <RowDefinition Height="*"/>
+                                            </Grid.RowDefinitions>
+                                            <Grid Grid.Row="0">
+                                                <Button Text="6 Months" 
+                                            FontSize="Micro" 
+                                            Padding="0,0,10,0"
+                                            BorderRadius="10"
+                                            TextColor="#AB9A9A"
+                                             BackgroundColor="White"
+                                            CornerRadius="10"
+                                            HeightRequest="20"
+                                            BorderWidth="1" 
+                                            BorderColor="#AB9A9A"/>
+                                            </Grid>
+                                            <Grid Grid.Row="1">
+                                                <Button CornerRadius="5" 
+                                       BorderRadius="5" 
+                                        Text="Select" 
+                                          TextColor="White"
+                                            Image="next.png"                                           
+                                            ContentLayout="Right,5"                      
+                                            FontSize="Micro"
+                                            Padding="0,0,10,0"
+                                             HeightRequest="20"                                      
+                                    BackgroundColor="#FF9408"/>
+                                            </Grid>
+                                        </Grid>
+                                    </Grid>
+                                </Frame>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </Grid>
+            <Grid Grid.Row="4">
+                <Button CornerRadius="5" 
+                            BorderRadius="5" 
+                            Text="More Plans" 
+                            TextColor="White" 
+                        Clicked="Button_Clicked"
+                            BackgroundColor="#FF9408"/>
+            </Grid>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

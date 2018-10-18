@@ -8,11 +8,12 @@ namespace SqueezeBill
 {
     public partial class App : Application
     {
+        public static NavigationPage NavigationPage { get; set; }
         public App()
         {
             InitializeComponent();
-
-            MainPage = new NavigationPage(new HomePage());
+            NavigationPage= new NavigationPage(new HomePage());
+            MainPage = NavigationPage;
         }
 
         protected override void OnStart()

@@ -2382,7 +2382,7 @@ namespace SqueezeBill.Droid
 			public const int commercial = 2130837594;
 			
 			// aapt resource value: 0x7f02005b
-			public const int commercialwhite = 2130837595;
+			public const int commercialyellow = 2130837595;
 			
 			// aapt resource value: 0x7f02005c
 			public const int constellation = 2130837596;
@@ -2412,10 +2412,10 @@ namespace SqueezeBill.Droid
 			public const int dropdown = 2130837604;
 			
 			// aapt resource value: 0x7f020065
-			public const int electicitywhite = 2130837605;
+			public const int electicity = 2130837605;
 			
 			// aapt resource value: 0x7f020066
-			public const int electricity = 2130837606;
+			public const int electicityyellow = 2130837606;
 			
 			// aapt resource value: 0x7f020067
 			public const int eye = 2130837607;
@@ -2427,7 +2427,7 @@ namespace SqueezeBill.Droid
 			public const int gas = 2130837609;
 			
 			// aapt resource value: 0x7f02006a
-			public const int gaswhite = 2130837610;
+			public const int gasyellow = 2130837610;
 			
 			// aapt resource value: 0x7f02006b
 			public const int hamburger = 2130837611;
@@ -3108,7 +3108,7 @@ namespace SqueezeBill.Droid
 			public const int residence = 2130837834;
 			
 			// aapt resource value: 0x7f02014b
-			public const int residencewhite = 2130837835;
+			public const int residenceyellow = 2130837835;
 			
 			// aapt resource value: 0x7f02014c
 			public const int scroll = 2130837836;

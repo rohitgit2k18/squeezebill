@@ -39,6 +39,7 @@
                 <Grid Grid.Row="0">
                     <Frame HasShadow="False" Padding="0" Margin="0" HeightRequest="-1" BackgroundColor="White">
                         <local:ImageEntry Placeholder="Email"
+                                          Text="{Binding email}"
                                           ImageAlignment="Right"
                                           ImageHeight="20"
                                           ImageWidth="20"
@@ -50,6 +51,7 @@
                 <Grid Grid.Row="1">
                     <Frame HasShadow="False" Padding="0" Margin="0" HeightRequest="-1" BackgroundColor="White">
                         <local:ImageEntry Placeholder="Password"
+                                          Text="{Binding password}"
                                           ImageAlignment="Right"
                                           ImageHeight="20"
                                           ImageWidth="20"
@@ -77,9 +79,10 @@
                 <Grid Grid.Row="3">
                     <Button CornerRadius="5" 
                             BorderRadius="5" 
+                            x:Name="XFBtnLogin"
                             Text="Login" 
                             TextColor="White"
-                            Clicked="Button_Clicked"
+                            Clicked="XFBtnLogin_Clicked"
                             BackgroundColor="#FF9408"/>
                 </Grid>
             </Grid>

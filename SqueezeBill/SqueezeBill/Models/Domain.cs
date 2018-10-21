@@ -22,7 +22,7 @@ namespace TargetTransport.Models
         {
             get
             {
-                return "api/User/login";
+                return "api/Login/UserLogin";
             }
         }
         public static string ForgotPasswordApiConstant
@@ -59,7 +59,7 @@ namespace TargetTransport.Models
         {
             get
             {
-                return "/api/Product/CompareRates";
+                return "api/Product/CompareRates";
             }
         }
         

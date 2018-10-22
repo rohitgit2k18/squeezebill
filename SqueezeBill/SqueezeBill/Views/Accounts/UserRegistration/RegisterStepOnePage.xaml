@@ -77,7 +77,8 @@
             <Grid Grid.Row="2">
                 <Frame HasShadow="False" Padding="0" Margin="0" HeightRequest="-1" BackgroundColor="White">
                     <local:BorderlessEntry Placeholder="Full Name"                                                                                    
-                                           PlaceholderColor="LightGray"                                          
+                                           PlaceholderColor="LightGray" 
+                                           Text="{Binding firstName}"
                                           />
                 </Frame>
             </Grid>
@@ -89,13 +90,19 @@
                                           ImageWidth="20"
                                           PlaceholderColor="LightGray"
                                           LineColor="White"
+                                           Keyboard="Email"
+                                        x:Name="XFEntryEmail"
+                                      TextChanged="XFEntryEmail_TextChanged"
+                                       Text="{Binding email}"
                                           Image="info"/>
                 </Frame>
             </Grid>
             <Grid Grid.Row="4">
                 <Frame HasShadow="False" Padding="0" Margin="0" HeightRequest="-1" BackgroundColor="White">
                     <local:BorderlessEntry Placeholder="Mobile Number"                                                                                    
-                                           PlaceholderColor="LightGray"                                          
+                                           PlaceholderColor="LightGray"
+                                           Keyboard="Telephone"
+                                           Text="{Binding phoneNumber}"
                                           />
                 </Frame>
             </Grid>
@@ -108,13 +115,15 @@
                                            IsPassword="True"
                                           PlaceholderColor="LightGray"
                                           LineColor="White"
+                                      Text="{Binding password}"
                                           Image="info"/>
                 </Frame>
             </Grid>
             <Grid Grid.Row="6">
                 <Frame HasShadow="False" Padding="0" Margin="0" HeightRequest="-1" BackgroundColor="White">
                     <local:BorderlessEntry Placeholder="Zipcode"                                                                                    
-                                           PlaceholderColor="LightGray"                                          
+                                           PlaceholderColor="LightGray"    
+                                            Text="{Binding zipCode}"
                                           />
                 </Frame>
             </Grid>
@@ -126,14 +135,16 @@
                 <Grid Grid.Column="0">
                     <Frame HasShadow="False" Padding="0" Margin="0" HeightRequest="-1" BackgroundColor="White">
                         <local:BorderlessEntry Placeholder="State"                                                                                    
-                                           PlaceholderColor="LightGray"                                          
+                                           PlaceholderColor="LightGray" 
+                                                Text="{Binding state}"
                                           />
                     </Frame>
                 </Grid>
                 <Grid Grid.Column="1">
                     <Frame HasShadow="False" Padding="0" Margin="0" HeightRequest="-1" BackgroundColor="White">
                         <local:BorderlessEntry Placeholder="City"                                                                                    
-                                           PlaceholderColor="LightGray"                                          
+                                           PlaceholderColor="LightGray" 
+                                               Text="{Binding city}"
                                           />
                     </Frame>
                 </Grid>
@@ -141,9 +152,10 @@
             <Grid Grid.Row="8" Padding="0,20,10,0">
                 <Button CornerRadius="5" 
                             BorderRadius="5" 
+                        x:Name="XFBtnReg1"
                             Text="Continue" 
                             TextColor="White"   
-                           Clicked="Button_Clicked"
+                           Clicked="XFBtnReg1_Clicked"
                             BackgroundColor="#FF9408"/>
             </Grid>
         </Grid>

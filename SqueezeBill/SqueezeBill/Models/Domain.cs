@@ -50,7 +50,7 @@ namespace TargetTransport.Models
         {
             get
             {
-                return "api/User/SignUp";
+                return "api/Registration/UserRegister";
             }
         }
 

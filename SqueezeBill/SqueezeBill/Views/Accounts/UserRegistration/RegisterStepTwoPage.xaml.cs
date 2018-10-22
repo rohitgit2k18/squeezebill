@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SqueezeBill.Services.Models.RequestModels;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -12,14 +13,31 @@ namespace SqueezeBill.Views.Accounts.UserRegistration
 	[XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class RegisterStepTwoPage : ContentPage
 	{
-		public RegisterStepTwoPage ()
+        #region Variable Declaration        
+        private UserRegistrationRequest _objUserRegistrationRequest;
+        #endregion
+        public RegisterStepTwoPage (UserRegistrationRequest objUserRegistrationRequest)
 		{
 			InitializeComponent ();
-		}
+            _objUserRegistrationRequest = new UserRegistrationRequest();
 
-        private void Button_Clicked(object sender, EventArgs e)
+            _objUserRegistrationRequest = objUserRegistrationRequest;
+            this.BindingContext = _objUserRegistrationRequest;
+        }
+
+        private void XFButtonTAndC_Clicked(object sender, EventArgs e)
         {
-            Navigation.PushAsync(new RegisterStepThreePage());
+            if(!_objUserRegistrationRequest.termandCondition1 ||
+                !_objUserRegistrationRequest.termandCondition2 ||
+                !_objUserRegistrationRequest.termandCondition3)
+            {
+                DisplayAlert("Alert", "please select terms and conditions!", "OK");
+            }
+            else
+            {
+                App.NavigationPage.Navigation.PushAsync(new RegisterStepThreePage(_objUserRegistrationRequest));
+            }
+           
         }
     }
 }

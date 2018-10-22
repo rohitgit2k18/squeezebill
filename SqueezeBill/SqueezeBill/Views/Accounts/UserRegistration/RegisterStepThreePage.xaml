@@ -100,6 +100,8 @@
                             Text="Yes" 
                             TextColor="#FF9408" 
                             BorderWidth="2"
+                            x:Name="XFBtnYes"
+                            Clicked="XFBtnYes_Clicked"
                             BorderColor="#FF9408"
                             BackgroundColor="White"/>
                 </Grid>
@@ -107,6 +109,8 @@
                     <Button CornerRadius="5" 
                             BorderRadius="5" 
                             Text="No" 
+                            Clicked="XFBtnNo_Clicked"
+                             x:Name="XFBtnNo"
                             TextColor="#FF9408" 
                             BorderWidth="2"
                             BorderColor="#FF9408"
@@ -132,7 +136,13 @@
                 </Grid>
             </Grid>
             <Grid Grid.Row="5">
-                <Entry Placeholder="Account Number" PlaceholderColor="LightGray"/>
+                <!--<Entry Placeholder="Account Number" PlaceholderColor="LightGray"/>-->
+                <Frame HasShadow="False" Padding="0" Margin="0" HeightRequest="-1" BackgroundColor="White">
+                    <local:BorderlessEntry Placeholder="Zipcode"                                                                                    
+                                           PlaceholderColor="LightGray"    
+                                            Text="{Binding medEdAccountatthisAddress}"
+                                          />
+                </Frame>
             </Grid>
             <Grid Grid.Row="6">
                 <Label Text="You must supply a 20-digit account number" TextColor="#FF9408" VerticalOptions="Center" HorizontalOptions="Center" HorizontalTextAlignment="Center" FontSize="Small"/>
@@ -142,8 +152,9 @@
                 <Button CornerRadius="5" 
                             BorderRadius="5" 
                             Text="Continue" 
-                            TextColor="White"   
-                           Clicked="Button_Clicked"
+                        x:Name="XFBtnRegisterUser"
+                            TextColor="White" 
+                        Clicked="XFBtnRegisterUser_Clicked"
                             BackgroundColor="#FF9408"/>
             </Grid>
         </Grid>

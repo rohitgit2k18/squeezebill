@@ -82,7 +82,7 @@
                         <ColumnDefinition Width="*"/>
                     </Grid.ColumnDefinitions>
                     <Grid Grid.Column="0">
-                        <Switch />
+                            <Switch x:Name="XFSwitch1" IsToggled="{Binding termandCondition1}"/>
                     </Grid>
                     <Grid Grid.Column="1">
                             <Label Text="Mein Name ist Roger Rabbit. Ich bin einundzwanzig Jahre alt. Ich wohne in Birmingham. Ich lebe in Birmingham fur drei Monate. Ich komme aus London in England. Ich bin studentin (I'm male is studentin correct?) und ich studiere Erdkunde. Ich studiere erst zwei Monate. Ich habe keine Kinder. Ich habe zwei Hobbys, sind sie Leichtathletik und Fußball spielen." VerticalOptions="Center" HorizontalOptions="Start" HorizontalTextAlignment="Start"/>
@@ -94,7 +94,7 @@
                         <ColumnDefinition Width="*"/>
                     </Grid.ColumnDefinitions>
                     <Grid Grid.Column="0">
-                        <Switch/>
+                            <Switch x:Name="XFSwitch2" IsToggled="{Binding termandCondition2}"/>
                     </Grid>
                     <Grid Grid.Column="1">
                             <Label Text="Mein Name ist Roger Rabbit. Ich bin einundzwanzig Jahre alt. Ich wohne in Birmingham. Ich lebe in Birmingham fur drei Monate. Ich komme aus London in England. Ich bin studentin (I'm male is studentin correct?) und ich studiere Erdkunde. Ich studiere erst zwei Monate. Ich habe keine Kinder. Ich habe zwei Hobbys, sind sie Leichtathletik und Fußball spielen." VerticalOptions="Center" HorizontalOptions="Start" HorizontalTextAlignment="Start"/>
@@ -106,7 +106,7 @@
                         <ColumnDefinition Width="*"/>
                     </Grid.ColumnDefinitions>
                     <Grid Grid.Column="0">
-                        <Switch/>
+                            <Switch x:Name="XFSwitch3" IsToggled="{Binding termandCondition3}"/>
                     </Grid>
                     <Grid Grid.Column="1">
                             <Label Text="Mein Name ist Roger Rabbit. Ich bin einundzwanzig Jahre alt. Ich wohne in Birmingham. Ich lebe in Birmingham fur drei Monate. Ich komme aus London in England. Ich bin studentin (I'm male is studentin correct?) und ich studiere Erdkunde. Ich studiere erst zwei Monate. Ich habe keine Kinder. Ich habe zwei Hobbys, sind sie Leichtathletik und Fußball spielen." VerticalOptions="Center" HorizontalOptions="Start" HorizontalTextAlignment="Start"/>
@@ -126,7 +126,7 @@
                             Text="Continue" 
                         VerticalOptions="Start"
                             TextColor="White"   
-                            Clicked="Button_Clicked"
+                            Clicked="XFButtonTAndC_Clicked"
                             BackgroundColor="#FF9408"/>
             </Grid>
         </Grid>

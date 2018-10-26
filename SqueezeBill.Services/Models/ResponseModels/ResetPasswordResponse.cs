@@ -4,15 +4,16 @@ using System.Text;
 
 namespace SqueezeBill.Services.Models.ResponseModels
 {
-   public class ForgotPasswordResponse
+   public class ResetPasswordResponse
     {
-        public FPResponse response { get; set; }
+        public RPasswordResponse response { get; set; }
     }
-    public class FPResponse
+
+
+    public class RPasswordResponse
     {
         public string message { get; set; }
         public int statusCode { get; set; }
     }
-
-    
+   
 }

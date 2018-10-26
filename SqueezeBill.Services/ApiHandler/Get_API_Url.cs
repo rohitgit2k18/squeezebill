@@ -37,9 +37,9 @@ namespace SqueezeBill.Services.ApiHandler
         /// </summary>
         /// <param name="BaseUsrl"></param>
         /// <returns></returns>
-        public string GetScheduleListApi(string BaseUsrl, string Search)
+        public string GetElectricityAndGasDetailApi(string BaseUsrl, int PlanId,bool IsResidential)
         {
-            return string.Format("{0}?Search={1}", BaseUsrl, Search);
+            return string.Format("{0}/{1}/{2}", BaseUsrl, PlanId, IsResidential);
         }
 
         /// <summary>

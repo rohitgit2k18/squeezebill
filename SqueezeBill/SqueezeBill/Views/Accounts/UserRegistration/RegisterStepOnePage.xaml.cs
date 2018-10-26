@@ -48,7 +48,7 @@ namespace SqueezeBill.Views.Accounts.UserRegistration
                         string.IsNullOrEmpty(_objUserRegistrationRequest.email) ||
                         string.IsNullOrEmpty(_objUserRegistrationRequest.password) ||
                         string.IsNullOrEmpty(_objUserRegistrationRequest.phoneNumber) ||
-                        _objUserRegistrationRequest.zipCode > 0 ||
+                        _objUserRegistrationRequest.zipCode <= 0 ||
                         string.IsNullOrEmpty(_objUserRegistrationRequest.state)||
                         string.IsNullOrEmpty(_objUserRegistrationRequest.city)
                         )

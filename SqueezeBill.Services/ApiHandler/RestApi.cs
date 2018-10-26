@@ -42,26 +42,14 @@ namespace SqueezeBill.Services.ApiHandler
             // var _storedToken=Settings;
             try
             {
-              //  client.MaxResponseContentBufferSize = 256000;
+                client.MaxResponseContentBufferSize = 256000;
                 if (IsHeaderRequired)
                 {
 
                     client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", objHeaderModel.TokenCode);
-                    //client.DefaultRequestHeaders.Add("Content-Type", "application/json");
-                    //client.DefaultRequestHeaders.Add("Authorization", "application/json");
-                    //client.DefaultRequestHeaders.Add("Content-Length", "84");
-                    //client.DefaultRequestHeaders.Add("User-Agent", "Fiddler");
-                    //client.DefaultRequestHeaders.Add("Host", "localhost:49165");
-                    // client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
-                }
-                // var request = new HttpRequestMessage(HttpMethod.Get, uri);
-
-                // request.Content = new FormUrlEncodedContent(keyValues);
-
-                //  HttpResponseMessage response = await client.SendAsync(request);
-
+                   
+                }         
                 HttpResponseMessage response = await client.GetAsync(uri);
-
 
                 if (response.IsSuccessStatusCode)
                 {
@@ -288,48 +276,82 @@ namespace SqueezeBill.Services.ApiHandler
         /// <param name="objHeaderModel"></param>
         /// <param name="_objLoginRequest"></param>
         /// <returns></returns>
+        //public async Task<LoginResponse> LoginAsync(string uri, Boolean IsHeaderRequired, HeaderModel objHeaderModel, LoginRequest _objLoginRequest)
+        //{
+
+        //    client.MaxResponseContentBufferSize = 256000;
+        //    LoginResponse _objLoginResponse = new LoginResponse();
+
+        //    var keyValues = new List<KeyValuePair<string, string>>
+        //    {
+        //        new KeyValuePair<string, string>("Email",_objLoginRequest.email),
+        //        new KeyValuePair<string, string>("Password",_objLoginRequest.password)
+
+        //    };
+        //    if (IsHeaderRequired)
+        //    {
+        //        client.DefaultRequestHeaders.TryAddWithoutValidation("Content-Type", "application/x-www-form-urlencoded; charset=UTF-8");
+        //        client.DefaultRequestHeaders.TryAddWithoutValidation("Content-Length", "69");
+        //        client.DefaultRequestHeaders.TryAddWithoutValidation("User-Agent", "Fiddler");
+        //        client.DefaultRequestHeaders.TryAddWithoutValidation("Host", "localhost:49165");
+        //    }
+        //    var request = new HttpRequestMessage(HttpMethod.Post, uri);
+
+        //    request.Content = new FormUrlEncodedContent(keyValues);
+
+        //    HttpResponseMessage response = await client.SendAsync(request);
+        //    var statuscode = Convert.ToInt64(response.StatusCode);
+        //    if (response.IsSuccessStatusCode)
+        //    {
+        //        ResponseStatus.StatusCode = Convert.ToInt32(response.StatusCode);
+        //        var SucessResponse = await response.Content.ReadAsStringAsync();
+        //        _objLoginResponse = JsonConvert.DeserializeObject<LoginResponse>(SucessResponse);
+        //        return _objLoginResponse;
+        //    }
+        //    else
+        //    {
+        //        ResponseStatus.StatusCode = Convert.ToInt32(response.StatusCode);
+        //        var ErrorResponse = await response.Content.ReadAsStringAsync();
+        //        _objLoginResponse = JsonConvert.DeserializeObject<LoginResponse>(ErrorResponse);
+        //        return _objLoginResponse;
+        //    }
+
+        //}
         public async Task<LoginResponse> LoginAsync(string uri, Boolean IsHeaderRequired, HeaderModel objHeaderModel, LoginRequest _objLoginRequest)
         {
 
-            client.MaxResponseContentBufferSize = 256000;
-            LoginResponse _objLoginResponse = new LoginResponse();
 
-            var keyValues = new List<KeyValuePair<string, string>>
+            LoginResponse objLoginResponse;
+            string s = JsonConvert.SerializeObject(_objLoginRequest);
+            HttpResponseMessage response = null;
+            using (var stringContent = new StringContent(s, System.Text.Encoding.UTF8, "application/json"))
             {
-                new KeyValuePair<string, string>("Email",_objLoginRequest.email),
-                new KeyValuePair<string, string>("Password",_objLoginRequest.password)
 
-            };
-            if (IsHeaderRequired)
-            {
-                client.DefaultRequestHeaders.TryAddWithoutValidation("Content-Type", "application/x-www-form-urlencoded; charset=UTF-8");
-                client.DefaultRequestHeaders.TryAddWithoutValidation("Content-Length", "69");
-                client.DefaultRequestHeaders.TryAddWithoutValidation("User-Agent", "Fiddler");
-                client.DefaultRequestHeaders.TryAddWithoutValidation("Host", "localhost:49165");
-            }
-            var request = new HttpRequestMessage(HttpMethod.Post, uri);
+                if (IsHeaderRequired)
+                {
+                    client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", objHeaderModel.TokenCode);
 
-            request.Content = new FormUrlEncodedContent(keyValues);
+                }
+                response = await client.PostAsync(uri, stringContent);
 
-            HttpResponseMessage response = await client.SendAsync(request);
-            var statuscode = Convert.ToInt64(response.StatusCode);
-            if (response.IsSuccessStatusCode)
-            {
-                ResponseStatus.StatusCode = Convert.ToInt32(response.StatusCode);
-                var SucessResponse = await response.Content.ReadAsStringAsync();
-                _objLoginResponse = JsonConvert.DeserializeObject<LoginResponse>(SucessResponse);
-                return _objLoginResponse;
-            }
-            else
-            {
-                ResponseStatus.StatusCode = Convert.ToInt32(response.StatusCode);
-                var ErrorResponse = await response.Content.ReadAsStringAsync();
-                _objLoginResponse = JsonConvert.DeserializeObject<LoginResponse>(ErrorResponse);
-                return _objLoginResponse;
+                var statuscode = Convert.ToInt64(response.StatusCode);
+                if (response.IsSuccessStatusCode)
+                {
+                    ResponseStatus.StatusCode = Convert.ToInt32(response.StatusCode);
+                    var SucessResponse = await response.Content.ReadAsStringAsync();
+                    objLoginResponse = JsonConvert.DeserializeObject<LoginResponse>(SucessResponse);
+                    return objLoginResponse;
+                }
+                else
+                {
+                    ResponseStatus.StatusCode = Convert.ToInt32(response.StatusCode);
+                    var ErrorResponse = await response.Content.ReadAsStringAsync();
+                    objLoginResponse = JsonConvert.DeserializeObject<LoginResponse>(ErrorResponse);
+                    return objLoginResponse;
+                }
             }
 
         }
-
         /// <summary>
         /// Forgot Password Api
         /// </summary>
@@ -338,43 +360,76 @@ namespace SqueezeBill.Services.ApiHandler
         /// <param name="objHeaderModel"></param>
         /// <param name="_objForgotPasswordRequest"></param>
         /// <returns></returns>
+        /// 
         public async Task<ForgotPasswordResponse> ForgotPasswordAsync(string uri, Boolean IsHeaderRequired, HeaderModel objHeaderModel, ForgotPasswordRequest _objForgotPasswordRequest)
         {
-
-            // client.MaxResponseContentBufferSize = 256000;
-            ForgotPasswordResponse _objForgotPasswordResponse = new ForgotPasswordResponse();
-
-            var keyValues = new List<KeyValuePair<string, string>>
-             {
-                 new KeyValuePair<string, string>("Email",_objForgotPasswordRequest.emailId)
-             };
-            if (IsHeaderRequired)
+            ForgotPasswordResponse objForgotPasswordResponse;
+            string s = JsonConvert.SerializeObject(_objForgotPasswordRequest);
+            HttpResponseMessage response = null;
+            using (var stringContent = new StringContent(s, System.Text.Encoding.UTF8, "application/json"))
             {
-                client.DefaultRequestHeaders.TryAddWithoutValidation("Content-Type", "application/x-www-form-urlencoded; charset=UTF-8");
-                client.DefaultRequestHeaders.TryAddWithoutValidation("Content-Length", "69");
-                client.DefaultRequestHeaders.TryAddWithoutValidation("User-Agent", "Fiddler");
-                client.DefaultRequestHeaders.TryAddWithoutValidation("Host", "localhost:49165");
-            }
-            var request = new HttpRequestMessage(HttpMethod.Post, uri);
 
-            request.Content = new FormUrlEncodedContent(keyValues);
+                if (IsHeaderRequired)
+                {
+                    client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", objHeaderModel.TokenCode);
 
-            HttpResponseMessage response = await client.SendAsync(request);
-            if (response.IsSuccessStatusCode)
-            {
-                var SucessResponse = await response.Content.ReadAsStringAsync();
-                _objForgotPasswordResponse = JsonConvert.DeserializeObject<ForgotPasswordResponse>(SucessResponse);
-                return _objForgotPasswordResponse;
-            }
-            else
-            {
-                var ErrorResponse = await response.Content.ReadAsStringAsync();
-                //  ErrorResponse = ErrorResponse.Insert(1, "\"Status\"" + _col + "\"Fail\",");
-                _objForgotPasswordResponse = JsonConvert.DeserializeObject<ForgotPasswordResponse>(ErrorResponse);
-                return _objForgotPasswordResponse;
+                }
+                response = await client.PostAsync(uri, stringContent);
+
+
+                if (response.IsSuccessStatusCode)
+                {
+                    var SucessResponse = await response.Content.ReadAsStringAsync();
+                    objForgotPasswordResponse = JsonConvert.DeserializeObject<ForgotPasswordResponse>(SucessResponse);
+                    return objForgotPasswordResponse;
+                }
+                else
+                {
+                    var ErrorResponse = await response.Content.ReadAsStringAsync();
+                    objForgotPasswordResponse = JsonConvert.DeserializeObject<ForgotPasswordResponse>(ErrorResponse);
+                    return objForgotPasswordResponse;
+                }
             }
 
         }
+
+        //public async Task<ForgotPasswordResponse> ForgotPasswordAsync(string uri, Boolean IsHeaderRequired, HeaderModel objHeaderModel, ForgotPasswordRequest _objForgotPasswordRequest)
+        //{
+
+        //    // client.MaxResponseContentBufferSize = 256000;
+        //    ForgotPasswordResponse _objForgotPasswordResponse = new ForgotPasswordResponse();
+
+        //    var keyValues = new List<KeyValuePair<string, string>>
+        //     {
+        //         new KeyValuePair<string, string>("Email",_objForgotPasswordRequest.emailId)
+        //     };
+        //    if (IsHeaderRequired)
+        //    {
+        //        client.DefaultRequestHeaders.TryAddWithoutValidation("Content-Type", "application/x-www-form-urlencoded; charset=UTF-8");
+        //        client.DefaultRequestHeaders.TryAddWithoutValidation("Content-Length", "69");
+        //        client.DefaultRequestHeaders.TryAddWithoutValidation("User-Agent", "Fiddler");
+        //        client.DefaultRequestHeaders.TryAddWithoutValidation("Host", "localhost:49165");
+        //    }
+        //    var request = new HttpRequestMessage(HttpMethod.Post, uri);
+
+        //    request.Content = new FormUrlEncodedContent(keyValues);
+
+        //    HttpResponseMessage response = await client.SendAsync(request);
+        //    if (response.IsSuccessStatusCode)
+        //    {
+        //        var SucessResponse = await response.Content.ReadAsStringAsync();
+        //        _objForgotPasswordResponse = JsonConvert.DeserializeObject<ForgotPasswordResponse>(SucessResponse);
+        //        return _objForgotPasswordResponse;
+        //    }
+        //    else
+        //    {
+        //        var ErrorResponse = await response.Content.ReadAsStringAsync();
+        //        //  ErrorResponse = ErrorResponse.Insert(1, "\"Status\"" + _col + "\"Fail\",");
+        //        _objForgotPasswordResponse = JsonConvert.DeserializeObject<ForgotPasswordResponse>(ErrorResponse);
+        //        return _objForgotPasswordResponse;
+        //    }
+
+        //}
         ///// <summary>
         /// Reset Password Api
         /// </summary>
@@ -383,39 +438,39 @@ namespace SqueezeBill.Services.ApiHandler
         /// <param name="objHeaderModel"></param>
         /// <param name="_objResetPasswordRequest"></param>
         /// <returns></returns>
-        //public async Task<ResetPasswordResponse> ResetPasswordAsync(string uri, Boolean IsHeaderRequired, HeaderModel objHeaderModel, ResetPasswordRequest _objResetPasswordRequest)
-        //{
+        public async Task<ResetPasswordResponse> ResetPasswordAsync(string uri, Boolean IsHeaderRequired, HeaderModel objHeaderModel, ResetPasswordRequest _objResetPasswordRequest)
+        {
 
 
-        //    ResetPasswordResponse objResetPasswordResponse;
-        //    string s = JsonConvert.SerializeObject(_objResetPasswordRequest);
-        //    HttpResponseMessage response = null;
-        //    using (var stringContent = new StringContent(s, System.Text.Encoding.UTF8, "application/json"))
-        //    {
+            ResetPasswordResponse objResetPasswordResponse;
+            string s = JsonConvert.SerializeObject(_objResetPasswordRequest);
+            HttpResponseMessage response = null;
+            using (var stringContent = new StringContent(s, System.Text.Encoding.UTF8, "application/json"))
+            {
 
-        //        if (IsHeaderRequired)
-        //        {
-        //            client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", objHeaderModel.TokenCode);
+                if (IsHeaderRequired)
+                {
+                    client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", objHeaderModel.TokenCode);
 
-        //        }
-        //        response = await client.PostAsync(uri, stringContent);
+                }
+                response = await client.PutAsync(uri, stringContent);
 
 
-        //        if (response.IsSuccessStatusCode)
-        //        {
-        //            var SucessResponse = await response.Content.ReadAsStringAsync();
-        //            objResetPasswordResponse = JsonConvert.DeserializeObject<ResetPasswordResponse>(SucessResponse);
-        //            return objResetPasswordResponse;
-        //        }
-        //        else
-        //        {
-        //            var ErrorResponse = await response.Content.ReadAsStringAsync();
-        //            objResetPasswordResponse = JsonConvert.DeserializeObject<ResetPasswordResponse>(ErrorResponse);
-        //            return objResetPasswordResponse;
-        //        }
-        //    }
+                if (response.IsSuccessStatusCode)
+                {
+                    var SucessResponse = await response.Content.ReadAsStringAsync();
+                    objResetPasswordResponse = JsonConvert.DeserializeObject<ResetPasswordResponse>(SucessResponse);
+                    return objResetPasswordResponse;
+                }
+                else
+                {
+                    var ErrorResponse = await response.Content.ReadAsStringAsync();
+                    objResetPasswordResponse = JsonConvert.DeserializeObject<ResetPasswordResponse>(ErrorResponse);
+                    return objResetPasswordResponse;
+                }
+            }
 
-        //}
+        }
 
         /// <summary>
         /// 

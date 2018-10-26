@@ -52,7 +52,8 @@
                 </Grid>
                 <Grid Grid.Column="1">
                     <BoxView HeightRequest="1" BackgroundColor="Yellow" HorizontalOptions="FillAndExpand" VerticalOptions="Start"/>
-                    <Label Text="Future annual savings  $480"  Margin="0,10,0,10"/>
+                    <Label Text="{Binding compareListDetails.futureAnnualSavings,StringFormat='Future annual savings    ${0}'}"  
+                           Margin="0,10,0,10"/>
                     <BoxView HeightRequest="1" BackgroundColor="Yellow" HorizontalOptions="FillAndExpand" VerticalOptions="End"/>
                 </Grid>
                 <Grid Grid.Column="2">
@@ -83,10 +84,10 @@
                                                 <RowDefinition Height="*"/>
                                             </Grid.RowDefinitions>
                                             <Grid Grid.Row="0">
-                                                <Label Text="Public Power" TextColor="#AB9A9A" VerticalOptions="Center" HorizontalOptions="Center" FontSize="Small"/>
+                                                <Label Text="{Binding retailerName}" TextColor="#AB9A9A" VerticalOptions="Center" HorizontalOptions="Center" FontSize="Small"/>
                                             </Grid>
                                             <Grid Grid.Row="1">
-                                                <Label Text="7.69c" TextColor="#AB9A9A" VerticalOptions="Center" HorizontalOptions="Center" FontSize="Small"/>
+                                                <Label Text="{Binding rate}" TextColor="#AB9A9A" VerticalOptions="Center" HorizontalOptions="Center" FontSize="Small"/>
                                             </Grid>
                                         </Grid>
                                         <Grid Grid.Column="2">
@@ -95,7 +96,7 @@
                                                 <RowDefinition Height="*"/>
                                             </Grid.RowDefinitions>
                                             <Grid Grid.Row="0">
-                                                <Button Text="6 Months" 
+                                                <Button Text="{Binding duration,StringFormat='{0} Months'}" 
                                             FontSize="Micro" 
                                             Padding="0,0,10,0"
                                             BorderRadius="10"
@@ -110,12 +111,14 @@
                                                 <Button CornerRadius="5" 
                                        BorderRadius="5" 
                                         Text="Select" 
+                                          x:Name="XFBtnPlanDetail"
                                           TextColor="White"
                                             Image="next.png"                                           
                                             ContentLayout="Right,5"                      
                                             FontSize="Micro"
                                             Padding="0,0,10,0"
-                                             HeightRequest="20"                                      
+                                             HeightRequest="20" 
+                                             Clicked="XFBtnPlanDetail_Clicked"
                                     BackgroundColor="#FF9408"/>
                                             </Grid>
                                         </Grid>
@@ -125,13 +128,19 @@
                         </DataTemplate>
                     </ListView.ItemTemplate>
                 </ListView>
+                <ActivityIndicator  Color="#F18601"
+                                    IsRunning="True"
+                                    x:Name="XFActivityIndicator"
+                                    IsVisible="False" 
+                                    VerticalOptions="Center"
+                                    HorizontalOptions="Center"/>
             </Grid>
             <Grid Grid.Row="4">
                 <Button CornerRadius="5" 
                             BorderRadius="5" 
                             Text="More Plans" 
                             TextColor="White" 
-                        Clicked="Button_Clicked"
+                        Clicked="XFBtnLoadPlans_Clicked"
                             BackgroundColor="#FF9408"/>
             </Grid>
         </Grid>

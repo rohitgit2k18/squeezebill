@@ -14,7 +14,7 @@
                 <Image VerticalOptions="Center" HorizontalOptions="Center" Source="publicpower.png"/>
             </Grid>
             <Grid Grid.Row="1">
-                <Button Text="6 Months" 
+                <Button Text="{Binding details.duration,StringFormat='{0} Month'}" 
                         FontSize="Micro"                                   
                         BorderRadius="10"
                         TextColor="#AB9A9A" 
@@ -48,10 +48,10 @@
                                VerticalOptions="Center"/>
                     </Grid>
                     <Grid Grid.Row="1" Padding="10">
-                        <Label Text="Public Power" 
+                            <Label Text="{Binding details.retailerName}" 
                                HorizontalOptions="StartAndExpand"
                                TextColor="#B7C0C7"
-                               FontSize="Micro"
+                               FontSize="Small"
                                VerticalOptions="Center"/>
                     </Grid>
                 </Grid>
@@ -68,10 +68,10 @@
                                VerticalOptions="Center"/>
                     </Grid>
                     <Grid Grid.Row="1" Padding="10">
-                        <Label Text="7.69c" 
+                            <Label Text="{Binding details.per_Kwh,StringFormat='{0} c'}" 
                                HorizontalOptions="StartAndExpand"
                                TextColor="#B7C0C7"
-                               FontSize="Micro"
+                               FontSize="Small"
                                VerticalOptions="Center"/>
                     </Grid>
                 </Grid>
@@ -88,10 +88,10 @@
                                VerticalOptions="Center"/>
                     </Grid>
                     <Grid Grid.Row="1" Padding="10">
-                        <Label Text="$100 - Early Termination Fee" 
+                            <Label Text="{Binding details.fees,StringFormat='{0} Early Termination Fee'}" 
                                HorizontalOptions="StartAndExpand"
                                TextColor="#B7C0C7"
-                               FontSize="Micro"
+                               FontSize="Small"
                                VerticalOptions="Center"/>
                     </Grid>
                 </Grid>
@@ -108,10 +108,10 @@
                                VerticalOptions="Center"/>
                     </Grid>
                     <Grid Grid.Row="1" Padding="10">
-                        <Label Text="0 %" 
+                            <Label Text="{Binding details.greenEnergy}" 
                                HorizontalOptions="StartAndExpand"
                                TextColor="#B7C0C7"
-                               FontSize="Micro"
+                               FontSize="Small"
                                VerticalOptions="Center"/>
                     </Grid>
                 </Grid>
@@ -128,10 +128,10 @@
                                VerticalOptions="Center"/>
                     </Grid>
                     <Grid Grid.Row="1" Padding="10">
-                        <Label Text="6 Monts Fixed" 
+                            <Label Text="{Binding details.duration,StringFormat='{0} Month Fixed'}" 
                                HorizontalOptions="StartAndExpand"
                                TextColor="#B7C0C7"
-                               FontSize="Micro"
+                               FontSize="Small"
                                VerticalOptions="Center"/>
                     </Grid>
                 </Grid>
@@ -148,10 +148,10 @@
                                VerticalOptions="Center"/>
                     </Grid>
                     <Grid Grid.Row="1" Padding="10">
-                        <Label Text="No Offers" 
+                            <Label Text="{Binding details.offers}" 
                                HorizontalOptions="StartAndExpand"
                                TextColor="#B7C0C7"
-                               FontSize="Micro"
+                               FontSize="Small"
                                VerticalOptions="Center"/>
                     </Grid>
                 </Grid>
@@ -160,8 +160,10 @@
             <Grid Grid.Row="3" Padding="20,0,20,30">
                 <Button CornerRadius="5" 
                             BorderRadius="5" 
+                        x:Name="XFBtnPlansDetails"
                             Text="Select" 
-                            TextColor="White"                            
+                            TextColor="White"   
+                        Clicked="XFBtnPlansDetails_Clicked"
                             BackgroundColor="#FF9408"/>
             </Grid>
         </Grid>

@@ -1,4 +1,6 @@
-﻿using SqueezeBill.Views.Home;
+﻿using SqueezeBill.Views.Accounts;
+using SqueezeBill.Views.Accounts.UserRegistration;
+using SqueezeBill.Views.Home;
 using System;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;

@@ -29,14 +29,14 @@ namespace TargetTransport.Models
         {
             get
             {
-                return "api/User/ForgetPassword";
+                return "api/Login/ForgetPassword";
             }
         }
         public static string ResetPasswordApiConstant
         {
             get
             {
-                return "api/User/ResetPassword";
+                return "api/Login/ResetPassword";
             }
         }
         public static string GetCountryApiConstant
@@ -63,11 +63,11 @@ namespace TargetTransport.Models
             }
         }
         
-        public static string MissedCountApiConstant
+        public static string ElectricityAndGasDetailApiConstant
         {
             get
             {
-                return "api/Dashborad/MissedWorkout";
+                return "api/Product/PlanDetails";
             }
         }
 

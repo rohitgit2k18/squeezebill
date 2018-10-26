@@ -44,8 +44,30 @@ namespace SqueezeBill.Views.ElectricityAndGas
                 }
                 else
                 {
+                    XFActivityIndicator.IsVisible = true;
                     _objComapreRatesByZipcodeResponse = await _apiService.ListofRetailerPostAsync(new Get_API_Url().CommonBaseApi(_baseUrl), false, new HeaderModel(), _objComapreRatesByZipcodeRequest);
                     var result = _objComapreRatesByZipcodeResponse.response;
+                    if (result.statusCode == 200)
+                    {
+                        if (result.compareListDetails.supplierList.Count > 0)
+                        {
+                            if (result.compareListDetails.retailerList.Count > 0)
+                            {
+                                this.BindingContext = result;
+                                RateComparisionList.ItemsSource = result.compareListDetails.retailerList;
+                                XFActivityIndicator.IsVisible = false;
+                            }
+                            else
+                            {
+                                await DisplayAlert("Alert", "No Retailer is Available", "Ok");
+                            }
+                        }
+                        else
+                        {
+                            await DisplayAlert("Alert", "No Supplier is Available", "Ok");
+                        }
+
+                    }
                 }
                 
             }
@@ -53,10 +75,20 @@ namespace SqueezeBill.Views.ElectricityAndGas
             {
                 var msg = ex.Message;
             }
-        }
-        private void Button_Clicked(object sender, EventArgs e)
+        }       
+
+        private void XFBtnLoadPlans_Clicked(object sender, EventArgs e)
         {
-            Navigation.PushAsync(new ElectricityAndGasPlans());
+            App.NavigationPage.Navigation.PushAsync(new ElectricityAndGasPlans(_objComapreRatesByZipcodeResponse));
+        }
+
+        private void XFBtnPlanDetail_Clicked(object sender, EventArgs e)
+        {
+            var Sender = ((Button)sender);
+            var Context = Sender.BindingContext;
+            var SelectedItems = Context as RetailerList;
+
+            App.NavigationPage.Navigation.PushAsync(new PlansDetails(SelectedItems));
         }
     }
 }

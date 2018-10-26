@@ -60,7 +60,7 @@ namespace SqueezeBill.Views.Accounts
                         var Response = _objLoginResponse;
                         if (Response.statusCode == 200)
                         {
-                           
+                            await DisplayAlert("Alert!", "Login Successful!", "Ok");
                         }
                         else
                         {

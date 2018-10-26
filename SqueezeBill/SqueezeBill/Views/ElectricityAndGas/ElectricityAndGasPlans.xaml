@@ -9,7 +9,7 @@
                 <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
             <Grid Grid.Row="0">
-                <Frame HasShadow="True" Padding="10" Margin="0" BackgroundColor="White" HeightRequest="-1" CornerRadius="5">
+                <!--<Frame HasShadow="True" Padding="10" Margin="0" BackgroundColor="White" HeightRequest="-1" CornerRadius="5">
                     <Grid>
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="0.4*"/>
@@ -45,10 +45,78 @@
                             <Label Text="6 Month Fixed" TextColor="#AB9A9A" VerticalOptions="Center" HorizontalOptions="Center" FontSize="Small"/>
                         </Grid>
                     </Grid>
-                </Frame>
+                </Frame>-->
             </Grid>
             <Grid Grid.Row="1">
-
+                <ListView x:Name="RateComparisionList"  HasUnevenRows="True" SeparatorColor="Transparent" >
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <Frame HasShadow="True" Padding="10" Margin="0" BackgroundColor="White" HeightRequest="-1" CornerRadius="5">
+                                    <Grid>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="0.4*"/>
+                                            <ColumnDefinition Width="0.4*"/>
+                                            <ColumnDefinition Width="0.2*"/>
+                                        </Grid.ColumnDefinitions>
+                                        <Grid Grid.Column="0" Padding="10">
+                                            <Image VerticalOptions="Center" HorizontalOptions="Center" Aspect="AspectFit" Source="publicpower.png"/>
+                                        </Grid>
+                                        <Grid Grid.Column="1">
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition Height="*"/>
+                                                <RowDefinition Height="*"/>
+                                            </Grid.RowDefinitions>
+                                            <Grid Grid.Row="0">
+                                                <Label Text="{Binding retailerName}" TextColor="#AB9A9A" VerticalOptions="Center" HorizontalOptions="Center" FontSize="Small"/>
+                                            </Grid>
+                                            <Grid Grid.Row="1">
+                                                <Label Text="{Binding rate}" TextColor="#AB9A9A" VerticalOptions="Center" HorizontalOptions="Center" FontSize="Small"/>
+                                            </Grid>
+                                        </Grid>
+                                        <Grid Grid.Column="2">
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition Height="*"/>
+                                                <RowDefinition Height="*"/>
+                                            </Grid.RowDefinitions>
+                                            <Grid Grid.Row="0">
+                                                <Button Text="{Binding duration,StringFormat='{0} Months'}" 
+                                            FontSize="Micro" 
+                                            Padding="0,0,10,0"
+                                            BorderRadius="10"
+                                            TextColor="#AB9A9A"
+                                             BackgroundColor="White"
+                                            CornerRadius="10"
+                                            HeightRequest="20"
+                                            BorderWidth="1" 
+                                            BorderColor="#AB9A9A"/>
+                                            </Grid>
+                                            <Grid Grid.Row="1">
+                                                <Button CornerRadius="5" 
+                                       BorderRadius="5" 
+                                        Text="Select" 
+                                          TextColor="White"
+                                            Image="next.png"                                           
+                                            ContentLayout="Right,5"                      
+                                            FontSize="Micro"
+                                            Padding="0,0,10,0"
+                                             HeightRequest="20" 
+                                      Clicked="XFBtnPlanDetail_Clicked"
+                                    BackgroundColor="#FF9408"/>
+                                            </Grid>
+                                        </Grid>
+                                    </Grid>
+                                </Frame>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+                <ActivityIndicator  Color="#F18601"
+                                    IsRunning="True"
+                                    x:Name="XFActivityIndicator"
+                                    IsVisible="False" 
+                                    VerticalOptions="Center"
+                                    HorizontalOptions="Center"/>
             </Grid>
         </Grid>
     </ContentPage.Content>

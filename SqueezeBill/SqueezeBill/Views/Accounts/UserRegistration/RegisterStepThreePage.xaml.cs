@@ -47,15 +47,15 @@ namespace SqueezeBill.Views.Accounts.UserRegistration
                     else
                     {
                         _objUserRegistrationResponse = await _apiService.UserRegistrationAsync(new Get_API_Url().CommonBaseApi(_baseUrl), false, new HeaderModel(), _objUserRegistrationRequest);
-                        var Response = _objUserRegistrationResponse;
+                        var Response = _objUserRegistrationResponse.response;
                         if (Response.statusCode == 200)
                         {
-                            await DisplayAlert("Alert!",Response.message, "Ok");
+                            await DisplayAlert("Alert!","Registeration Successful!", "Ok");
                           await  App.NavigationPage.Navigation.PushAsync(new LoginPage());
                         }
                         else
                         {
-                            await DisplayAlert("Alert!", Response.message, "Ok");
+                            await DisplayAlert("Alert!", "Some error occured! ", "Ok");
                         }
                     }
                 }

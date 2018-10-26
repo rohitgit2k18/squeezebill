@@ -9,6 +9,6 @@ namespace SqueezeBill.Services.Models.ResponseModels
         public string responseMessage { get; set; }
         public int statusCode { get; set; }
         public string token { get; set; }
-        public DateTime expiryDate { get; set; }
+        public DateTime? expiryDate { get; set; }
     }
 }

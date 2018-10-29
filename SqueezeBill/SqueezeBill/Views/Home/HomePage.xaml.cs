@@ -31,7 +31,7 @@ namespace SqueezeBill.Views.Home
         public HomePage ()
 		{
 			InitializeComponent ();
-          
+            //NavigationPage.SetHasNavigationBar(this, false);
             _objComapreRatesByZipcodeRequest = new ComapreRatesByZipcodeRequest();
             
             listTabsConsumerTypes = new List<KeyValuePair<string, string>>()

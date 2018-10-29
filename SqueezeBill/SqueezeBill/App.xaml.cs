@@ -1,4 +1,5 @@
 ﻿using SqueezeBill.Views.Accounts;
+using SqueezeBill.Views.Accounts.UserProfile;
 using SqueezeBill.Views.Accounts.UserRegistration;
 using SqueezeBill.Views.Home;
 using System;
@@ -10,11 +11,13 @@ namespace SqueezeBill
 {
     public partial class App : Application
     {
+        public static INavigation Navigation;
+        public static Page DetailPage;
         public static NavigationPage NavigationPage { get; set; }
         public App()
         {
             InitializeComponent();
-            NavigationPage= new NavigationPage(new HomePage());
+            NavigationPage= new NavigationPage(new UserNavigationPage());
             MainPage = NavigationPage;
         }
 

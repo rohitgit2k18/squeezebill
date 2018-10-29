@@ -1,0 +1,208 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<MasterDetailPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"            
+                  xmlns:SetMain1="clr-namespace:SqueezeBill.Views.Home"
+                  x:Class="SqueezeBill.Views.Accounts.UserProfile.UserNavigationPage">
+    <MasterDetailPage.Master>
+        <ContentPage Title="Menu" BackgroundColor="#2E6FBA">
+            <Grid x:Name="RootLayout" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand"  BackgroundColor="#1D8BE0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+                <Grid Grid.Row="0"  BackgroundColor="#1D8BE0">
+                    <StackLayout Orientation="Vertical" Margin="0,30,0,0" Spacing="0">
+                        <!--<StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand">
+                            <controls:CircleImage x:Name="imgProfile"  Source="profile.png" BorderColor="White" BorderThickness="4" Aspect="AspectFit" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+                                <controls:CircleImage.WidthRequest>
+                                    <OnPlatform x:TypeArguments="x:Double">
+                                        <On Platform="Android, iOS">100</On>
+                                        <On Platform="WinPhone">75</On>
+                                    </OnPlatform>
+                                </controls:CircleImage.WidthRequest>
+                                <controls:CircleImage.HeightRequest>
+                                    <OnPlatform x:TypeArguments="x:Double">
+                                        <On Platform="Android, iOS">100</On>
+                                        <On Platform="WinPhone">75</On>
+                                    </OnPlatform>
+                                </controls:CircleImage.HeightRequest>
+                                <controls:CircleImage.GestureRecognizers>
+                                    <TapGestureRecognizer NumberOfTapsRequired="1" x:Name="ImageProfile" Tapped="ImageProfile_Tapped"/>
+                                </controls:CircleImage.GestureRecognizers>
+                            </controls:CircleImage>
+                        </StackLayout>-->
+                        <Label HorizontalOptions="Center" x:Name="lblUserName" HorizontalTextAlignment="Center" FontAttributes="Bold" Text="James Smith" TextColor="White" FontSize="Medium"/>
+                    </StackLayout>
+                </Grid>
+                <ScrollView  Grid.Row="1" BackgroundColor="White" Margin="0,30,0,0" VerticalOptions="FillAndExpand">
+                    <Grid BackgroundColor="White" Padding="30,0,0,0" RowSpacing="1">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="50"/>
+                            <RowDefinition Height="50"/>
+                            <RowDefinition Height="50"/>
+                            <RowDefinition Height="50"/>
+                            <RowDefinition Height="50"/>
+                            <RowDefinition Height="50"/>
+                            <RowDefinition Height="50"/>
+                            <RowDefinition Height="50"/>
+                            <RowDefinition Height="50"/>
+                            <RowDefinition Height="*"/>
+                        </Grid.RowDefinitions>
+                        <Grid Grid.Row="0" x:Name="GridHome" BackgroundColor="White">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <Grid Grid.Column="0">
+                                <Label VerticalOptions="Center" Text="Home" TextColor="Gray" FontSize="Medium"/>
+                            </Grid>
+                            <Grid.GestureRecognizers>
+                                <TapGestureRecognizer 
+                                    NumberOfTapsRequired="1"
+                                    Tapped="GridHome_Tapped"/>
+                            </Grid.GestureRecognizers>
+                        </Grid>
+                        <Grid Grid.Row="1" BackgroundColor="White">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            
+                            <Grid Grid.Column="0">
+                                <Label VerticalOptions="Center" Text="News" TextColor="Gray" FontSize="Medium">
+                                </Label>
+                            </Grid>
+                            <Grid.GestureRecognizers>
+                                <TapGestureRecognizer 
+                                    NumberOfTapsRequired="1"
+                                    Tapped="GridNews_Tapped"/>
+                            </Grid.GestureRecognizers>
+
+                        </Grid>
+                        <Grid Grid.Row="2" BackgroundColor="White">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            
+                            <Grid Grid.Column="0">
+                                <Label VerticalOptions="Center" Text="How switching works" TextColor="Gray" FontSize="Medium"/>
+                            </Grid>
+                            <Grid.GestureRecognizers>
+                                <TapGestureRecognizer 
+                                    NumberOfTapsRequired="1"
+                                    Tapped="GridHowSwitchWork_Tapped"/>
+                            </Grid.GestureRecognizers>
+                        </Grid>
+                        <Grid Grid.Row="3" BackgroundColor="White">
+                            <Grid.ColumnDefinitions>
+                               
+                                <ColumnDefinition Width="*"/>
+                                
+                            </Grid.ColumnDefinitions>
+                            
+                            <Grid Grid.Column="0">
+                                <Label VerticalOptions="Center" Text="Why switch" TextColor="Gray" FontSize="Medium"/>
+                            </Grid>
+                            <Grid.GestureRecognizers>
+                                <TapGestureRecognizer 
+                                    NumberOfTapsRequired="1"
+                                     Tapped="GridWhySwitch_Tapped"/>
+                            </Grid.GestureRecognizers>
+                        </Grid>
+                        <Grid Grid.Row="4" BackgroundColor="White">
+                            <Grid.ColumnDefinitions>
+                                
+                                <ColumnDefinition Width="*"/>
+                                
+                            </Grid.ColumnDefinitions>
+                            
+                            <Grid Grid.Column="0">
+                                <Label VerticalOptions="Center" Text="Service Area" TextColor="Gray" FontSize="Medium"/>
+                            </Grid>
+                            <Grid.GestureRecognizers>
+                                <TapGestureRecognizer 
+                                    NumberOfTapsRequired="1"
+                                     Tapped="GridServiceArea_Tapped"/>
+                            </Grid.GestureRecognizers>
+                        </Grid>
+                        <Grid Grid.Row="5" BackgroundColor="White">
+                            <Grid.ColumnDefinitions>
+                               
+                                <ColumnDefinition Width="*"/>
+                               
+                            </Grid.ColumnDefinitions>
+                            
+                            <Grid Grid.Column="0">
+                                <Label VerticalOptions="Center" Text="Energy Glossary" TextColor="Gray" FontSize="Medium"/>
+                            </Grid>
+                            <Grid.GestureRecognizers>
+                                <TapGestureRecognizer 
+                                    NumberOfTapsRequired="1"
+                                     Tapped="GridEnergyGlossary_Tapped"/>
+                            </Grid.GestureRecognizers>
+                        </Grid>
+                        <Grid Grid.Row="6" BackgroundColor="White">
+                            <Grid.ColumnDefinitions>
+                               
+                                <ColumnDefinition Width="*"/>
+                               
+                            </Grid.ColumnDefinitions>
+                            
+                            <Grid Grid.Column="0">
+                                <Label VerticalOptions="Center" Text="FAQ" TextColor="Gray" FontSize="Medium"/>
+                            </Grid>
+                            <Grid.GestureRecognizers>
+                                <TapGestureRecognizer 
+                                    NumberOfTapsRequired="1"
+                                     Tapped="GridFaq_Tapped"/>
+                            </Grid.GestureRecognizers>
+                        </Grid>
+                        <Grid Grid.Row="7" BackgroundColor="White">
+                            <Grid.ColumnDefinitions>
+                                
+                                <ColumnDefinition Width="*"/>
+                                
+                            </Grid.ColumnDefinitions>
+                           
+                            <Grid Grid.Column="0">
+                                <Label VerticalOptions="Center" Text="Contact Us" TextColor="Gray" FontSize="Medium"/>
+                            </Grid>
+                            <Grid.GestureRecognizers>
+                                <TapGestureRecognizer 
+                                    NumberOfTapsRequired="1"
+                                     Tapped="GridContactUs_Tapped"/>
+                            </Grid.GestureRecognizers>
+                        </Grid>
+                        <Grid Grid.Row="8" BackgroundColor="White">
+                            <Grid.ColumnDefinitions>
+                                
+                                <ColumnDefinition Width="*"/>
+                                
+                            </Grid.ColumnDefinitions>
+                           
+                            <Grid Grid.Column="0">
+                                <Label VerticalOptions="Center" Text="Logout" TextColor="Gray" FontSize="Medium"/>
+                            </Grid>
+                            <Grid.GestureRecognizers>
+                                <TapGestureRecognizer 
+                                    NumberOfTapsRequired="1"
+                                     Tapped="GridLogout_Tapped"/>
+                            </Grid.GestureRecognizers>
+                        </Grid>
+
+                        <Grid Grid.Row="9" BackgroundColor="White">
+                        </Grid>
+                    </Grid>
+                </ScrollView>
+            </Grid>
+
+        </ContentPage>
+
+    </MasterDetailPage.Master>
+    <MasterDetailPage.Detail>
+        <NavigationPage>
+            <x:Arguments>
+                <SetMain1:HomePage BackgroundColor="Transparent"/>
+            </x:Arguments>
+        </NavigationPage>
+    </MasterDetailPage.Detail>
+
+</MasterDetailPage>

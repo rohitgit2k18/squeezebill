@@ -6,7 +6,7 @@
              x:Class="SqueezeBill.Views.Home.HomePage">
     <NavigationPage.TitleView>
         <Grid VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
-            <Label Text="Home" VerticalOptions="Center" FontAttributes="Bold" TextColor="White" HorizontalOptions="Center" FontSize="Medium" />
+            <Label Text="Home" VerticalOptions="Center" FontAttributes="Bold" TextColor="White" HorizontalOptions="Center" Margin="-80,0,0,0" FontSize="Medium" />
         </Grid>
     </NavigationPage.TitleView>
     <ContentPage.Content>

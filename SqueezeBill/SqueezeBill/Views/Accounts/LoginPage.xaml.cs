@@ -3,6 +3,7 @@ using SqueezeBill.Services.ApiHandler;
 using SqueezeBill.Services.Models;
 using SqueezeBill.Services.Models.RequestModels;
 using SqueezeBill.Services.Models.ResponseModels;
+using SqueezeBill.Views.Accounts.UserProfile;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -61,6 +62,10 @@ namespace SqueezeBill.Views.Accounts
                         if (Response.statusCode == 200)
                         {
                             await DisplayAlert("Alert!", "Login Successful!", "Ok");
+                            //var otherPage = new UserNavigationPage();
+                            //var homePage = App.NavigationPage.Navigation.NavigationStack.First();
+                            //App.NavigationPage.Navigation.InsertPageBefore(otherPage, homePage);
+                            //await App.NavigationPage.PopToRootAsync(false);                            
                         }
                         else
                         {

@@ -2,6 +2,7 @@
 <MasterDetailPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"            
                   xmlns:SetMain1="clr-namespace:SqueezeBill.Views.Home"
+                   xmlns:controls="clr-namespace:ImageCircle.Forms.Plugin.Abstractions;assembly=ImageCircle.Forms.Plugin"
                   x:Class="SqueezeBill.Views.Accounts.UserProfile.UserNavigationPage">
     <MasterDetailPage.Master>
         <ContentPage Title="Menu" BackgroundColor="#2E6FBA">
@@ -12,25 +13,23 @@
                 </Grid.RowDefinitions>
                 <Grid Grid.Row="0"  BackgroundColor="#1D8BE0">
                     <StackLayout Orientation="Vertical" Margin="0,30,0,0" Spacing="0">
-                        <!--<StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand">
-                            <controls:CircleImage x:Name="imgProfile"  Source="profile.png" BorderColor="White" BorderThickness="4" Aspect="AspectFit" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+                        <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand">
+                            <controls:CircleImage x:Name="imgProfile"  Source="profile.png" BorderColor="White" BorderThickness="2" Aspect="AspectFit" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
                                 <controls:CircleImage.WidthRequest>
                                     <OnPlatform x:TypeArguments="x:Double">
                                         <On Platform="Android, iOS">100</On>
-                                        <On Platform="WinPhone">75</On>
                                     </OnPlatform>
                                 </controls:CircleImage.WidthRequest>
                                 <controls:CircleImage.HeightRequest>
                                     <OnPlatform x:TypeArguments="x:Double">
                                         <On Platform="Android, iOS">100</On>
-                                        <On Platform="WinPhone">75</On>
                                     </OnPlatform>
                                 </controls:CircleImage.HeightRequest>
-                                <controls:CircleImage.GestureRecognizers>
+                                <!--<controls:CircleImage.GestureRecognizers>
                                     <TapGestureRecognizer NumberOfTapsRequired="1" x:Name="ImageProfile" Tapped="ImageProfile_Tapped"/>
-                                </controls:CircleImage.GestureRecognizers>
+                                </controls:CircleImage.GestureRecognizers>-->
                             </controls:CircleImage>
-                        </StackLayout>-->
+                        </StackLayout>
                         <Label HorizontalOptions="Center" x:Name="lblUserName" HorizontalTextAlignment="Center" FontAttributes="Bold" Text="James Smith" TextColor="White" FontSize="Medium"/>
                     </StackLayout>
                 </Grid>

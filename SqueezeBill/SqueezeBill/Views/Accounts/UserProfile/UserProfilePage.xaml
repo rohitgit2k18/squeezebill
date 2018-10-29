@@ -2,6 +2,7 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
                 xmlns:local="clr-namespace:SqueezeBill"
+             xmlns:controls="clr-namespace:ImageCircle.Forms.Plugin.Abstractions;assembly=ImageCircle.Forms.Plugin"
              x:Class="SqueezeBill.Views.Accounts.UserProfile.UserProfilePage">
     <ContentPage.Content>
         <Grid x:Name="RootLayout" Margin="20,0,20,0">
@@ -10,7 +11,21 @@
                 <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
             <Grid Grid.Row="0" Padding="20" BackgroundColor="#FF9408">
-                <Image VerticalOptions="Center" HorizontalOptions="Center" Source="profile.png"/>
+                <controls:CircleImage x:Name="imgProfile"  Source="profile.png" BorderColor="White" BorderThickness="2" Aspect="AspectFit" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+                    <controls:CircleImage.WidthRequest>
+                        <OnPlatform x:TypeArguments="x:Double">
+                            <On Platform="Android, iOS">100</On>
+                        </OnPlatform>
+                    </controls:CircleImage.WidthRequest>
+                    <controls:CircleImage.HeightRequest>
+                        <OnPlatform x:TypeArguments="x:Double">
+                            <On Platform="Android, iOS">100</On>
+                        </OnPlatform>
+                    </controls:CircleImage.HeightRequest>
+                    <!--<controls:CircleImage.GestureRecognizers>
+                                    <TapGestureRecognizer NumberOfTapsRequired="1" x:Name="ImageProfile" Tapped="ImageProfile_Tapped"/>
+                                </controls:CircleImage.GestureRecognizers>-->
+                </controls:CircleImage>
             </Grid>
             <Grid Grid.Row="1" >
                 <Grid.RowDefinitions>

@@ -83,5 +83,16 @@ namespace SqueezeBill.Views.Accounts
             // EntryEmail.TextColor = IsValid ? Color.White : Color.Red;           
         }
 
+        private void XFLblForgotPassword_Tapped(object sender, EventArgs e)
+        {
+            try
+            {
+                App.NavigationPage.Navigation.PushAsync(new ForgotPasswordPage());
+            }
+           catch(Exception ex)
+            {
+                var msg = ex.Message;
+            }
+        }
     }
 }

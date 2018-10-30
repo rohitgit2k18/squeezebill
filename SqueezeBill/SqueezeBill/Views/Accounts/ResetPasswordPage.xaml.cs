@@ -50,7 +50,7 @@ namespace SqueezeBill.Views.Accounts
                         string.IsNullOrEmpty(_objResetPasswordRequest.confirmPassword))
 
                     {
-                        await DisplayAlert("Alert", "please fill all field first first!", "ok");
+                        await DisplayAlert("Alert", "please fill all field first!", "ok");
                     }
                     else
                     {

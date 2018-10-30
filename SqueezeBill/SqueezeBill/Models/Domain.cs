@@ -71,11 +71,11 @@ namespace TargetTransport.Models
             }
         }
 
-        public static string ListofWorkoutApiConstant
+        public static string ListofFaqApiConstant
         {
             get
             {
-                return "api/Workout/ListOfWorkouts";
+                return "api/WhySwitching/FAQ";
             }
         }
         public static string AddWorkoutApiConstant

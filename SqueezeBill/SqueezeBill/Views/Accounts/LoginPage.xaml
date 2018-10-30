@@ -76,8 +76,13 @@
                         </StackLayout>
                     </Grid>
                     <Grid Grid.Column="1">
-                        <Label Text="Forgot Password ?" TextColor="#35414C" FontSize="Small" HorizontalOptions="EndAndExpand" VerticalOptions="Center" />
-                    </Grid>
+                            <Label Text="Forgot Password ?" TextColor="#35414C" FontSize="Small" HorizontalOptions="EndAndExpand" VerticalOptions="Center">
+                                <Label.GestureRecognizers>
+                                    <TapGestureRecognizer  NumberOfTapsRequired="1" x:Name="XFLblForgotPassword"
+                                                           Tapped="XFLblForgotPassword_Tapped"/>
+                                </Label.GestureRecognizers>
+                            </Label>
+                        </Grid>
                 </Grid>
                 <Grid Grid.Row="3">
                     <Button CornerRadius="5" 

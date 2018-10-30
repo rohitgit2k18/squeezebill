@@ -36,6 +36,19 @@ namespace SqueezeBill.Services.Models.ResponseModels
         public string question { get; set; }
         public string answer { get; set; }
         private bool _iSVisible { get; set; }
+        private string _icontext { get; set; }
+        public string IconText
+        {
+            get { return _icontext; }
+            set
+            {
+                if (_icontext != value)
+                {
+                    _icontext = value;
+                    OnPropertyChanged();
+                }
+            }
+        }
         public bool IsVisible
         {
             get { return _iSVisible; }

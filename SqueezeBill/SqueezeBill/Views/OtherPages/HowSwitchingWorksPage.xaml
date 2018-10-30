@@ -3,10 +3,35 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="SqueezeBill.Views.OtherPages.HowSwitchingWorksPage">
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
-        </StackLayout>
+        <Grid x:Name="RootLayout" Margin="20">
+            <ListView x:Name="HowSwitchingWorksList"  HasUnevenRows="True"  SeparatorColor="Transparent" >
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Grid x:Name="MainGrid">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
+                                </Grid.RowDefinitions>
+                                <Grid Grid.Row="0" Padding="10">
+                                    <Image VerticalOptions="FillAndExpand" HeightRequest="140" HorizontalOptions="FillAndExpand" Source="image.png"/>
+                                </Grid>
+                                <Grid Grid.Row="1" Padding="10">
+                                    <Label VerticalOptions="Start"
+                                           HorizontalOptions="Start" 
+                                           TextColor="#6C6C6C"  Text="The easiest way to install Color Cop is to download the self-installing version. If you use the installer it's easy to remove the application by using add/remove programs under Windows."/>
+                                </Grid>
+                            </Grid>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            <ActivityIndicator  Color="#F18601"
+                                    IsRunning="True"
+                                    x:Name="XFActivityIndicator"
+                                    IsVisible="False" 
+                                    VerticalOptions="Center"
+                                    HorizontalOptions="Center"/>
+        </Grid>
     </ContentPage.Content>
 </ContentPage>

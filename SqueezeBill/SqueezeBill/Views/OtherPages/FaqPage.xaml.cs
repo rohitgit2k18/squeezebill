@@ -35,24 +35,31 @@ namespace SqueezeBill.Views.OtherPages
         {
             try
             {
+                XFActivityIndicator.IsVisible = true;
                 _objFAQResponse = await _apiService.GetAsyncData_GetApi(new Get_API_Url().CommonBaseApi(_baseUrl), false, new HeaderModel(), _objFAQResponse);
                 var result = _objFAQResponse.response;
                 if (result.statusCode == 200)
                 {
-
+                    XFActivityIndicator.IsVisible = false;
                     // await DisplayAlert("Alert", "Sucess", "Ok");
+                    foreach (var items in result.details)
+                    {
+                        items.IconText = "+";
+                    }
                     this.BindingContext = result;
 
                     GetCompleteFaq.GetCompleteFAQ = result.details;
                 }
                 else
                 {
+                    XFActivityIndicator.IsVisible = false;
                     await DisplayAlert("Alert", "No Supplier is Available", "Ok");
                 }
             }
             catch(Exception ex)
             {
                 var msg = ex.Message;
+                XFActivityIndicator.IsVisible = false;
             }
         }
 
@@ -66,6 +73,15 @@ namespace SqueezeBill.Views.OtherPages
             if (_oldproduct == product)
             {
                 product.IsVisible = !product.IsVisible;
+                if(product.IconText == "+")
+                {
+                    product.IconText = "-";
+                }
+                else
+                {
+                    product.IconText = "+";
+                }
+                
                 UpdateProduct(product);
             }
             else
@@ -73,9 +89,11 @@ namespace SqueezeBill.Views.OtherPages
                 if (_oldproduct != null)
                 {
                     _oldproduct.IsVisible = false;
+                    _oldproduct.IconText = "+";
                     UpdateProduct(product);
                 }
                 product.IsVisible = true;
+                product.IconText = "-";
                 UpdateProduct(product);
             }
             //product.IsVisible = true;

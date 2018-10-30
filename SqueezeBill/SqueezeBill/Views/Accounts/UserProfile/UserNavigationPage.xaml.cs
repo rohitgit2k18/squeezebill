@@ -1,4 +1,5 @@
-﻿using SqueezeBill.Views.Home;
+﻿using SqueezeBill.Helpers;
+using SqueezeBill.Views.Home;
 using SqueezeBill.Views.OtherPages;
 using System;
 using System.Collections.Generic;
@@ -19,7 +20,22 @@ namespace SqueezeBill.Views.Accounts.UserProfile
 			InitializeComponent ();
             NavigationPage.SetHasNavigationBar(this, false);
         }
-
+        protected override void OnAppearing()
+        {
+            base.OnAppearing();
+            if(Settings.IsLoggedIn)
+            {
+                XFStackProfilePic.IsVisible = true;
+                XFLblSignIn.IsVisible = false;
+                XFGridPic.Padding = new Thickness(0, 0, 0, 0);
+            }
+            else
+            {
+                XFLblSignIn.IsVisible = true;
+                XFStackProfilePic.IsVisible = false;
+                XFGridPic.Padding = new Thickness(0, 20, 0, 20);
+            }
+        }
         private void GridHome_Tapped(object sender, EventArgs e)
         {
 
@@ -118,6 +134,14 @@ namespace SqueezeBill.Views.Accounts.UserProfile
         private void GridLogout_Tapped(object sender, EventArgs e)
         {
 
+        }
+
+        private async void XFLblLogin_Tapped(object sender, EventArgs e)
+        {
+            var otherPage = new LoginPage();
+            var homePage = App.NavigationPage.Navigation.NavigationStack.First();
+            App.NavigationPage.Navigation.InsertPageBefore(otherPage, homePage);
+            await App.NavigationPage.PopToRootAsync(false);
         }
     }
 }

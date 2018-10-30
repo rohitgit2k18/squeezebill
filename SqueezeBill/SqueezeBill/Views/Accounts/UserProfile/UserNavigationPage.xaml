@@ -11,8 +11,8 @@
                     <RowDefinition Height="Auto" />
                     <RowDefinition Height="*" />
                 </Grid.RowDefinitions>
-                <Grid Grid.Row="0"  BackgroundColor="#1D8BE0">
-                    <StackLayout Orientation="Vertical" Margin="0,30,0,0" Spacing="0">
+                <Grid Grid.Row="0" x:Name="XFGridPic" BackgroundColor="#1D8BE0">
+                    <StackLayout x:Name="XFStackProfilePic" IsVisible="False" Orientation="Vertical" Margin="0,30,0,0" Spacing="0">
                         <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand">
                             <controls:CircleImage x:Name="imgProfile"  Source="profile.png" BorderColor="White" BorderThickness="2" Aspect="AspectFit" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
                                 <controls:CircleImage.WidthRequest>
@@ -30,8 +30,19 @@
                                 </controls:CircleImage.GestureRecognizers>-->
                             </controls:CircleImage>
                         </StackLayout>
-                        <Label HorizontalOptions="Center" x:Name="lblUserName" HorizontalTextAlignment="Center" FontAttributes="Bold" Text="James Smith" TextColor="White" FontSize="Medium"/>
+                        <Label HorizontalOptions="Center" VerticalOptions="Center" Margin="0,30,0,0" x:Name="lblUserName" HorizontalTextAlignment="Center" FontAttributes="Bold" Text="James Smith" TextColor="White" FontSize="Medium"/>
                     </StackLayout>
+                    <Label VerticalOptions="Center"
+                           HorizontalOptions="Center"
+                           TextColor="#F4941C"
+                           x:Name="XFLblSignIn"
+                           FontSize="Small"
+                           IsVisible="False"
+                           Text="SignIn">
+                        <Label.GestureRecognizers>
+                            <TapGestureRecognizer NumberOfTapsRequired="1" x:Name="XFLblLogin" Tapped="XFLblLogin_Tapped"/>
+                        </Label.GestureRecognizers>
+                    </Label>
                 </Grid>
                 <ScrollView  Grid.Row="1" BackgroundColor="White" Margin="0,30,0,0" VerticalOptions="FillAndExpand">
                     <Grid BackgroundColor="White" Padding="30,0,0,0" RowSpacing="1">

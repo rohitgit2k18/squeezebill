@@ -595,4 +595,13 @@
   <ItemGroup>
     <BundleResource Include="Resources\residenceyellow%403x.png" />
   </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\drop_down.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\drop_down%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\drop_down%403x.png" />
+  </ItemGroup>
 </Project>

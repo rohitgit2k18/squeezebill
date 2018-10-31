@@ -1,12 +1,56 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:SqueezeBill" 
              x:Class="SqueezeBill.Views.ElectricityAndGas.ListingFilterPage">
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
-        </StackLayout>
+        <Grid x:Name="RootLayout" Margin="20">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Grid Grid.Row="0" RowSpacing="10">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <Grid Grid.Row="0">
+                    <Label VerticalOptions="Center" 
+                           HorizontalOptions="Center"
+                           FontSize="Small"
+                           TextColor="#6A4B4B"
+                           Text="Contract Terms"/>
+                </Grid>
+                <Grid Grid.Row="1">
+                    <Button Text="6-12 Months" 
+                                            FontSize="Micro" 
+                                            Padding="0,0,10,0"
+                                            BorderRadius="10"
+                                            TextColor="#AB9A9A"
+                                            HorizontalOptions="Center"
+                                            BackgroundColor="White"
+                                            CornerRadius="10"
+                                            HeightRequest="20"
+                                            BorderWidth="1" 
+                                            BorderColor="#AB9A9A"/>
+                </Grid>
+                <Grid Grid.Row="2">
+                    
+                </Grid>
+            </Grid>
+            <Grid Grid.Row="1">
+                <local:ImagePicker  TextColor="Black"  
+                           x:Name="dropdownLoadType"                           
+                            Title="Suppliers"    
+                             LineColor="Gray"
+                             Image="drop_down"
+                             ImageAlignment="Right"
+                             ImageHeight="20"
+                            ImageWidth="20"
+                            ItemDisplayBinding="{Binding Type}"                        
+                        HorizontalOptions="FillAndExpand"/>
+            </Grid>
+        </Grid>
     </ContentPage.Content>
 </ContentPage>

@@ -2,6 +2,16 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="SqueezeBill.Views.ElectricityAndGas.ElectricityAndGasListing">
+    <NavigationPage.TitleView>
+        <Grid VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+            <Label Text="Electricity" VerticalOptions="Center" FontAttributes="Bold" TextColor="White" HorizontalOptions="Center" Margin="-80,0,0,0" FontSize="Medium" />
+            <Image VerticalOptions="Center" Margin="0,0,20,0" HorizontalOptions="EndAndExpand" Source="filter.png">
+                <Image.GestureRecognizers>
+                    <TapGestureRecognizer NumberOfTapsRequired="1" x:Name="XFImgFilter" Tapped="XFImgFilter_Tapped"/>
+                </Image.GestureRecognizers>
+            </Image>
+        </Grid>
+    </NavigationPage.TitleView>
     <ContentPage.Content>
         <Grid x:Name="RootLayout" Margin="10" RowSpacing="20">
             <Grid.RowDefinitions>

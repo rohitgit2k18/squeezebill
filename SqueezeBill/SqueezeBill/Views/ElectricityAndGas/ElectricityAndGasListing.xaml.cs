@@ -90,5 +90,10 @@ namespace SqueezeBill.Views.ElectricityAndGas
 
             App.NavigationPage.Navigation.PushAsync(new PlansDetails(SelectedItems));
         }
+
+        private void XFImgFilter_Tapped(object sender, EventArgs e)
+        {
+            App.NavigationPage.Navigation.PushAsync(new ListingFilterPage());
+        }
     }
 }

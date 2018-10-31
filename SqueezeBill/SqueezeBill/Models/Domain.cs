@@ -78,67 +78,76 @@ namespace TargetTransport.Models
                 return "api/WhySwitching/FAQ";
             }
         }
-        public static string AddWorkoutApiConstant
+        // News
+        public static string NewsApiConstant
         {
             get
             {
-                return "api/Workout/AddWorkout";
+                return "api/NewsImageList/GetListOfImageList";
             }
         }
-        public static string AddExerciseWorkoutApiConstant
+        // how Switching works
+        public static string HowSwitchingWorksApiConstant
         {
             get
             {
-                return "api/Exercise/AddExercise";
+                return "api/NewsImageList/GetSwitchImageList";
             }
         }
-        public static string GetScheduleListApiConstant
+        // Why Switch
+        public static string WhySwitchApiConstant
         {
             get
             {
-                return "api/ExerciseSchedule/ListOfSchedule";
+                return "api/WhySwitching/WhySwitchList";
             }
         }
-        public static string EditUserApiConstant
+        // Service Area
+        public static string ServiceAreaApiConstant
         {
             get
             {
-                return "api/User/EditProfile";
+                return "api/NewsImageList/GetAreaList";
             }
         }
-        public static string UpdateUserApiConstant
+        //Energy Glossery
+        public static string EnergyGlosseryApiConstant
         {
             get
             {
-                return "api/User/UpdateUser";
+                return "api/NewsImageList/GetGlossaryList";
             }
         }
-        public static string WorkoutDetailspiConstant
+        // Contact Us
+        public static string ContactUsApiConstant
         {
             get
             {
-                return "api/Workout/WorkoutDetails";
+                return "api/WhySwitching/Contact";
             }
         }
-        public static string ExerciseDetailsByIDApiConstant
+        //User Detail
+        public static string USerDetailsApiConstant
         {
             get
             {
-                return "api/Exercise/ExerciseDetailsByWorkOutId";
+                return "api/Registration/UserRegistrationDetail";
             }
         }
-        public static string AddActualExerciseApiConstant
+        // Update User Details
+        public static string UpdateUserDetailsApiConstant
         {
             get
             {
-                return "api/Exercise/AddActualExercise";
+                return "api/Registration/UpdateUserRegistration";
             }
         }
-        public static string AddWorkoutScheduleApiConstant
+        // Update Profile Image
+        public static string UpdateUserProfileApiConstant
         {
             get
             {
-                return "api/Schedule/AddWorkoutSchedule";
+                return "api/Registration/UpdateUserProfilePic";
             }
         }
         public static string AddScheduleExerciseApiConstant
@@ -163,107 +172,6 @@ namespace TargetTransport.Models
             }
         }
 
-        //-----------------------------Non Driver-------------------------------
-        public static string NonDriver_HomeApiConstant
-        {
-            get
-            {
-                return "api/MobileUser/GetEmployeeById";
-            }
-        }
-
-        public static string NDDailyCheckListGet_ApiConstant
-        {
-            get
-            {
-                return "api/MobileUser/GetCheckListByEmployeeId";
-            }
-        }
        
-        public static string NDDailyCheckListPost_ApiConstant
-        {
-            get
-            {
-                return "api/MobileUser/AddChecklist";
-            }
-        }
-        public static string ND_SignatureApiConstant
-        {
-            get
-            {
-                return "api/MobileUser/AddSignature";
-            }
-        }
-        public static string ND_TimeSheetApiConstant
-        {
-            get
-            {
-                return "api/WorksTimes/GetWorksTimeList";
-            }
-        }
-
-        //----------------------------Mechanic Section-------------------------------
-        /// <summary>
-        /// 
-        /// </summary>
-        public static string M_HomeDataApiConstant
-        {
-            get
-            {
-                return "api/MobileUser/GetEmployeeById";
-            }
-        }
-        /// <summary>
-        /// 
-        /// </summary>
-        public static string M_ViewDetailsApiConstant
-        {
-            get
-            {
-                return "api/MobileUser/GetMaintenanceRequetById";
-            }
-        }
-        /// <summary>
-        /// 
-        /// </summary>
-        public static string M_CheckboxListApiConstant
-        {
-            get
-            {
-                return "api/MobileUser/GetCheckListByEmployeeId";
-            }
-        }
-        /// <summary>
-        /// 
-        /// </summary>
-        public static string M_SendRequestDoneApiConstant
-        {
-            get
-            {
-                return "api/MobileUser/MaintenanceRequetDone";
-            }
-        }
-        public static string M_SignatureApiConstant
-        {
-            get
-            {
-                return "api/MobileUser/AddMechanicSignature";
-            }
-        }
-        public static string M_RequestHistoryApiConstant
-        {
-            get
-            {
-                return "api/MobileUser/GetEmployeeById";
-            }
-        }
-        // --------------------------------------------Sub Contractor---------------------------------
-        public static string SC_HomeApiConstant
-        {
-            get
-            {
-                return "api/MobileUser/GetEmployeeById";
-            }
-        }
     }
 }

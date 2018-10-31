@@ -102,6 +102,10 @@
                             <Span Text="Create an account" ForegroundColor="#FF9408" FontSize="Small"/>
                         </FormattedString>
                     </Label.FormattedText>
+                        <Label.GestureRecognizers>
+                            <TapGestureRecognizer NumberOfTapsRequired="1"
+                                                  x:Name="XFLblRegisterUser" Tapped="XFLblRegisterUser_Tapped"/>
+                        </Label.GestureRecognizers>
                 </Label>
             </Grid>
         </Grid>

@@ -4,6 +4,7 @@ using SqueezeBill.Services.Models;
 using SqueezeBill.Services.Models.RequestModels;
 using SqueezeBill.Services.Models.ResponseModels;
 using SqueezeBill.Views.Accounts.UserProfile;
+using SqueezeBill.Views.Accounts.UserRegistration;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -90,6 +91,18 @@ namespace SqueezeBill.Views.Accounts
                 App.NavigationPage.Navigation.PushAsync(new ForgotPasswordPage());
             }
            catch(Exception ex)
+            {
+                var msg = ex.Message;
+            }
+        }
+
+        private void XFLblRegisterUser_Tapped(object sender, EventArgs e)
+        {
+            try
+            {
+                App.NavigationPage.Navigation.PushAsync(new RegisterStepOnePage());
+            }
+            catch(Exception ex)
             {
                 var msg = ex.Message;
             }

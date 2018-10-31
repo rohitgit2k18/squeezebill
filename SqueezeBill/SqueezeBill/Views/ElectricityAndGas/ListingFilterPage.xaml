@@ -1,13 +1,14 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:local="clr-namespace:SqueezeBill" 
+             xmlns:local="clr-namespace:SqueezeBill"
+            xmlns:range="clr-namespace:Syncfusion.SfRangeSlider.XForms;assembly=Syncfusion.SfRangeSlider.XForms"
              x:Class="SqueezeBill.Views.ElectricityAndGas.ListingFilterPage">
     <ContentPage.Content>
         <Grid x:Name="RootLayout" Margin="20">
             <Grid.RowDefinitions>
-                <RowDefinition Height="*"/>
-                <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
             </Grid.RowDefinitions>
             <Grid Grid.Row="0" RowSpacing="10">
                 <Grid.RowDefinitions>
@@ -36,7 +37,21 @@
                                             BorderColor="#AB9A9A"/>
                 </Grid>
                 <Grid Grid.Row="2">
-                    
+                    <range:SfRangeSlider x:Name="rangeslider"
+                                         ShowRange="true"
+                                         RangeStart="3"
+                                         RangeEnd="36"
+                                         Maximum="36"
+                                         Minimum="3"
+                                         TrackThickness="5"
+                                         TrackColor="#CECECC"
+                                         ShowValueLabel="True"
+                                         StepFrequency="3"
+                                         TickFrequency="3"
+                                         TrackSelectionColor="#F18601"
+                                         TickPlacement="BottomRight"
+                                         RangeChanging="rangeslider_RangeChanging"                                        
+                                         Orientation="Horizontal"/>
                 </Grid>
             </Grid>
             <Grid Grid.Row="1">

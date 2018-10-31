@@ -26,6 +26,16 @@ namespace SqueezeBill.Droid
 		
 		public static void UpdateIdValues()
 		{
+			global::Com.Syncfusion.Sfrangeslider.Resource.Dimension.label_font_size = global::SqueezeBill.Droid.Resource.Dimension.label_font_size;
+			global::Com.Syncfusion.Sfrangeslider.Resource.Dimension.thumb_size = global::SqueezeBill.Droid.Resource.Dimension.thumb_size;
+			global::Com.Syncfusion.Sfrangeslider.Resource.Dimension.tick_size = global::SqueezeBill.Droid.Resource.Dimension.tick_size;
+			global::Com.Syncfusion.Sfrangeslider.Resource.Dimension.tool_bottom = global::SqueezeBill.Droid.Resource.Dimension.tool_bottom;
+			global::Com.Syncfusion.Sfrangeslider.Resource.Dimension.tool_left = global::SqueezeBill.Droid.Resource.Dimension.tool_left;
+			global::Com.Syncfusion.Sfrangeslider.Resource.Dimension.tool_right = global::SqueezeBill.Droid.Resource.Dimension.tool_right;
+			global::Com.Syncfusion.Sfrangeslider.Resource.Dimension.tool_top = global::SqueezeBill.Droid.Resource.Dimension.tool_top;
+			global::Com.Syncfusion.Sfrangeslider.Resource.Dimension.tooltip_textsize = global::SqueezeBill.Droid.Resource.Dimension.tooltip_textsize;
+			global::Com.Syncfusion.Sfrangeslider.Resource.Dimension.track_size = global::SqueezeBill.Droid.Resource.Dimension.track_size;
+			global::Com.Syncfusion.Sfrangeslider.Resource.String.library_name = global::SqueezeBill.Droid.Resource.String.library_name;
 			global::Xamarin.Forms.Platform.Android.Resource.Attribute.actionBarSize = global::SqueezeBill.Droid.Resource.Attribute.actionBarSize;
 		}
 		
@@ -1990,6 +2000,9 @@ namespace SqueezeBill.Droid
 			// aapt resource value: 0x7f080005
 			public const int item_touch_helper_swipe_escape_velocity = 2131230725;
 			
+			// aapt resource value: 0x7f0800a4
+			public const int label_font_size = 2131230884;
+			
 			// aapt resource value: 0x7f080006
 			public const int mr_controller_volume_group_list_item_height = 2131230726;
 			
@@ -2053,6 +2066,24 @@ namespace SqueezeBill.Droid
 			// aapt resource value: 0x7f0800a3
 			public const int notification_top_pad_large_text = 2131230883;
 			
+			// aapt resource value: 0x7f0800a5
+			public const int thumb_size = 2131230885;
+			
+			// aapt resource value: 0x7f0800a7
+			public const int tick_size = 2131230887;
+			
+			// aapt resource value: 0x7f0800a9
+			public const int tool_bottom = 2131230889;
+			
+			// aapt resource value: 0x7f0800aa
+			public const int tool_left = 2131230890;
+			
+			// aapt resource value: 0x7f0800ab
+			public const int tool_right = 2131230891;
+			
+			// aapt resource value: 0x7f0800a8
+			public const int tool_top = 2131230888;
+			
 			// aapt resource value: 0x7f080062
 			public const int tooltip_corner_radius = 2131230818;
 			
@@ -2068,6 +2099,9 @@ namespace SqueezeBill.Droid
 			// aapt resource value: 0x7f080066
 			public const int tooltip_precise_anchor_threshold = 2131230822;
 			
+			// aapt resource value: 0x7f0800ac
+			public const int tooltip_textsize = 2131230892;
+			
 			// aapt resource value: 0x7f080067
 			public const int tooltip_vertical_padding = 2131230823;
 			
@@ -2076,6 +2110,9 @@ namespace SqueezeBill.Droid
 			
 			// aapt resource value: 0x7f080069
 			public const int tooltip_y_offset_touch = 2131230825;
+			
+			// aapt resource value: 0x7f0800a6
+			public const int track_size = 2131230886;
 			
 			static Dimension()
 			{
@@ -4186,6 +4223,9 @@ namespace SqueezeBill.Droid
 			
 			// aapt resource value: 0x7f0a0035
 			public const int character_counter_pattern = 2131361845;
+			
+			// aapt resource value: 0x7f0a003c
+			public const int library_name = 2131361852;
 			
 			// aapt resource value: 0x7f0a0000
 			public const int mr_button_content_description = 2131361792;

@@ -16,5 +16,13 @@ namespace SqueezeBill.Views.ElectricityAndGas
 		{
 			InitializeComponent ();
 		}
-	}
+
+        private void rangeslider_RangeChanging(object sender, Syncfusion.SfRangeSlider.XForms.RangeEventArgs e)
+        {
+            var x = e.Start;
+            var y = e.End;
+        }
+
+        
+    }
 }

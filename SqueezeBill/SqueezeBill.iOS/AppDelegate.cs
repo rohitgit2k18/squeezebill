@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 
 using Foundation;
+using Syncfusion.SfRangeSlider.XForms.iOS;
 using UIKit;
 
 namespace SqueezeBill.iOS
@@ -22,6 +23,7 @@ namespace SqueezeBill.iOS
         //
         public override bool FinishedLaunching(UIApplication app, NSDictionary options)
         {
+            new SfRangeSliderRenderer();
             global::Xamarin.Forms.Forms.Init();
             LoadApplication(new App());
             UINavigationBar.Appearance.BarTintColor = UIColor.FromRGB(243, 147, 28);

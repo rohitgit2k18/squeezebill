@@ -27,7 +27,9 @@ namespace SqueezeBill.Views.OtherPages
             _objContactUsResponse = new ContactUsResponse();
             _apiService = new RestApi();
             _baseUrl = Domain.Url + Domain.ContactUsApiConstant;
-		}
+            LoadContactUsDetails();
+
+        }
         private async void LoadContactUsDetails()
         {
             try
@@ -45,7 +47,8 @@ namespace SqueezeBill.Views.OtherPages
                     {
 
                         // await DisplayAlert("Alert", "Sucess", "Ok");
-                        this.BindingContext = result;
+                        result.details.CompleteAddress += result.details.address + ", " + result.details.state + ", " + result.details.zipcode;
+                        this.BindingContext = result.details;
                     }
                     else
                     {

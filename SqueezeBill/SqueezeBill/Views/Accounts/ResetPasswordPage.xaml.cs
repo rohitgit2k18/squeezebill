@@ -27,6 +27,7 @@ namespace SqueezeBill.Views.Accounts
         public ResetPasswordPage ()
 		{
 			InitializeComponent ();
+            NavigationPage.SetHasNavigationBar(this, false);
             _objResetPasswordRequest = new ResetPasswordRequest();
             this.BindingContext = _objResetPasswordRequest;
             _objResetPasswordResponse = new ResetPasswordResponse();

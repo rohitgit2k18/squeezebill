@@ -30,6 +30,7 @@ namespace SqueezeBill.Views.Accounts
         public ForgotPasswordPage ()
 		{
 			InitializeComponent ();
+            NavigationPage.SetHasNavigationBar(this, false);
             _objForgotPasswordRequest = new ForgotPasswordRequest();
             this.BindingContext = _objForgotPasswordRequest;
             _objForgotPasswordResponse = new ForgotPasswordResponse();

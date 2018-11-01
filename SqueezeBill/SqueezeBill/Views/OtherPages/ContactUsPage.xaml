@@ -3,10 +3,77 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="SqueezeBill.Views.OtherPages.ContactUsPage">
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
-        </StackLayout>
+        <Grid x:Name="RootLayout" Margin="20" >
+            <Grid.RowDefinitions>
+                <RowDefinition Height="0.4*"/>
+                <RowDefinition Height="0.6*"/>
+            </Grid.RowDefinitions>
+            <Grid Grid.Row="0" Padding="20">
+                <StackLayout Orientation="Vertical">
+                    <Image Source="idea.png" VerticalOptions="Start" HorizontalOptions="Center"/>
+                    <Label Text="SqueezeBill"
+                           FontSize="Large" 
+                           FontAttributes="Bold" 
+                           HorizontalOptions="Center" 
+                           HorizontalTextAlignment="Center" 
+                           TextColor="Black"/>
+                    <Label Text="Smart way to save"
+                           FontSize="Small" 
+                           FontAttributes="None" 
+                           Margin="40,0,-40,0"
+                           HorizontalOptions="Center" 
+                           HorizontalTextAlignment="Center"
+                           TextColor="Gray"/>
+                </StackLayout>
+            </Grid>
+            <Grid Grid.Row="1" RowSpacing="10">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <Grid Grid.Row="0">
+                    <Label Text="{Binding content}"
+                           FontSize="Small" 
+                           FontAttributes="None"                           
+                           HorizontalOptions="Start" 
+                           VerticalOptions="Start"
+                           HorizontalTextAlignment="Start"
+                           TextColor="Gray"/>
+                </Grid>
+                <Grid Grid.Row="1" ColumnSpacing="10">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="Auto"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid Grid.Column="0">
+                        <Image VerticalOptions="Start" HorizontalOptions="Start" Source="pin.png"/>
+                    </Grid>
+                    <Grid Grid.Column="1">
+                        <StackLayout>
+                            <Label Text="{Binding CompleteAddress}" HorizontalOptions="Start" TextColor="#ADADAB"
+                                   FontSize="Small"/>
+                            <Label Text="{Binding country}" HorizontalOptions="Start" TextColor="#ADADAB"
+                                   FontSize="Small"/>
+                            <Label Text="Worked" FontAttributes="Bold" HorizontalOptions="Start" TextColor="#ADADAB"
+                                   FontSize="Small"/>
+                        </StackLayout>
+                    </Grid>
+                </Grid>
+                <Grid Grid.Row="2">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="Auto"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid Grid.Column="0">
+                        <Image VerticalOptions="Start" HorizontalOptions="Start" Source="call.png"/>
+                    </Grid>
+                    <Grid Grid.Column="1">
+                        <Label VerticalOptions="Start" HorizontalOptions="Start"
+                               Text="{Binding phoneNumber}" TextColor="#ADADAB" FontSize="Small"/>
+                    </Grid>
+                </Grid>
+            </Grid>
+        </Grid>
     </ContentPage.Content>
 </ContentPage>

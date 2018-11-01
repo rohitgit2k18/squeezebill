@@ -18,7 +18,7 @@ namespace SqueezeBill.Services.Models.ResponseModels
 
     public class EGlosseryResponse
     {
-        public List<Detail> details { get; set; }
+        public List<EGlosseryDetail> details { get; set; }
         public string message { get; set; }
         public int statusCode { get; set; }
     }

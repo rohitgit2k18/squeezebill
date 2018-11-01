@@ -214,23 +214,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Arnav Rohit\\.nuget\\packages\\": {},
+    "C:\\Users\\vinove1.VSS-DT0109\\.nuget\\packages\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\SqueezBill\\SqueezeBill\\squeezebill\\SqueezeBill.Services\\SqueezeBill.Services.csproj",
+      "projectUniqueName": "D:\\ClientProject\\SqueezeBills\\SqueezeBill\\SqueezeBill.Services\\SqueezeBill.Services.csproj",
       "projectName": "SqueezeBill.Services",
-      "projectPath": "E:\\SqueezBill\\SqueezeBill\\squeezebill\\SqueezeBill.Services\\SqueezeBill.Services.csproj",
-      "packagesPath": "C:\\Users\\Arnav Rohit\\.nuget\\packages\\",
-      "outputPath": "E:\\SqueezBill\\SqueezeBill\\squeezebill\\SqueezeBill.Services\\obj\\",
+      "projectPath": "D:\\ClientProject\\SqueezeBills\\SqueezeBill\\SqueezeBill.Services\\SqueezeBill.Services.csproj",
+      "packagesPath": "C:\\Users\\vinove1.VSS-DT0109\\.nuget\\packages\\",
+      "outputPath": "D:\\ClientProject\\SqueezeBills\\SqueezeBill\\SqueezeBill.Services\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\Arnav Rohit\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\vinove1.VSS-DT0109\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [

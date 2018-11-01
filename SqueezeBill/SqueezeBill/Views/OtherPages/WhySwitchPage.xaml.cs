@@ -27,7 +27,7 @@ namespace SqueezeBill.Views.OtherPages
             _objWhySwitchResponse = new WhySwitchResponse();
             _apiService = new RestApi();
             _baseUrl = Domain.Url + Domain.WhySwitchApiConstant;
-
+            LoadWhySwitchList();
         }
         private async void LoadWhySwitchList()
         {
@@ -39,7 +39,7 @@ namespace SqueezeBill.Views.OtherPages
                 }
                 else
                 {
-                    // XFActivityIndicator.IsVisible = true;
+                     XFActivityIndicator.IsVisible = true;
                     _objWhySwitchResponse = await _apiService.GetAsyncData_GetApi(new Get_API_Url().CommonBaseApi(_baseUrl), false, new HeaderModel(), _objWhySwitchResponse);
                     var result = _objWhySwitchResponse.response;
                     if (result.statusCode == 200)
@@ -47,10 +47,12 @@ namespace SqueezeBill.Views.OtherPages
 
                         // await DisplayAlert("Alert", "Sucess", "Ok");
                         this.BindingContext = result;
+                        XFActivityIndicator.IsVisible = false;
                     }
                     else
                     {
                         await DisplayAlert("Alert", "No Data is Available", "Ok");
+                        XFActivityIndicator.IsVisible = false;
                     }
 
 
@@ -59,6 +61,7 @@ namespace SqueezeBill.Views.OtherPages
             }
             catch (Exception ex)
             {
+                XFActivityIndicator.IsVisible = false;
                 var msg = ex.Message;
             }
         }

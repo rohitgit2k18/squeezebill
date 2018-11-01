@@ -27,6 +27,7 @@ namespace SqueezeBill.Views.OtherPages
             _objEnergyGlosseryResponse = new EnergyGlosseryResponse();
             _apiService = new RestApi();
             _baseUrl = Domain.Url + Domain.EnergyGlosseryApiConstant;
+            LoadEnergyGlosseryList();
         }
         private async void LoadEnergyGlosseryList()
         {
@@ -38,17 +39,18 @@ namespace SqueezeBill.Views.OtherPages
                 }
                 else
                 {
-                    // XFActivityIndicator.IsVisible = true;
+                     XFActivityIndicator.IsVisible = true;
                     _objEnergyGlosseryResponse = await _apiService.GetAsyncData_GetApi(new Get_API_Url().CommonBaseApi(_baseUrl), false, new HeaderModel(), _objEnergyGlosseryResponse);
                     var result = _objEnergyGlosseryResponse.response;
                     if (result.statusCode == 200)
                     {
-
+                        XFActivityIndicator.IsVisible = false;
                         // await DisplayAlert("Alert", "Sucess", "Ok");
                         this.BindingContext = result;
                     }
                     else
                     {
+                        XFActivityIndicator.IsVisible = false;
                         await DisplayAlert("Alert", "No Data is Available", "Ok");
                     }
 
@@ -58,6 +60,7 @@ namespace SqueezeBill.Views.OtherPages
             }
             catch (Exception ex)
             {
+                XFActivityIndicator.IsVisible = false;
                 var msg = ex.Message;
             }
         }

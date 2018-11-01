@@ -4,7 +4,7 @@
              x:Class="SqueezeBill.Views.OtherPages.ServiceAreaPage">
     <ContentPage.Content>
         <Grid x:Name="RootLayout" Margin="20">
-            <ListView x:Name="ServiceAreaList"  HasUnevenRows="True"  SeparatorColor="Transparent" >
+            <ListView x:Name="ServiceAreaList" ItemsSource="{Binding details}"  HasUnevenRows="True"  SeparatorColor="Transparent" >
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
@@ -14,12 +14,12 @@
                                     <RowDefinition Height="Auto"/>
                                 </Grid.RowDefinitions>
                                 <Grid Grid.Row="0" Padding="10">
-                                    <Image VerticalOptions="FillAndExpand" HeightRequest="140" HorizontalOptions="FillAndExpand" Source="image.png"/>
+                                    <Image VerticalOptions="FillAndExpand" HeightRequest="140" HorizontalOptions="FillAndExpand" Source="{Binding imageURL}"/>
                                 </Grid>
                                 <Grid Grid.Row="1" Padding="10">
                                     <Label VerticalOptions="Start"
                                            HorizontalOptions="Start" 
-                                           TextColor="#6C6C6C"  Text="The easiest way to install Color Cop is to download the self-installing version. If you use the installer it's easy to remove the application by using add/remove programs under Windows."/>
+                                           TextColor="#6C6C6C"  Text="{Binding description}"/>
                                 </Grid>
                             </Grid>
                         </ViewCell>

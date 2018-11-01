@@ -1,4 +1,5 @@
 ﻿using Plugin.Connectivity;
+using SqueezeBill.Helpers;
 using SqueezeBill.Services.ApiHandler;
 using SqueezeBill.Services.Models;
 using SqueezeBill.Services.Models.RequestModels;
@@ -32,6 +33,7 @@ namespace SqueezeBill.Views.Accounts
         public LoginPage ()
 		{
 			InitializeComponent ();
+            NavigationPage.SetHasNavigationBar(this, false);
             _objLoginRequest = new LoginRequest();
             this.BindingContext = _objLoginRequest;
             _objLoginResponse = new LoginResponse();
@@ -63,10 +65,12 @@ namespace SqueezeBill.Views.Accounts
                         if (Response.statusCode == 200)
                         {
                             await DisplayAlert("Alert!", "Login Successful!", "Ok");
-                            //var otherPage = new UserNavigationPage();
-                            //var homePage = App.NavigationPage.Navigation.NavigationStack.First();
-                            //App.NavigationPage.Navigation.InsertPageBefore(otherPage, homePage);
-                            //await App.NavigationPage.PopToRootAsync(false);                            
+                            Settings.TokenCode = Response.token;
+                            Settings.IsLoggedIn = true;
+                            var otherPage = new UserNavigationPage();
+                            var homePage = App.NavigationPage.Navigation.NavigationStack.First();
+                            App.NavigationPage.Navigation.InsertPageBefore(otherPage, homePage);
+                            await App.NavigationPage.PopToRootAsync(false);
                         }
                         else
                         {

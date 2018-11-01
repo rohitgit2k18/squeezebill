@@ -17,11 +17,12 @@ namespace SqueezeBill.Services.Models.ResponseModels
         public string country { get; set; }
         public string zipcode { get; set; }
         public string phoneNumber { get; set; }
+        public string CompleteAddress { get; set; }
     }
 
     public class ContactResponse
     {
-        public Details details { get; set; }
+        public ContactDetails details { get; set; }
         public string message { get; set; }
         public int statusCode { get; set; }
     }

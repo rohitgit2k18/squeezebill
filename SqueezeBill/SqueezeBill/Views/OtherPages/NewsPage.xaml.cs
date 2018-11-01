@@ -21,16 +21,17 @@ namespace SqueezeBill.Views.OtherPages
         private RestApi _apiService;
         private string _baseUrl;
         #endregion
-        List<string> listview = new List<string>();
+       // List<string> listview = new List<string>();
 		public NewsPage ()
 		{
 			InitializeComponent ();
-            listview.Add("ajhkjkh");
-            listview.Add("lhlh");
-            NewsList.ItemsSource = listview;
+            //listview.Add("ajhkjkh");
+            //listview.Add("lhlh");
+            //NewsList.ItemsSource = listview;
             _objNewsListResponse = new NewsListResponse();
             _apiService = new RestApi();
             _baseUrl =Domain.Url + Domain.NewsApiConstant;
+            LoadNewsList();
 
         }
         private async void LoadNewsList()
@@ -43,7 +44,7 @@ namespace SqueezeBill.Views.OtherPages
                 }
                 else
                 {
-                    // XFActivityIndicator.IsVisible = true;
+                     XFActivityIndicator.IsVisible = true;
                     _objNewsListResponse = await _apiService.GetAsyncData_GetApi(new Get_API_Url().CommonBaseApi(_baseUrl), false, new HeaderModel(), _objNewsListResponse);
                     var result = _objNewsListResponse.response;
                     if (result.statusCode == 200)
@@ -51,10 +52,12 @@ namespace SqueezeBill.Views.OtherPages
 
                         // await DisplayAlert("Alert", "Sucess", "Ok");
                         this.BindingContext = result;
+                        XFActivityIndicator.IsVisible = false;
                     }
                     else
                     {
                         await DisplayAlert("Alert", "No Data is Available", "Ok");
+                        XFActivityIndicator.IsVisible = false;
                     }
 
 
@@ -63,6 +66,7 @@ namespace SqueezeBill.Views.OtherPages
             }
             catch (Exception ex)
             {
+                XFActivityIndicator.IsVisible = false;
                 var msg = ex.Message;
             }
         }

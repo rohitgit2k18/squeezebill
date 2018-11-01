@@ -18,7 +18,7 @@ namespace SqueezeBill.Services.Models.ResponseModels
 
     public class SAreaResponse
     {
-        public List<Detail> details { get; set; }
+        public List<SAreaDetail> details { get; set; }
         public string message { get; set; }
         public int statusCode { get; set; }
     }

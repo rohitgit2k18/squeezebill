@@ -27,6 +27,7 @@ namespace SqueezeBill.Views.OtherPages
             _objHowSwitchingWorksResponse = new HowSwitchingWorksResponse();
             _apiService = new RestApi();
             _baseUrl = Domain.Url + Domain.HowSwitchingWorksApiConstant;
+            LoadHowSwitchingWorksList();
 
         }
         private async void LoadHowSwitchingWorksList()
@@ -39,7 +40,7 @@ namespace SqueezeBill.Views.OtherPages
                 }
                 else
                 {
-                    // XFActivityIndicator.IsVisible = true;
+                     XFActivityIndicator.IsVisible = true;
                     _objHowSwitchingWorksResponse = await _apiService.GetAsyncData_GetApi(new Get_API_Url().CommonBaseApi(_baseUrl), false, new HeaderModel(), _objHowSwitchingWorksResponse);
                     var result = _objHowSwitchingWorksResponse.response;
                     if (result.statusCode == 200)
@@ -47,10 +48,12 @@ namespace SqueezeBill.Views.OtherPages
 
                         // await DisplayAlert("Alert", "Sucess", "Ok");
                         this.BindingContext = result;
+                        XFActivityIndicator.IsVisible = false;
                     }
                     else
                     {
                         await DisplayAlert("Alert", "No Data is Available", "Ok");
+                        XFActivityIndicator.IsVisible = false;
                     }
 
 
@@ -60,6 +63,7 @@ namespace SqueezeBill.Views.OtherPages
             catch (Exception ex)
             {
                 var msg = ex.Message;
+                XFActivityIndicator.IsVisible = false;
             }
         }
     }

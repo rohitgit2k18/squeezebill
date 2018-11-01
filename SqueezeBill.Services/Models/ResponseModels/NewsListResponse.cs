@@ -22,7 +22,7 @@ namespace SqueezeBill.Services.Models.ResponseModels
 
     public class NewsResponse
     {
-        public List<Detail> details { get; set; }
+        public List<NewsDetail> details { get; set; }
         public string message { get; set; }
         public int statusCode { get; set; }
     }

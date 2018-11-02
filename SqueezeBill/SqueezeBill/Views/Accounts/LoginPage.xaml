@@ -30,14 +30,13 @@
                 </StackLayout>
             </Grid>
             <Grid Grid.Row="1" RowSpacing="20">
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="Auto"/>
-                    <RowDefinition Height="Auto"/>
-                    <RowDefinition Height="Auto"/>
-                    <RowDefinition Height="Auto"/>
-                </Grid.RowDefinitions>
-                <Grid Grid.Row="0">
-                    <Frame HasShadow="False" Padding="0" Margin="0" HeightRequest="-1" BackgroundColor="White">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+                    <Frame Grid.Row="0" HasShadow="False" Padding="0" Margin="0" HeightRequest="-1" BackgroundColor="White">
                         <local:ImageEntry Placeholder="Email"
                                           Text="{Binding email}"
                                           ImageAlignment="Right"
@@ -49,9 +48,8 @@
                                           LineColor="White"
                                           Image="info"/>
                     </Frame>
-                </Grid>
-                <Grid Grid.Row="1">
-                    <Frame HasShadow="False" Padding="0" Margin="0" HeightRequest="-1" BackgroundColor="White">
+
+                    <Frame Grid.Row="1" HasShadow="False" Padding="0" Margin="0" HeightRequest="-1" BackgroundColor="White">
                         <local:ImageEntry Placeholder="Password"
                                           Text="{Binding password}"
                                           ImageAlignment="Right"
@@ -62,9 +60,8 @@
                                           LineColor="White"
                                           Image="info"/>
                     </Frame>
-                </Grid>
 
-                <Grid Grid.Row="2">
+                    <Grid Grid.Row="2">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="*"/>
                         <ColumnDefinition Width="*"/>

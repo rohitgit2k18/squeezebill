@@ -36,8 +36,14 @@ namespace SqueezeBill.Views.Accounts.UserRegistration
 
         private async void XFBtnRegisterUser_Clicked(object sender, EventArgs e)
         {
+            if (IsBusy)
+            {
+                return;
+            }
+            IsBusy = true;
             try
             {
+
                 if(_objUserRegistrationRequest.isMedEdAccountat)
                 {
                    if(string.IsNullOrEmpty(_objUserRegistrationRequest.medEdAccountatthisAddress))
@@ -68,6 +74,10 @@ namespace SqueezeBill.Views.Accounts.UserRegistration
             catch(Exception ex)
             {
                 var msg = ex.Message;
+            }
+            finally
+            {
+                IsBusy = false;
             }
           //  Navigation.PushAsync(new ElectricityAndGasListing());
         }

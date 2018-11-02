@@ -25,9 +25,9 @@
                                         <On Platform="Android, iOS">100</On>
                                     </OnPlatform>
                                 </controls:CircleImage.HeightRequest>
-                                <!--<controls:CircleImage.GestureRecognizers>
+                                <controls:CircleImage.GestureRecognizers>
                                     <TapGestureRecognizer NumberOfTapsRequired="1" x:Name="ImageProfile" Tapped="ImageProfile_Tapped"/>
-                                </controls:CircleImage.GestureRecognizers>-->
+                                </controls:CircleImage.GestureRecognizers>
                             </controls:CircleImage>
                         </StackLayout>
                         <Label HorizontalOptions="Center" VerticalOptions="Center" Margin="0,30,0,0" x:Name="lblUserName" HorizontalTextAlignment="Center" FontAttributes="Bold" Text="James Smith" TextColor="White" FontSize="Medium"/>

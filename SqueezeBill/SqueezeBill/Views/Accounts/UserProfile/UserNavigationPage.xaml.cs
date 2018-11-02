@@ -131,9 +131,21 @@ namespace SqueezeBill.Views.Accounts.UserProfile
             IsPresented = false;
         }
 
-        private void GridLogout_Tapped(object sender, EventArgs e)
+        private async void GridLogout_Tapped(object sender, EventArgs e)
         {
-
+            if (Settings.IsLoggedIn)
+            {
+                Settings.IsLoggedIn = false;
+                Settings.TokenCode = string.Empty;
+                var otherPage = new LoginPage();
+                var homePage = App.NavigationPage.Navigation.NavigationStack.First();
+                App.NavigationPage.Navigation.InsertPageBefore(otherPage, homePage);
+                await App.NavigationPage.PopToRootAsync(false);
+            }
+            else
+            {
+                await DisplayAlert("Alert", "please Click on sign in first!", "ok");
+            }
         }
 
         private async void XFLblLogin_Tapped(object sender, EventArgs e)
@@ -142,6 +154,16 @@ namespace SqueezeBill.Views.Accounts.UserProfile
             var homePage = App.NavigationPage.Navigation.NavigationStack.First();
             App.NavigationPage.Navigation.InsertPageBefore(otherPage, homePage);
             await App.NavigationPage.PopToRootAsync(false);
+        }
+
+        private void ImageProfile_Tapped(object sender, EventArgs e)
+        {
+            var detail = new NavigationPage(new UserProfilePage());
+            App.DetailPage = new UserProfilePage();
+            detail.Title = "UserProfilePage";
+            App.Navigation = detail.Navigation;
+            Detail = detail;
+            IsPresented = false;
         }
     }
 }

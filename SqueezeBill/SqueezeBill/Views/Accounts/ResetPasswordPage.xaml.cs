@@ -38,6 +38,11 @@ namespace SqueezeBill.Views.Accounts
         private async void XFBtnResetPassword_Clicked(object sender, EventArgs e)
         {
             // Navigation.PushAsync(new RegisterStepOnePage());
+            if (IsBusy)
+            {
+                return;
+            }
+            IsBusy = true;
             try
             {
                 if (!CrossConnectivity.Current.IsConnected)
@@ -80,6 +85,10 @@ namespace SqueezeBill.Views.Accounts
             catch(Exception ex)
             {
                 var msg = ex.Message;
+            }
+            finally
+            {
+                IsBusy = false;
             }
         }
     }

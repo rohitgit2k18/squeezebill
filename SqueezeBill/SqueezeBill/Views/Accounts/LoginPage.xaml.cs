@@ -45,11 +45,18 @@ namespace SqueezeBill.Views.Accounts
 
         private async void XFBtnLogin_Clicked(object sender, EventArgs e)
         {
+            if (IsBusy)
+            {
+                return;
+            }
+            IsBusy = true;
             try
             {
+               
                 if (!CrossConnectivity.Current.IsConnected)
                 {
                     await DisplayAlert("Alert", "No Network Connection!", "ok");
+
                 }
                 else
                 {
@@ -60,26 +67,38 @@ namespace SqueezeBill.Views.Accounts
                     }
                     else
                     {
-                        _objLoginResponse = await _apiService.LoginAsync(new Get_API_Url().CommonBaseApi(_baseUrl), false, new HeaderModel(), _objLoginRequest);
-                        var Response = _objLoginResponse;
-                        if (Response.statusCode == 200)
+                        if (!IsValid)
                         {
-                            await DisplayAlert("Alert!", "Login Successful!", "Ok");
-                            Settings.TokenCode = Response.token;
-                            Settings.IsLoggedIn = true;
-                            var otherPage = new UserNavigationPage();
-                            var homePage = App.NavigationPage.Navigation.NavigationStack.First();
-                            App.NavigationPage.Navigation.InsertPageBefore(otherPage, homePage);
-                            await App.NavigationPage.PopToRootAsync(false);
+                            await DisplayAlert("Alert", "Email is not in valid formate!", "ok");
                         }
                         else
                         {
-                            await DisplayAlert("Alert!", "Please try again!", "Ok");
+
+                            _objLoginResponse = await _apiService.LoginAsync(new Get_API_Url().CommonBaseApi(_baseUrl), false, new HeaderModel(), _objLoginRequest);
+                            var Response = _objLoginResponse;
+                            if (Response.statusCode == 200)
+                            {
+                                await DisplayAlert("Alert!", "Login Successful!", "Ok");
+                                Settings.TokenCode = Response.token;
+                                Settings.IsLoggedIn = true;
+                                var otherPage = new UserNavigationPage();
+                                var homePage = App.NavigationPage.Navigation.NavigationStack.First();
+                                App.NavigationPage.Navigation.InsertPageBefore(otherPage, homePage);
+                                await App.NavigationPage.PopToRootAsync(false);
+                            }
+                            else
+                            {
+                                await DisplayAlert("Alert!", "Please try again!", "Ok");
+                            }
                         }
                     }
                 }
             }
             catch (Exception ex){ var mag = ex.Message; }
+            finally
+            {
+                IsBusy = false;
+            }
         }
 
         private void EntryEmail_TextChanged(object sender, TextChangedEventArgs e)

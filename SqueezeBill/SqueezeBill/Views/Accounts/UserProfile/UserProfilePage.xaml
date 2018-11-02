@@ -5,29 +5,34 @@
              xmlns:controls="clr-namespace:ImageCircle.Forms.Plugin.Abstractions;assembly=ImageCircle.Forms.Plugin"
              x:Class="SqueezeBill.Views.Accounts.UserProfile.UserProfilePage">
     <ContentPage.Content>
-        <Grid x:Name="RootLayout" Margin="20,0,20,0">
+        <ScrollView>
+        <Grid x:Name="RootLayout">
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto"/>
-                <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="20"/>
             </Grid.RowDefinitions>
-            <Grid Grid.Row="0" Padding="20" BackgroundColor="#FF9408">
-                <controls:CircleImage x:Name="imgProfile"  Source="profile.png" BorderColor="White" BorderThickness="2" Aspect="AspectFit" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
-                    <controls:CircleImage.WidthRequest>
-                        <OnPlatform x:TypeArguments="x:Double">
-                            <On Platform="Android, iOS">100</On>
-                        </OnPlatform>
-                    </controls:CircleImage.WidthRequest>
-                    <controls:CircleImage.HeightRequest>
-                        <OnPlatform x:TypeArguments="x:Double">
-                            <On Platform="Android, iOS">100</On>
-                        </OnPlatform>
-                    </controls:CircleImage.HeightRequest>
-                    <!--<controls:CircleImage.GestureRecognizers>
+            <Grid Grid.Row="0"  Padding="0,10,0,0" BackgroundColor="#FF9408">
+                <StackLayout Spacing="10">
+                    <controls:CircleImage x:Name="imgProfile"  Source="profile.png" BorderColor="White" BorderThickness="2" Aspect="AspectFit" VerticalOptions="Start"  HorizontalOptions="Center">
+                        <controls:CircleImage.WidthRequest>
+                            <OnPlatform x:TypeArguments="x:Double">
+                                <On Platform="Android, iOS">100</On>
+                            </OnPlatform>
+                        </controls:CircleImage.WidthRequest>
+                        <controls:CircleImage.HeightRequest>
+                            <OnPlatform x:TypeArguments="x:Double">
+                                <On Platform="Android, iOS">100</On>
+                            </OnPlatform>
+                        </controls:CircleImage.HeightRequest>
+                        <!--<controls:CircleImage.GestureRecognizers>
                                     <TapGestureRecognizer NumberOfTapsRequired="1" x:Name="ImageProfile" Tapped="ImageProfile_Tapped"/>
                                 </controls:CircleImage.GestureRecognizers>-->
-                </controls:CircleImage>
+                    </controls:CircleImage>
+                    <Label HorizontalOptions="Center"   x:Name="lblUserName" HorizontalTextAlignment="Center" FontAttributes="Bold" Text="James Smith" TextColor="White" FontSize="Medium"/>
+                </StackLayout>
             </Grid>
-            <Grid Grid.Row="1" >
+            <Grid Grid.Row="1" Margin="20,0,20,10" >
                 <Grid.RowDefinitions>
                     <RowDefinition Height="Auto"/>
                     <RowDefinition Height="Auto"/>
@@ -36,23 +41,21 @@
                     <RowDefinition Height="Auto"/>
                     <RowDefinition Height="Auto"/>
                     <RowDefinition Height="Auto"/>
-                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="60"/>
                 </Grid.RowDefinitions>
                 <Grid Grid.Row="0">
                     <Frame HasShadow="False" Padding="0" Margin="0" HeightRequest="-1" BackgroundColor="White">
                         <local:BorderlessEntry Placeholder="Full Name"                                                                                    
                                            PlaceholderColor="LightGray" 
-                                           Text="{Binding firstName}"
+                                          
                                           />
                     </Frame>
                 </Grid>
                 <Grid Grid.Row="1">
                     <Frame HasShadow="False" Padding="0" Margin="0" HeightRequest="-1" BackgroundColor="White">
-                        <local:ImageEntry Placeholder="Email"
-                                          Text="{Binding email}"
+                        <local:ImageEntry Placeholder="Email"                                        
                                           ImageAlignment="Right"
-                                          ImageHeight="20"
-                                          x:Name="EntryEmail"                                
+                                          ImageHeight="20"                                                                       
                                           ImageWidth="20"
                                           PlaceholderColor="LightGray"
                                           LineColor="White"
@@ -64,7 +67,7 @@
                         <local:BorderlessEntry Placeholder="Mobile Number"                                                                                    
                                            PlaceholderColor="LightGray"
                                            Keyboard="Telephone"
-                                           Text="{Binding phoneNumber}"
+                                           
                                           />
                     </Frame>
                 </Grid>
@@ -77,7 +80,7 @@
                                            IsPassword="True"
                                           PlaceholderColor="LightGray"
                                           LineColor="White"
-                                      Text="{Binding password}"
+                                      
                                           Image="info"/>
                     </Frame>
                 </Grid>
@@ -85,7 +88,7 @@
                     <Frame HasShadow="False" Padding="0" Margin="0" HeightRequest="-1" BackgroundColor="White">
                         <local:BorderlessEntry Placeholder="Zipcode"                                                                                    
                                            PlaceholderColor="LightGray"    
-                                            Text="{Binding zipCode}"
+                                            
                                           />
                     </Frame>
                 </Grid>
@@ -98,7 +101,7 @@
                         <Frame HasShadow="False" Padding="0" Margin="0" HeightRequest="-1" BackgroundColor="White">
                             <local:BorderlessEntry Placeholder="State"                                                                                    
                                            PlaceholderColor="LightGray" 
-                                                Text="{Binding state}"
+                                                
                                           />
                         </Frame>
                     </Grid>
@@ -106,7 +109,7 @@
                         <Frame HasShadow="False" Padding="0" Margin="0" HeightRequest="-1" BackgroundColor="White">
                             <local:BorderlessEntry Placeholder="City"                                                                                    
                                            PlaceholderColor="LightGray" 
-                                               Text="{Binding city}"
+                                               
                                           />
                         </Frame>
                     </Grid>
@@ -114,7 +117,7 @@
                 <Grid Grid.Row="6">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="*"/>
-                        <ColumnDefinition Width="Aut0"/>
+                        <ColumnDefinition Width="Auto"/>
                     </Grid.ColumnDefinitions>
                     <Grid Grid.Column="0">
                         <Label Text="Would you like to receive price Alert?"/>
@@ -149,5 +152,6 @@
                 </Grid>
             </Grid>
         </Grid>
+        </ScrollView>
     </ContentPage.Content>
 </ContentPage>

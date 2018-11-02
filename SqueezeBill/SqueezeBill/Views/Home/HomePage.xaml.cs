@@ -62,6 +62,11 @@ namespace SqueezeBill.Views.Home
 
         private void XFBtnCompareRates_Clicked(object sender, EventArgs e)
         {
+            if (IsBusy)
+            {
+                return;
+            }
+            IsBusy = true;
             try
             {
                 string Zipcode= XFEntryZipCode.Text;
@@ -79,6 +84,10 @@ namespace SqueezeBill.Views.Home
             catch(Exception ex)
             {
                 var msg = ex.Message;
+            }
+            finally
+            {
+                IsBusy = false;
             }
            
         }

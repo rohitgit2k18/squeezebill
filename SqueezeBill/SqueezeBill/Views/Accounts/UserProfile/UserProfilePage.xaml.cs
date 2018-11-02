@@ -16,5 +16,6 @@ namespace SqueezeBill.Views.Accounts.UserProfile
 		{
 			InitializeComponent ();
 		}
+
 	}
 }

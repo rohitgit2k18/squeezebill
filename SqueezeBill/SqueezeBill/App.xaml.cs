@@ -17,7 +17,7 @@ namespace SqueezeBill
         public App()
         {
             InitializeComponent();
-            NavigationPage= new NavigationPage(new UserNavigationPage());
+            NavigationPage= new NavigationPage(new UserProfilePage());
             MainPage = NavigationPage;
         }
 

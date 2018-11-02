@@ -40,6 +40,11 @@ namespace SqueezeBill.Views.Accounts
 
         private async void XFBtnForgotPassword_Clicked(object sender, EventArgs e)
         {
+            if (IsBusy)
+            {
+                return;
+            }
+            IsBusy = true;
             try
             {
                 if (!CrossConnectivity.Current.IsConnected)
@@ -83,6 +88,10 @@ namespace SqueezeBill.Views.Accounts
             catch(Exception ex)
             {
                 var msg = ex.Message;
+            }
+            finally
+            {
+                IsBusy = false;
             }
             
         }

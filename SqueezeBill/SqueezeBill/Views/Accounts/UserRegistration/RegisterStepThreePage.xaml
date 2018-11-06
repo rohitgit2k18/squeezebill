@@ -12,8 +12,6 @@
                 <RowDefinition Height="Auto"/>
                 <RowDefinition Height="Auto"/>
                 <RowDefinition Height="Auto"/>
-                <RowDefinition Height="Auto"/>
-                <RowDefinition Height="Auto"/>
             </Grid.RowDefinitions>
             <Grid Grid.Row="0">
                 <Grid.ColumnDefinitions>
@@ -117,41 +115,50 @@
                             BackgroundColor="White"/>
                 </Grid>
             </Grid>
-            <Grid Grid.Row="4">
+            <Grid Grid.Row="4" x:Name="XFGridAccountInfo" IsVisible="False">
                 <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
                     <RowDefinition Height="Auto"/>
                     <RowDefinition Height="Auto"/>
                 </Grid.RowDefinitions>
                 <Grid Grid.Row="0">
-                    <Label Text="Account Information"
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+                    <Grid Grid.Row="0">
+                        <Label Text="Account Information"
                            TextColor="Black"
                            HorizontalOptions="Center"
                            VerticalOptions="Center"/>
-                </Grid>
-                <Grid Grid.Row="1">
-                    <Label Text="Mein Name ist Roger Rabbit. Ich bin einundzwanzig Jahre alt. Ich wohne in Birmingham. Ich lebe in Birmingham fur drei Monate. Ich komme aus London in England. Ich bin studentin (I'm male is studentin correct?) und ich studiere Erdkunde."
+                    </Grid>
+                    <Grid Grid.Row="1">
+                        <Label Text="Mein Name ist Roger Rabbit. Ich bin einundzwanzig Jahre alt. Ich wohne in Birmingham. Ich lebe in Birmingham fur drei Monate. Ich komme aus London in England. Ich bin studentin (I'm male is studentin correct?) und ich studiere Erdkunde."
                            TextColor="LightGray"
                            HorizontalOptions="Center"
                            VerticalOptions="Center"/>
+                    </Grid>
                 </Grid>
-            </Grid>
-            <Grid Grid.Row="5">
-                <!--<Entry Placeholder="Account Number" PlaceholderColor="LightGray"/>-->
-                <Frame HasShadow="False" Padding="0" Margin="0" HeightRequest="-1" BackgroundColor="White">
-                    <local:BorderlessEntry Placeholder="Account Number"                                                                                    
+                <Grid Grid.Row="1">
+                    <!--<Entry Placeholder="Account Number" PlaceholderColor="LightGray"/>-->
+                    <Frame HasShadow="False" Padding="0" Margin="0" HeightRequest="-1" BackgroundColor="White">
+                        <local:BorderlessEntry Placeholder="Account Number"                                                                                    
                                            PlaceholderColor="LightGray"    
                                             Text="{Binding medEdAccountatthisAddress}"
                                           />
-                </Frame>
+                    </Frame>
+                </Grid>
+                <Grid Grid.Row="2">
+                    <Label Text="You must supply a 20-digit account number" TextColor="#FF9408" VerticalOptions="Center" HorizontalOptions="Center" HorizontalTextAlignment="Center" FontSize="Small"/>
+                </Grid>
             </Grid>
-            <Grid Grid.Row="6">
-                <Label Text="You must supply a 20-digit account number" TextColor="#FF9408" VerticalOptions="Center" HorizontalOptions="Center" HorizontalTextAlignment="Center" FontSize="Small"/>
-            </Grid>
+            
            
-            <Grid Grid.Row="7" Padding="0,20,10,0">
+            <Grid Grid.Row="5" Padding="0,20,10,0">
                 <Button CornerRadius="5" 
                             BorderRadius="5" 
                             Text="Submit" 
+                        HeightRequest="40"
                         x:Name="XFBtnRegisterUser"
                             TextColor="White" 
                         Clicked="XFBtnRegisterUser_Clicked"

@@ -44,6 +44,7 @@
                                           x:Name="EntryEmail"
                                           TextChanged="EntryEmail_TextChanged"
                                           ImageWidth="20"
+                                          Keyboard="Email"
                                           PlaceholderColor="LightGray"
                                           LineColor="White"
                                           Image="info"/>

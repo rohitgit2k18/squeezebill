@@ -14,7 +14,7 @@
             </Grid.RowDefinitions>
             <Grid Grid.Row="0"  Padding="0,10,0,0" BackgroundColor="#FF9408">
                 <StackLayout Spacing="10">
-                    <controls:CircleImage x:Name="imgProfile"  Source="profile.png" BorderColor="White" BorderThickness="2" Aspect="AspectFit" VerticalOptions="Start"  HorizontalOptions="Center">
+                        <controls:CircleImage x:Name="imgProfile"  Source="{Binding profilePic}" BorderColor="White" BorderThickness="2" Aspect="AspectFit" VerticalOptions="Start"  HorizontalOptions="Center">
                         <controls:CircleImage.WidthRequest>
                             <OnPlatform x:TypeArguments="x:Double">
                                 <On Platform="Android, iOS">100</On>
@@ -44,10 +44,10 @@
                     <RowDefinition Height="60"/>
                 </Grid.RowDefinitions>
                 <Grid Grid.Row="0">
-                    <Frame HasShadow="False" Padding="0" Margin="0" HeightRequest="-1" BackgroundColor="White">
+                        <Frame HasShadow="False" Padding="0" Margin="0" HeightRequest="-1" BorderColor="#F5F5F5" BackgroundColor="White">
                         <local:BorderlessEntry Placeholder="Full Name"                                                                                    
                                            PlaceholderColor="LightGray" 
-                                          
+                                          Text="{Binding firstName}"
                                           />
                     </Frame>
                 </Grid>
@@ -57,8 +57,11 @@
                                           ImageAlignment="Right"
                                           ImageHeight="20"                                                                       
                                           ImageWidth="20"
+                                          Keyboard="Email"
                                           PlaceholderColor="LightGray"
                                           LineColor="White"
+                                          TextChanged="EntryEmail_TextChanged"
+                                          Text="{Binding email}"
                                           Image="info"/>
                     </Frame>
                 </Grid>
@@ -67,7 +70,7 @@
                         <local:BorderlessEntry Placeholder="Mobile Number"                                                                                    
                                            PlaceholderColor="LightGray"
                                            Keyboard="Telephone"
-                                           
+                                           Text="{Binding mobileNum}"
                                           />
                     </Frame>
                 </Grid>
@@ -80,7 +83,7 @@
                                            IsPassword="True"
                                           PlaceholderColor="LightGray"
                                           LineColor="White"
-                                      
+                                      Text="{Binding password}"
                                           Image="info"/>
                     </Frame>
                 </Grid>
@@ -88,7 +91,7 @@
                     <Frame HasShadow="False" Padding="0" Margin="0" HeightRequest="-1" BackgroundColor="White">
                         <local:BorderlessEntry Placeholder="Zipcode"                                                                                    
                                            PlaceholderColor="LightGray"    
-                                            
+                                            Text="{Binding zipCode}"
                                           />
                     </Frame>
                 </Grid>
@@ -101,16 +104,15 @@
                         <Frame HasShadow="False" Padding="0" Margin="0" HeightRequest="-1" BackgroundColor="White">
                             <local:BorderlessEntry Placeholder="State"                                                                                    
                                            PlaceholderColor="LightGray" 
-                                                
+                                            Text="{Binding state}"    
                                           />
                         </Frame>
                     </Grid>
                     <Grid Grid.Column="1">
                         <Frame HasShadow="False" Padding="0" Margin="0" HeightRequest="-1" BackgroundColor="White">
                             <local:BorderlessEntry Placeholder="City"                                                                                    
-                                           PlaceholderColor="LightGray" 
-                                               
-                                          />
+                                   PlaceholderColor="LightGray"
+                                                   Text="{Binding city}"/>
                         </Frame>
                     </Grid>
                 </Grid>
@@ -123,7 +125,7 @@
                         <Label Text="Would you like to receive price Alert?"/>
                     </Grid>
                     <Grid Grid.Column="1">
-                        <Switch/>
+                            <Switch IsToggled="{Binding priceAlert}"/>
                     </Grid>
                 </Grid>
                 <Grid Grid.Row="7" Margin="0,20,0,0">
@@ -136,7 +138,8 @@
                             BorderRadius="5" 
                             x:Name="XFBtnUpdateUser"
                             Text="Update" 
-                            TextColor="White"                            
+                            TextColor="White"   
+                                Clicked="XFBtnUpdateUser_Clicked"
                             BackgroundColor="#FF9408"/>
                     </Grid>
                     <Grid Grid.Column="1">

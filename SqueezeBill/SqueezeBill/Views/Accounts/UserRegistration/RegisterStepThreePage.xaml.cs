@@ -85,11 +85,13 @@ namespace SqueezeBill.Views.Accounts.UserRegistration
         private void XFBtnYes_Clicked(object sender, EventArgs e)
         {
             _objUserRegistrationRequest.isMedEdAccountat = true;
+            XFGridAccountInfo.IsVisible = true;
         }
 
         private void XFBtnNo_Clicked(object sender, EventArgs e)
         {
             _objUserRegistrationRequest.isMedEdAccountat = false;
+            XFGridAccountInfo.IsVisible = false;
         }
     }
 }

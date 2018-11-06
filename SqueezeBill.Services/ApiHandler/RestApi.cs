@@ -560,36 +560,36 @@ namespace SqueezeBill.Services.ApiHandler
         /// <param name="objHeaderModel"></param>
         /// <param name="objAddWorkoutRequest"></param>
         /// <returns></returns>
-        //public async Task<AddWorkoutResponse> AddWorkoutPostAsync(string uri, Boolean IsHeaderRequired, HeaderModel objHeaderModel, AddWorkoutRequest objAddWorkoutRequest)
-        //{
+        public async Task<UpdateUserResponse> UpdateUserPostAsync(string uri, Boolean IsHeaderRequired, HeaderModel objHeaderModel, UserDetailsResponse objUserDetailsResponse)
+        {
 
-        //    AddWorkoutResponse objAddWorkoutResponse;
-        //    string s = JsonConvert.SerializeObject(objAddWorkoutRequest);
-        //    HttpResponseMessage response = null;
-        //    using (var stringContent = new StringContent(s, System.Text.Encoding.UTF8, "application/json"))
-        //    {
+            UpdateUserResponse objUpdateUserResponse;
+            string s = JsonConvert.SerializeObject(objUserDetailsResponse.response.details);
+            HttpResponseMessage response = null;
+            using (var stringContent = new StringContent(s, System.Text.Encoding.UTF8, "application/json"))
+            {
 
-        //        if (IsHeaderRequired)
-        //        {
-        //            client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", objHeaderModel.TokenCode);
-        //        }
-        //        response = await client.PostAsync(uri, stringContent);
+                if (IsHeaderRequired)
+                {
+                    client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", objHeaderModel.TokenCode);
+                }
+                response = await client.PutAsync(uri, stringContent);
 
 
-        //        if (response.IsSuccessStatusCode)
-        //        {
-        //            var SucessResponse = await response.Content.ReadAsStringAsync();
-        //            objAddWorkoutResponse = JsonConvert.DeserializeObject<AddWorkoutResponse>(SucessResponse);
-        //            return objAddWorkoutResponse;
-        //        }
-        //        else
-        //        {
-        //            var ErrorResponse = await response.Content.ReadAsStringAsync();
-        //            objAddWorkoutResponse = JsonConvert.DeserializeObject<AddWorkoutResponse>(ErrorResponse);
-        //            return objAddWorkoutResponse;
-        //        }
-        //    }
-        //}
+                if (response.IsSuccessStatusCode)
+                {
+                    var SucessResponse = await response.Content.ReadAsStringAsync();
+                    objUpdateUserResponse = JsonConvert.DeserializeObject<UpdateUserResponse>(SucessResponse);
+                    return objUpdateUserResponse;
+                }
+                else
+                {
+                    var ErrorResponse = await response.Content.ReadAsStringAsync();
+                    objUpdateUserResponse = JsonConvert.DeserializeObject<UpdateUserResponse>(ErrorResponse);
+                    return objUpdateUserResponse;
+                }
+            }
+        }
 
         /// <summary>
         /// 

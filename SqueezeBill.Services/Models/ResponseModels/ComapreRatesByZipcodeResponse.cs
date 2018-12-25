@@ -61,6 +61,7 @@ namespace SqueezeBill.Services.Models.ResponseModels
     public class SupplierList
     {
         public string companyName { get; set; }
+        public int companyId { get; set; }
         public double rate { get; set; }
     }
 
@@ -73,6 +74,7 @@ namespace SqueezeBill.Services.Models.ResponseModels
         public string imagePath { get; set; }
         public string retailerName { get; set; }
         public int retailerId { get; set; }
+        public int companyId { get; set; }
         public bool isResidential { get; set;}
     }
 

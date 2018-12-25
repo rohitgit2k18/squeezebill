@@ -1,30 +1,55 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:local="clr-namespace:SqueezeBill"
-            xmlns:range="clr-namespace:Syncfusion.SfRangeSlider.XForms;assembly=Syncfusion.SfRangeSlider.XForms"
+             NavigationPage.HasBackButton="False"
+             xmlns:range="clr-namespace:Syncfusion.SfRangeSlider.XForms;assembly=Syncfusion.SfRangeSlider.XForms"
+             xmlns:ext="clr-namespace:XFCustomControls.Ext;assembly=XFCustomControls.Ext"
              x:Class="SqueezeBill.Views.ElectricityAndGas.ListingFilterPage">
+    <NavigationPage.TitleView>
+        <Grid VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+            <Image VerticalOptions="Center" Margin="0,0,20,0" HorizontalOptions="Start" Source="back.png">
+                <Image.GestureRecognizers>
+                    <TapGestureRecognizer NumberOfTapsRequired="1" Tapped="XFImgBack_Tapped"/>
+                </Image.GestureRecognizers>
+            </Image>
+
+            <Label Text="Filter" VerticalOptions="Center" FontAttributes="Bold" TextColor="White" HorizontalOptions="Center" Margin="-80,0,0,0" FontSize="Medium" />
+
+            <Label Text="Apply" VerticalOptions="Center" FontAttributes="Bold" TextColor="White" HorizontalOptions="End" FontSize="Medium" Margin="0,0,5,0">
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer NumberOfTapsRequired="1" Tapped="XFLblApply_Tapped"/>
+                </Label.GestureRecognizers>
+            </Label>
+        </Grid>
+    </NavigationPage.TitleView>
+    
     <ContentPage.Content>
         <Grid x:Name="RootLayout" Margin="20">
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto"/>
                 <RowDefinition Height="Auto"/>
             </Grid.RowDefinitions>
+            
             <Grid Grid.Row="0" RowSpacing="10">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="Auto"/>
                     <RowDefinition Height="Auto"/>
                     <RowDefinition Height="Auto"/>
                 </Grid.RowDefinitions>
+                
                 <Grid Grid.Row="0">
                     <Label VerticalOptions="Center" 
                            HorizontalOptions="Center"
-                           FontSize="Small"
+                           FontSize="17"
                            TextColor="#6A4B4B"
                            Text="Contract Terms"/>
                 </Grid>
-                <Grid Grid.Row="1">
-                    <Button Text="6-12 Months" 
+                
+                <Grid Grid.Row="1" HorizontalOptions="Center">
+                    <Frame Padding="5" Margin="0" HorizontalOptions="Center" BackgroundColor="White" BorderColor="LightGray" CornerRadius="5" HeightRequest="-1">
+                        <Label x:Name="XFLBFilterDuration" Margin="5,0,5,0" Text="6-12 Months" TextColor="Gray" HorizontalOptions="Center" VerticalOptions="Center"/>
+                    </Frame>
+                    <!--<Button Text="6-12 Months" 
                                             FontSize="Micro" 
                                             Padding="0,0,10,0"
                                             BorderRadius="10"
@@ -34,37 +59,36 @@
                                             CornerRadius="10"
                                             HeightRequest="20"
                                             BorderWidth="1" 
-                                            BorderColor="#AB9A9A"/>
+                                            BorderColor="#AB9A9A"/>-->
                 </Grid>
+                
                 <Grid Grid.Row="2">
-                    <range:SfRangeSlider x:Name="rangeslider"
-                                         ShowRange="true"
-                                         RangeStart="3"
-                                         RangeEnd="36"
-                                         Maximum="36"
-                                         Minimum="3"
-                                         TrackThickness="5"
-                                         TrackColor="#CECECC"
-                                         ShowValueLabel="True"
-                                         StepFrequency="3"
-                                         TickFrequency="3"
-                                         TrackSelectionColor="#F18601"
-                                         TickPlacement="BottomRight"
-                                         RangeChanging="rangeslider_RangeChanging"                                        
-                                         Orientation="Horizontal"/>
+                    <range:SfRangeSlider 
+                        x:Name="rangeslider"
+                        ShowRange="true"
+                        RangeStart="6"
+                        RangeEnd="12"
+                        Maximum="36"
+                        Minimum="3"
+                        TrackThickness="5"
+                        TrackColor="#CECECC"
+                        ShowValueLabel="True"
+                        StepFrequency="3"
+                        TickFrequency="3"
+                        TrackSelectionColor="#F18601"
+                        TickPlacement="BottomRight"
+                        RangeChanging="rangeslider_RangeChanging"                                        
+                        Orientation="Horizontal"/>
                 </Grid>
             </Grid>
+
             <Grid Grid.Row="1">
-                <local:ImagePicker  TextColor="Black"  
-                           x:Name="dropdownLoadType"                           
-                            Title="Suppliers"    
-                             LineColor="Gray"
-                             Image="drop_down"
-                             ImageAlignment="Right"
-                             ImageHeight="20"
-                            ImageWidth="20"
-                            ItemDisplayBinding="{Binding Type}"                        
-                        HorizontalOptions="FillAndExpand"/>
+                <ext:Picker
+                    TextColor="Black"  
+                    x:Name="dropdownLoadType"                           
+                    Title="Suppliers"    
+                    BackgroundColor="LightGray"
+                    HorizontalOptions="FillAndExpand"/>
             </Grid>
         </Grid>
     </ContentPage.Content>

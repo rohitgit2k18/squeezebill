@@ -28,7 +28,11 @@ namespace SqueezeBill.Views.Accounts.UserRegistration
             this.BindingContext = _objUserRegistrationRequest;
 
         }
-        
+
+        private void XFImgBack_Tapped(object sender, EventArgs e)
+        {
+            App.NavigationPage.Navigation.PopAsync();
+        }
 
         private void XFBtnReg1_Clicked(object sender, EventArgs e)
         {

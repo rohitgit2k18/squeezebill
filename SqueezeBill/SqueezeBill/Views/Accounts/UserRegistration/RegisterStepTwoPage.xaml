@@ -1,7 +1,21 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             NavigationPage.HasBackButton="False"
              x:Class="SqueezeBill.Views.Accounts.UserRegistration.RegisterStepTwoPage">
+    
+    <NavigationPage.TitleView>
+        <Grid VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+            <Image VerticalOptions="Center" Margin="0,0,20,0" HorizontalOptions="Start" Source="back.png">
+                <Image.GestureRecognizers>
+                    <TapGestureRecognizer NumberOfTapsRequired="1" Tapped="XFImgBack_Tapped"/>
+                </Image.GestureRecognizers>
+            </Image>
+
+            <Label Text="Sign Up" VerticalOptions="Center" FontAttributes="Bold" TextColor="White" HorizontalOptions="Center" Margin="-80,0,0,0" FontSize="Medium" />
+        </Grid>
+    </NavigationPage.TitleView>
+    
     <ContentPage.Content>
         <Grid x:Name="RootLayout" Margin="20">
             <Grid.RowDefinitions>

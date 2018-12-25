@@ -1,7 +1,26 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             NavigationPage.HasBackButton="False"
              x:Class="SqueezeBill.Views.ElectricityAndGas.ElectricityAndGasPlans">
+    <NavigationPage.TitleView>
+        <Grid VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+            <Image VerticalOptions="Center" Margin="0,0,20,0" HorizontalOptions="Start" Source="back.png">
+                <Image.GestureRecognizers>
+                    <TapGestureRecognizer NumberOfTapsRequired="1" Tapped="XFImgBack_Tapped"/>
+                </Image.GestureRecognizers>
+            </Image>
+
+            <Label Text="Plans" VerticalOptions="Center" FontAttributes="Bold" TextColor="White" HorizontalOptions="Center" Margin="-80,0,0,0" FontSize="Medium" />
+
+            <Image VerticalOptions="Center" Margin="0,0,20,0" HorizontalOptions="End" Source="notification.png">
+                <Image.GestureRecognizers>
+                    <TapGestureRecognizer NumberOfTapsRequired="1" Tapped="XFImgNotification_Tapped"/>
+                </Image.GestureRecognizers>
+            </Image>
+        </Grid>
+    </NavigationPage.TitleView>
+    
     <ContentPage.Content>
         <Grid x:Name="RootLayout" Margin="20">
             <Grid.RowDefinitions>
@@ -47,65 +66,88 @@
                     </Grid>
                 </Frame>-->
             </Grid>
+            
             <Grid Grid.Row="1">
-                <ListView x:Name="RateComparisionList"  HasUnevenRows="True" SeparatorColor="Transparent" >
+                <ListView x:Name="RateComparisionList" HasUnevenRows="True" SeparatorVisibility="None" SelectionMode="None">
                     <ListView.ItemTemplate>
                         <DataTemplate>
                             <ViewCell>
-                                <Frame HasShadow="True" Padding="10" Margin="0" BackgroundColor="White" HeightRequest="-1" CornerRadius="5">
-                                    <Grid>
-                                        <Grid.ColumnDefinitions>
-                                            <ColumnDefinition Width="0.4*"/>
-                                            <ColumnDefinition Width="0.4*"/>
-                                            <ColumnDefinition Width="0.2*"/>
-                                        </Grid.ColumnDefinitions>
-                                        <Grid Grid.Column="0" Padding="10">
-                                            <Image VerticalOptions="Center" HorizontalOptions="Center" Aspect="AspectFit" Source="publicpower.png"/>
+                                <Frame Margin="5" VerticalOptions="Center" CornerRadius="5" HasShadow="True" Padding="0,0,2,2" BackgroundColor="#a8aaa9">
+                                    <Frame VerticalOptions="Center" BackgroundColor="White" CornerRadius="5" HasShadow="True" Padding="5,10,5,10">
+                                        <Grid ColumnSpacing="5">
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="0.3*"/>
+                                                <ColumnDefinition Width="0.45*"/>
+                                                <ColumnDefinition Width="0.25*"/>
+                                            </Grid.ColumnDefinitions>
+
+                                            <Grid Grid.Column="0" Padding="10">
+                                                <Image 
+                                                    VerticalOptions="FillAndExpand" 
+                                                    HorizontalOptions="FillAndExpand" 
+                                                    Aspect="AspectFill" 
+                                                    Source="{Binding imagePath}">
+                                                    <Image.GestureRecognizers>
+                                                        <TapGestureRecognizer 
+                                                            NumberOfTapsRequired="1"
+                                                            Tapped="XFPlanDetail_Clicked"/>
+                                                    </Image.GestureRecognizers>
+                                                </Image>
+                                            </Grid>
+
+                                            <Grid Grid.Column="1">
+                                                <Grid.RowDefinitions>
+                                                    <RowDefinition Height="*"/>
+                                                    <RowDefinition Height="*"/>
+                                                </Grid.RowDefinitions>
+
+                                                <Grid Grid.Row="0">
+                                                    <Label Text="{Binding retailerName}" TextColor="#AB9A9A" VerticalOptions="Center" LineBreakMode="TailTruncation" HorizontalOptions="Start" FontSize="Small"/>
+                                                </Grid>
+
+                                                <Grid Grid.Row="1">
+                                                    <Label Text="{Binding rate, StringFormat='{0:C2}c'}" TextColor="#AB9A9A" VerticalOptions="Center" HorizontalOptions="Start" FontSize="Small"/>
+                                                </Grid>
+                                            </Grid>
+
+                                            <Grid Grid.Column="2">
+                                                <Grid.RowDefinitions>
+                                                    <RowDefinition Height="*"/>
+                                                    <RowDefinition Height="*"/>
+                                                </Grid.RowDefinitions>
+
+                                                <Grid Grid.Row="0">
+                                                    <Button 
+                                                        Text="{Binding duration,StringFormat='{0} Months'}" 
+                                                        FontSize="Micro" 
+                                                        Padding="0,0,10,0"
+                                                        BorderRadius="10"
+                                                        TextColor="#AB9A9A"
+                                                        BackgroundColor="White"
+                                                        CornerRadius="10"
+                                                        HeightRequest="20"
+                                                        BorderWidth="1" 
+                                                        BorderColor="#AB9A9A"/>
+                                                </Grid>
+
+                                                <Grid Grid.Row="1">
+                                                    <Button 
+                                                        CornerRadius="5" 
+                                                        BorderRadius="5" 
+                                                        Text="Select" 
+                                                        x:Name="XFBtnPlanDetail"
+                                                        TextColor="White"
+                                                        Image="next.png"                                           
+                                                        ContentLayout="Right,5"                      
+                                                        FontSize="Micro"
+                                                        Padding="0,0,10,0"
+                                                        HeightRequest="20" 
+                                                        Clicked="XFBtnPlanDetail_Clicked"
+                                                        BackgroundColor="#FF9408"/>
+                                                </Grid>
+                                            </Grid>
                                         </Grid>
-                                        <Grid Grid.Column="1">
-                                            <Grid.RowDefinitions>
-                                                <RowDefinition Height="*"/>
-                                                <RowDefinition Height="*"/>
-                                            </Grid.RowDefinitions>
-                                            <Grid Grid.Row="0">
-                                                <Label Text="{Binding retailerName}" TextColor="#AB9A9A" VerticalOptions="Center" HorizontalOptions="Center" FontSize="Small"/>
-                                            </Grid>
-                                            <Grid Grid.Row="1">
-                                                <Label Text="{Binding rate}" TextColor="#AB9A9A" VerticalOptions="Center" HorizontalOptions="Center" FontSize="Small"/>
-                                            </Grid>
-                                        </Grid>
-                                        <Grid Grid.Column="2">
-                                            <Grid.RowDefinitions>
-                                                <RowDefinition Height="*"/>
-                                                <RowDefinition Height="*"/>
-                                            </Grid.RowDefinitions>
-                                            <Grid Grid.Row="0">
-                                                <Button Text="{Binding duration,StringFormat='{0} Months'}" 
-                                            FontSize="Micro" 
-                                            Padding="0,0,10,0"
-                                            BorderRadius="10"
-                                            TextColor="#AB9A9A"
-                                             BackgroundColor="White"
-                                            CornerRadius="10"
-                                            HeightRequest="20"
-                                            BorderWidth="1" 
-                                            BorderColor="#AB9A9A"/>
-                                            </Grid>
-                                            <Grid Grid.Row="1">
-                                                <Button CornerRadius="5" 
-                                       BorderRadius="5" 
-                                        Text="Select" 
-                                          TextColor="White"
-                                            Image="next.png"                                           
-                                            ContentLayout="Right,5"                      
-                                            FontSize="Micro"
-                                            Padding="0,0,10,0"
-                                             HeightRequest="20" 
-                                      Clicked="XFBtnPlanDetail_Clicked"
-                                    BackgroundColor="#FF9408"/>
-                                            </Grid>
-                                        </Grid>
-                                    </Grid>
+                                    </Frame>
                                 </Frame>
                             </ViewCell>
                         </DataTemplate>

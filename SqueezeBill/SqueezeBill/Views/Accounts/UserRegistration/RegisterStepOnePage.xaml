@@ -1,8 +1,21 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-              xmlns:local="clr-namespace:SqueezeBill" 
+             xmlns:local="clr-namespace:SqueezeBill" 
+             NavigationPage.HasBackButton="False"
              x:Class="SqueezeBill.Views.Accounts.UserRegistration.RegisterStepOnePage">
+    <NavigationPage.TitleView>
+        <Grid VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+            <Image VerticalOptions="Center" Margin="0,0,20,0" HorizontalOptions="Start" Source="back.png">
+                <Image.GestureRecognizers>
+                    <TapGestureRecognizer NumberOfTapsRequired="1" Tapped="XFImgBack_Tapped"/>
+                </Image.GestureRecognizers>
+            </Image>
+
+            <Label Text="Sign Up" VerticalOptions="Center" FontAttributes="Bold" TextColor="White" HorizontalOptions="Center" Margin="-80,0,0,0" FontSize="Medium" />
+        </Grid>
+    </NavigationPage.TitleView>
+    
     <ContentPage.Content>
         <Grid x:Name="RootLayout" Margin="20">
             <Grid.RowDefinitions>
@@ -15,13 +28,16 @@
                 <RowDefinition Height="Auto"/>
                 <RowDefinition Height="Auto"/>
                 <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
             </Grid.RowDefinitions>
+            
             <Grid Grid.Row="0">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*"/>
                     <ColumnDefinition Width="1.5*"/>
                     <ColumnDefinition Width="*"/>
                 </Grid.ColumnDefinitions>
+                
                 <Grid Grid.Column="0">
                     <Frame HeightRequest="-1" Margin="0" BackgroundColor="White" HasShadow="False" CornerRadius="5" Padding="5" BorderColor="LightGray">
                         <Label Text="7.69c" 
@@ -29,9 +45,11 @@
                                FontSize="Micro" />
                     </Frame>
                 </Grid>
+                
                 <Grid Grid.Column="1">
                     <Image VerticalOptions="Center" HorizontalOptions="Center" Source="publicpower.png"/>
                 </Grid>
+                
                 <Grid Grid.Column="2">
                     <Frame HeightRequest="-1" Margin="0" BackgroundColor="White" HasShadow="False" CornerRadius="5" Padding="5" BorderColor="LightGray">
                         <Label Text="6 Month" 
@@ -40,6 +58,7 @@
                     </Frame>
                 </Grid>
             </Grid>
+            
             <Grid Grid.Row="1" RowSpacing="0">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="Auto"/>
@@ -74,15 +93,26 @@
                     </Grid>
                 </Grid>
             </Grid>
+            
             <Grid Grid.Row="2">
                 <Frame HasShadow="False" Padding="0" Margin="0" HeightRequest="-1" BackgroundColor="White">
-                    <local:BorderlessEntry Placeholder="Full Name"                                                                                    
-                                           PlaceholderColor="LightGray" 
-                                           Text="{Binding firstName}"
-                                          />
+                    <local:BorderlessEntry 
+                        Placeholder="First Name"                                                                                    
+                        PlaceholderColor="LightGray" 
+                        Text="{Binding firstName}" />
                 </Frame>
             </Grid>
+
             <Grid Grid.Row="3">
+                <Frame HasShadow="False" Padding="0" Margin="0" HeightRequest="-1" BackgroundColor="White">
+                    <local:BorderlessEntry 
+                        Placeholder="Last Name"                                                                                    
+                        PlaceholderColor="LightGray" 
+                        Text="{Binding lastName}" />
+                </Frame>
+            </Grid>
+
+            <Grid Grid.Row="4">
                 <Frame HasShadow="False" Padding="0" Margin="0" HeightRequest="-1" BackgroundColor="White">
                     <local:ImageEntry Placeholder="Email"
                                           ImageAlignment="Right"
@@ -97,7 +127,8 @@
                                           Image="info"/>
                 </Frame>
             </Grid>
-            <Grid Grid.Row="4">
+            
+            <Grid Grid.Row="5">
                 <Frame HasShadow="False" Padding="0" Margin="0" HeightRequest="-1" BackgroundColor="White">
                     <local:BorderlessEntry Placeholder="Mobile Number"                                                                                    
                                            PlaceholderColor="LightGray"
@@ -106,7 +137,8 @@
                                           />
                 </Frame>
             </Grid>
-            <Grid Grid.Row="5">
+            
+            <Grid Grid.Row="6">
                 <Frame HasShadow="False" Padding="0" Margin="0" HeightRequest="-1" BackgroundColor="White">
                     <local:ImageEntry Placeholder="Password"
                                           ImageAlignment="Right"
@@ -119,7 +151,8 @@
                                           Image="info"/>
                 </Frame>
             </Grid>
-            <Grid Grid.Row="6">
+            
+            <Grid Grid.Row="7">
                 <Frame HasShadow="False" Padding="0" Margin="0" HeightRequest="-1" BackgroundColor="White">
                     <local:BorderlessEntry Placeholder="Zipcode"                                                                                    
                                            PlaceholderColor="LightGray"    
@@ -127,7 +160,8 @@
                                           />
                 </Frame>
             </Grid>
-            <Grid Grid.Row="7">
+            
+            <Grid Grid.Row="8">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*"/>
                     <ColumnDefinition Width="*"/>
@@ -149,7 +183,8 @@
                     </Frame>
                 </Grid>
             </Grid>
-            <Grid Grid.Row="8" Padding="0,20,10,0">
+            
+            <Grid Grid.Row="9" Padding="0,20,10,0">
                 <Button CornerRadius="5" 
                             BorderRadius="5" 
                         x:Name="XFBtnReg1"

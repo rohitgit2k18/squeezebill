@@ -34,6 +34,10 @@ namespace SqueezeBill.Views.Accounts.UserRegistration
             _baseUrl = Domain.Url + Domain.UserSignUpApiConstant;
         }
 
+        private void XFImgBack_Tapped(object sender, EventArgs e)
+        {
+            App.NavigationPage.Navigation.PopAsync();
+        }
         private async void XFBtnRegisterUser_Clicked(object sender, EventArgs e)
         {
             if (IsBusy)

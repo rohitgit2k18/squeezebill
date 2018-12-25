@@ -1,4 +1,5 @@
 ﻿using SqueezeBill.Services.Models.ResponseModels;
+using SqueezeBill.Views.Accounts.UserRegistration;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -16,15 +17,15 @@ namespace SqueezeBill.Views.ElectricityAndGas
         #region Variable Declaration
         private ComapreRatesByZipcodeResponse _objComapreRatesByZipcodeResponse;
         #endregion
-        public ElectricityAndGasPlans( ComapreRatesByZipcodeResponse objComapreRatesByZipcodeResponse)
-		{
-			InitializeComponent ();
+        public ElectricityAndGasPlans(ComapreRatesByZipcodeResponse objComapreRatesByZipcodeResponse)
+        {
+            InitializeComponent();
             _objComapreRatesByZipcodeResponse = new ComapreRatesByZipcodeResponse();
             _objComapreRatesByZipcodeResponse = objComapreRatesByZipcodeResponse;
             LoadListData();
         }
 
-        private void  LoadListData()
+        private void LoadListData()
         {
             try
             {
@@ -35,7 +36,6 @@ namespace SqueezeBill.Views.ElectricityAndGas
                     {
                         if (_objComapreRatesByZipcodeResponse.response.compareListDetails.retailerList.Count > 0)
                         {
-                            //this.BindingContext = _objComapreRatesByZipcodeResponse.response;
                             RateComparisionList.ItemsSource = _objComapreRatesByZipcodeResponse.response.compareListDetails.retailerList;
                             XFActivityIndicator.IsVisible = false;
                         }
@@ -46,25 +46,37 @@ namespace SqueezeBill.Views.ElectricityAndGas
                     }
                     else
                     {
-                         DisplayAlert("Alert", "No Supplier is Available", "Ok");
+                        DisplayAlert("Alert", "No Supplier is Available", "Ok");
                     }
-
                 }
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
-                var msg = ex.Message;
+                string message = ex.Message;
             }
         }
 
         private void XFBtnPlanDetail_Clicked(object sender, EventArgs e)
         {
-            var Sender = ((Button)sender);
-            var Context = Sender.BindingContext;
-            var SelectedItems = Context as RetailerList;
-
-            App.NavigationPage.Navigation.PushAsync(new PlansDetails(SelectedItems));
+            App.NavigationPage.Navigation.PushAsync(new RegisterStepOnePage());
         }
-        
+
+        private void XFPlanDetail_Clicked(object sender, EventArgs e)
+        {
+            Image image = (Image)sender;
+            object bindingContext = image.BindingContext;
+            RetailerList objRetailerList = bindingContext as RetailerList;
+            App.NavigationPage.Navigation.PushAsync(new PlansDetails(objRetailerList));
+        }
+
+        private void XFImgNotification_Tapped(object sender, EventArgs e)
+        {
+        }
+
+        private void XFImgBack_Tapped(object sender, EventArgs e)
+        {
+            App.NavigationPage.Navigation.PopAsync();
+        }
+
     }
 }

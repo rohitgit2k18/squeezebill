@@ -25,6 +25,7 @@ namespace SqueezeBill.Droid
             base.SetTheme(Resource.Style.MainTheme);
 
             base.OnCreate(savedInstanceState);
+
             global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
             LoadApplication(new App());
         }

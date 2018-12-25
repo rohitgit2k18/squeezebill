@@ -23,17 +23,19 @@ namespace SqueezeBill.Views.ElectricityAndGas
         private RestApi _apiService;
         private string _baseUrl;
         #endregion
-        public PlansDetails (RetailerList objRetailerList)
-		{
-			InitializeComponent ();
+        public PlansDetails(RetailerList objRetailerList)
+        {
+            InitializeComponent();
             _objRetailerList = new RetailerList();
             _objRetailerList = objRetailerList;
             _objElectricityAndGasPlanDetailsResponse = new ElectricityAndGasPlanDetailsResponse();
             _apiService = new RestApi();
             _baseUrl = Domain.Url + Domain.ElectricityAndGasDetailApiConstant;
+            XFLabelPlanTitle.Text = objRetailerList.retailerName;
             GetPlanDetailsbyId();
         }
-        public async void  GetPlanDetailsbyId()
+
+        public async void GetPlanDetailsbyId()
         {
             try
             {
@@ -43,28 +45,31 @@ namespace SqueezeBill.Views.ElectricityAndGas
                 }
                 else
                 {
-                    // XFActivityIndicator.IsVisible = true;
                     _objElectricityAndGasPlanDetailsResponse = await _apiService.GetAsyncData_GetApi(new Get_API_Url().GetElectricityAndGasDetailApi(_baseUrl, _objRetailerList.planid, _objRetailerList.isResidential), false, new HeaderModel(), _objElectricityAndGasPlanDetailsResponse);
-                    var result = _objElectricityAndGasPlanDetailsResponse.response;
-                    if (result.statusCode == 200)
+                    EANDGPResponse result = _objElectricityAndGasPlanDetailsResponse.response;
+                    if (result.statusCode != 200)
                     {
-
-                        // await DisplayAlert("Alert", "Sucess", "Ok");
-                        this.BindingContext = result;
+                        await DisplayAlert("Alert", "No Supplier is Available", "Ok");
                     }
-                        else
-                        {
-                            await DisplayAlert("Alert", "No Supplier is Available", "Ok");
-                        }
-
-                    
+                    else
+                    {
+                        base.BindingContext = result;
+                    }
                 }
-
             }
             catch (Exception ex)
             {
-                var msg = ex.Message;
+                string message = ex.Message;
             }
+        }
+
+        private void XFImgBack_Tapped(object sender, EventArgs e)
+        {
+            App.NavigationPage.Navigation.PopAsync();
+        }
+
+        private void XFImgNotification_Tapped(object sender, EventArgs e)
+        {
         }
 
         private void XFBtnPlansDetails_Clicked(object sender, EventArgs e)

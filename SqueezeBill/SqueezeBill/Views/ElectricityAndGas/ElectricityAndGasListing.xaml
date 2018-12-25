@@ -1,158 +1,272 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             NavigationPage.HasBackButton="False"
              x:Class="SqueezeBill.Views.ElectricityAndGas.ElectricityAndGasListing">
     <NavigationPage.TitleView>
         <Grid VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
-            <Label Text="Electricity" VerticalOptions="Center" FontAttributes="Bold" TextColor="White" HorizontalOptions="Center" Margin="-80,0,0,0" FontSize="Medium" />
-            <Image VerticalOptions="Center" Margin="0,0,20,0" HorizontalOptions="EndAndExpand" Source="filter.png">
+            <Image VerticalOptions="Center" Margin="0,0,20,0" HorizontalOptions="Start" Source="back.png">
                 <Image.GestureRecognizers>
-                    <TapGestureRecognizer NumberOfTapsRequired="1" x:Name="XFImgFilter" Tapped="XFImgFilter_Tapped"/>
+                    <TapGestureRecognizer NumberOfTapsRequired="1" Tapped="XFImgBack_Tapped"/>
+                </Image.GestureRecognizers>
+            </Image>
+            
+            <Label x:Name="XFLabelTitle" Text="Electricity" VerticalOptions="Center" FontAttributes="Bold" TextColor="White" HorizontalOptions="Center" Margin="-80,0,0,0" FontSize="Medium" />
+            
+            <Image VerticalOptions="Center" Margin="0,0,20,0" HorizontalOptions="End" Source="filter.png">
+                <Image.GestureRecognizers>
+                    <TapGestureRecognizer NumberOfTapsRequired="1" Tapped="XFImgFilter_Tapped"/>
                 </Image.GestureRecognizers>
             </Image>
         </Grid>
     </NavigationPage.TitleView>
+    
     <ContentPage.Content>
-        <Grid x:Name="RootLayout" Margin="10" RowSpacing="20">
-            <Grid.RowDefinitions>
-                <RowDefinition Height="Auto"/>
-                <RowDefinition Height="Auto"/>
-                <RowDefinition Height="Auto"/>
-                <RowDefinition Height="Auto"/>
-                <RowDefinition Height="Auto"/>
-            </Grid.RowDefinitions>
-            <Grid Grid.Row="0">
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="1.2*"/>
-                    <ColumnDefinition Width="*"/>
-                </Grid.ColumnDefinitions>
-                <Grid Grid.Column="0">
-                    <Label Text="Your Utility Company"
+        <RelativeLayout>
+            <Grid x:Name="RootLayout" Margin="10" RowSpacing="20">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+
+                <Grid Grid.Row="0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="1.2*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <Grid Grid.Column="0">
+                        <Label Text="Your Utility Company"
                            TextColor="Black"
                            FontAttributes="Bold"
                            VerticalOptions="Center"
                            HorizontalOptions="Center"
                            FontSize="Small"/>
+                    </Grid>
+
+                    <Grid Grid.Column="1" ColumnSpacing="15">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+
+                        <Grid Grid.Column="0">
+                            <Frame Padding="5" Margin="0" BackgroundColor="LightGray" CornerRadius="5" HeightRequest="-1">
+                                <!--<Label Text="8.50c" TextColor="White" HorizontalOptions="Center" VerticalOptions="Center"/>-->
+                                <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+                                    <Label
+                                        x:Name="XFLBLCompanyName"
+                                        Text="{Binding selectedCompany.companyName}"
+                                        TextColor="#858585"
+                                        LineBreakMode="TailTruncation"
+                                        HorizontalTextAlignment="Center"
+                                        BackgroundColor="Transparent" />
+                                    
+                                    <Image 
+                                        Source="drop_down.png" 
+                                        VerticalOptions="Center" 
+                                        HorizontalOptions="Center"/>
+
+                                    <StackLayout.GestureRecognizers>
+                                        <TapGestureRecognizer NumberOfTapsRequired="1" Tapped="XFLblCompany_Clicked"/>
+                                    </StackLayout.GestureRecognizers>
+                                </StackLayout>
+                            </Frame>
+                        </Grid>
+
+                        <Grid Grid.Column="1">
+                            <Frame Padding="5" Margin="0" BackgroundColor="White" BorderColor="LightGray" CornerRadius="5" HeightRequest="-1">
+                                <Label x:Name="XFLBKCompanyRate" Text="8.50c" TextColor="Gray" HorizontalOptions="Center" VerticalOptions="Center"/>
+                            </Frame>
+                        </Grid>
+                    </Grid>
                 </Grid>
-                <Grid Grid.Column="1" ColumnSpacing="15">
+
+                <Grid Grid.Row="1">
                     <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="*"/>
-                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="0.15*"/>
+                        <ColumnDefinition Width="0.60*"/>
+                        <ColumnDefinition Width="0.25*"/>
                     </Grid.ColumnDefinitions>
+
                     <Grid Grid.Column="0">
-                        <Frame Padding="5" Margin="0" BackgroundColor="LightGray" CornerRadius="5" HeightRequest="-1">
-                            <Label Text="8.50c" TextColor="White" HorizontalOptions="Center" VerticalOptions="Center"/>
-                        </Frame>
                     </Grid>
+
                     <Grid Grid.Column="1">
-                        <Frame Padding="5" Margin="0" BackgroundColor="White" BorderColor="LightGray" CornerRadius="5" HeightRequest="-1">
-                            <Label Text="8.50c" TextColor="Gray" HorizontalOptions="Center" VerticalOptions="Center"/>
-                        </Frame>
+                        <BoxView HeightRequest="1" BackgroundColor="LightGray" HorizontalOptions="FillAndExpand" VerticalOptions="Start"/>
+                        <Label Margin="0,10,0,10" HorizontalTextAlignment="Center">
+                            <Label.FormattedText>
+                                <FormattedString>
+                                    <Span 
+                                    Text="Future annual savings  "
+                                    FontSize="13"
+                                    TextColor="Black"/>
+                                    <Span 
+                                    Text="{Binding compareListDetails.futureAnnualSavings, StringFormat='${0}'}"
+                                    FontSize="14"
+                                    TextColor="#F58C0E"/>
+                                </FormattedString>
+
+                            </Label.FormattedText>
+                        </Label>
+                        <BoxView HeightRequest="1" BackgroundColor="LightGray" HorizontalOptions="FillAndExpand" VerticalOptions="End"/>
+                    </Grid>
+
+                    <Grid Grid.Column="2">
+                        <Image VerticalOptions="Center" HorizontalOptions="Center" Source="question.png"/>
                     </Grid>
                 </Grid>
-            </Grid>
-            <Grid Grid.Row="1">
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="0.15*"/>
-                    <ColumnDefinition Width="0.60*"/>
-                    <ColumnDefinition Width="0.25*"/>
-                </Grid.ColumnDefinitions>
-                <Grid Grid.Column="0">
-                    
+
+                <Grid Grid.Row="2">
+                    <Label Text="Our Best Picks" TextColor="#6D5E61" FontSize="17" VerticalOptions="Center" HorizontalOptions="Center"/>
                 </Grid>
-                <Grid Grid.Column="1">
-                    <BoxView HeightRequest="1" BackgroundColor="Yellow" HorizontalOptions="FillAndExpand" VerticalOptions="Start"/>
-                    <Label Text="{Binding compareListDetails.futureAnnualSavings,StringFormat='Future annual savings    ${0}'}"  
-                           Margin="0,10,0,10"/>
-                    <BoxView HeightRequest="1" BackgroundColor="Yellow" HorizontalOptions="FillAndExpand" VerticalOptions="End"/>
-                </Grid>
-                <Grid Grid.Column="2">
-                    <Image VerticalOptions="Center" HorizontalOptions="Center" Source="info.png"/>
-                </Grid>
-            </Grid>
-            <Grid Grid.Row="2">
-                <Label Text="Our Best Picks" TextColor="Gray" VerticalOptions="Center" HorizontalOptions="Center"/>
-            </Grid>
-            <Grid Grid.Row="3">
-                <ListView x:Name="RateComparisionList"  HasUnevenRows="True" SeparatorColor="Transparent" >
-                    <ListView.ItemTemplate>
-                        <DataTemplate>
-                            <ViewCell>
-                                <Frame HasShadow="True" Padding="10" Margin="0" BackgroundColor="White" HeightRequest="-1" CornerRadius="5">
-                                    <Grid>
-                                        <Grid.ColumnDefinitions>
-                                            <ColumnDefinition Width="0.4*"/>
-                                            <ColumnDefinition Width="0.4*"/>
-                                            <ColumnDefinition Width="0.2*"/>
-                                        </Grid.ColumnDefinitions>
-                                        <Grid Grid.Column="0" Padding="10">
-                                            <Image VerticalOptions="Center" HorizontalOptions="Center" Aspect="AspectFit" Source="publicpower.png"/>
-                                        </Grid>
-                                        <Grid Grid.Column="1">
-                                            <Grid.RowDefinitions>
-                                                <RowDefinition Height="*"/>
-                                                <RowDefinition Height="*"/>
-                                            </Grid.RowDefinitions>
-                                            <Grid Grid.Row="0">
-                                                <Label Text="{Binding retailerName}" TextColor="#AB9A9A" VerticalOptions="Center" HorizontalOptions="Center" FontSize="Small"/>
+
+                <Grid Grid.Row="3">
+                    <ListView x:Name="RateComparisionList" HasUnevenRows="True" SeparatorVisibility="None" SelectionMode="None" >
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <ViewCell>
+                                    <Frame Margin="5" VerticalOptions="Center" CornerRadius="5" HasShadow="True" Padding="0,0,2,2" BackgroundColor="#a8aaa9">
+                                        <Frame VerticalOptions="Center" BackgroundColor="White" CornerRadius="5" HasShadow="True" Padding="5,10,5,10">
+                                            <Grid ColumnSpacing="5">
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition Width="0.3*"/>
+                                                    <ColumnDefinition Width="0.45*"/>
+                                                    <ColumnDefinition Width="0.25*"/>
+                                                </Grid.ColumnDefinitions>
+
+                                                <Grid Grid.Column="0" Padding="10">
+                                                    <Image 
+                                                    VerticalOptions="FillAndExpand" 
+                                                    HorizontalOptions="FillAndExpand" 
+                                                    Aspect="AspectFit" 
+                                                    Source="{Binding imagePath}">
+                                                        <Image.GestureRecognizers>
+                                                            <TapGestureRecognizer 
+                                                            NumberOfTapsRequired="1"
+                                                            Tapped="XFPlanDetail_Clicked"/>
+                                                        </Image.GestureRecognizers>
+                                                    </Image>
+                                                </Grid>
+
+                                                <Grid Grid.Column="1">
+                                                    <Grid.RowDefinitions>
+                                                        <RowDefinition Height="*"/>
+                                                        <RowDefinition Height="*"/>
+                                                    </Grid.RowDefinitions>
+
+                                                    <Grid Grid.Row="0">
+                                                        <Label Text="{Binding retailerName}" TextColor="#AB9A9A" VerticalOptions="Center" LineBreakMode="TailTruncation" HorizontalOptions="Start" FontSize="Small"/>
+                                                    </Grid>
+
+                                                    <Grid Grid.Row="1">
+                                                        <Label Text="{Binding rate, StringFormat='{0:C2}c'}" TextColor="#AB9A9A" VerticalOptions="Center" HorizontalOptions="Start" FontSize="Small"/>
+                                                    </Grid>
+                                                </Grid>
+
+                                                <Grid Grid.Column="2">
+                                                    <Grid.RowDefinitions>
+                                                        <RowDefinition Height="*"/>
+                                                        <RowDefinition Height="*"/>
+                                                    </Grid.RowDefinitions>
+
+                                                    <Grid Grid.Row="0">
+                                                        <Button 
+                                                        Text="{Binding duration,StringFormat='{0} Months'}" 
+                                                        FontSize="Micro" 
+                                                        Padding="0,0,10,0"
+                                                        BorderRadius="10"
+                                                        TextColor="#AB9A9A"
+                                                        BackgroundColor="White"
+                                                        CornerRadius="10"
+                                                        HeightRequest="20"
+                                                        BorderWidth="1" 
+                                                        BorderColor="#AB9A9A"/>
+                                                    </Grid>
+
+                                                    <Grid Grid.Row="1">
+                                                        <Button 
+                                                        CornerRadius="5" 
+                                                        BorderRadius="5" 
+                                                        Text="Select" 
+                                                        x:Name="XFBtnPlanDetail"
+                                                        TextColor="White"
+                                                        Image="next.png"                                           
+                                                        ContentLayout="Right,5"                      
+                                                        FontSize="Micro"
+                                                        Padding="0,0,10,0"
+                                                        HeightRequest="20" 
+                                                        Clicked="XFBtnPlanDetail_Clicked"
+                                                        BackgroundColor="#FF9408"/>
+                                                    </Grid>
+                                                </Grid>
                                             </Grid>
-                                            <Grid Grid.Row="1">
-                                                <Label Text="{Binding rate}" TextColor="#AB9A9A" VerticalOptions="Center" HorizontalOptions="Center" FontSize="Small"/>
-                                            </Grid>
-                                        </Grid>
-                                        <Grid Grid.Column="2">
-                                            <Grid.RowDefinitions>
-                                                <RowDefinition Height="*"/>
-                                                <RowDefinition Height="*"/>
-                                            </Grid.RowDefinitions>
-                                            <Grid Grid.Row="0">
-                                                <Button Text="{Binding duration,StringFormat='{0} Months'}" 
-                                            FontSize="Micro" 
-                                            Padding="0,0,10,0"
-                                            BorderRadius="10"
-                                            TextColor="#AB9A9A"
-                                             BackgroundColor="White"
-                                            CornerRadius="10"
-                                            HeightRequest="20"
-                                            BorderWidth="1" 
-                                            BorderColor="#AB9A9A"/>
-                                            </Grid>
-                                            <Grid Grid.Row="1">
-                                                <Button CornerRadius="5" 
-                                       BorderRadius="5" 
-                                        Text="Select" 
-                                          x:Name="XFBtnPlanDetail"
-                                          TextColor="White"
-                                            Image="next.png"                                           
-                                            ContentLayout="Right,5"                      
-                                            FontSize="Micro"
-                                            Padding="0,0,10,0"
-                                             HeightRequest="20" 
-                                             Clicked="XFBtnPlanDetail_Clicked"
-                                    BackgroundColor="#FF9408"/>
-                                            </Grid>
-                                        </Grid>
-                                    </Grid>
-                                </Frame>
-                            </ViewCell>
-                        </DataTemplate>
-                    </ListView.ItemTemplate>
-                </ListView>
-                <ActivityIndicator  Color="#F18601"
+                                        </Frame>
+                                    </Frame>
+                                </ViewCell>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+
+                    <ActivityIndicator  Color="#F18601"
                                     IsRunning="True"
                                     x:Name="XFActivityIndicator"
                                     IsVisible="False" 
                                     VerticalOptions="Center"
                                     HorizontalOptions="Center"/>
+                </Grid>
+
+                <Grid Grid.Row="4">
+                    <Button 
+                    CornerRadius="5" 
+                    BorderRadius="5" 
+                    Text="More Plans" 
+                    TextColor="White" 
+                    Clicked="XFBtnLoadPlans_Clicked"
+                    BackgroundColor="#FF9408"/>
+                </Grid>
             </Grid>
-            <Grid Grid.Row="4">
-                <Button CornerRadius="5" 
-                            BorderRadius="5" 
-                            Text="More Plans" 
-                            TextColor="White" 
-                        Clicked="XFBtnLoadPlans_Clicked"
-                            BackgroundColor="#FF9408"/>
-            </Grid>
-        </Grid>
+
+            <ContentView 
+                x:Name="XFCVCompanyPopup" 
+                IsVisible="False"
+                BackgroundColor="#C0808080"
+                RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=X, Factor=0, Constant = 0}"
+                RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Y, Factor=0, Constant = 0}"
+                RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=1, Constant = 0}"
+                RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=1, Constant = 0}">
+
+                <ListView
+                    x:Name="XFListCompanyName"
+                    BackgroundColor="White"
+                    VerticalOptions="CenterAndExpand"
+                    HorizontalOptions="CenterAndExpand"
+                    Margin="20,0,20,0"
+                    SeparatorColor="Gray"
+                    ItemSelected="XFListView_ItemSelected" >
+
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell Height="50">
+                                <Frame Padding="5,0,5,0" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+                                    <Label 
+                                        Text="{Binding companyName}" 
+                                        TextColor="Black" 
+                                        HorizontalOptions="FillAndExpand" 
+                                        VerticalOptions="CenterAndExpand"/>
+                                </Frame>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+
+                <ContentView.GestureRecognizers>
+                    <TapGestureRecognizer NumberOfTapsRequired="1" Tapped="XFPopupCancel_Clicked" />
+                </ContentView.GestureRecognizers>
+            </ContentView>
+        </RelativeLayout>
     </ContentPage.Content>
 </ContentPage>

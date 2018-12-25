@@ -1,7 +1,33 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             NavigationPage.HasBackButton="False"
              x:Class="SqueezeBill.Views.ElectricityAndGas.PlansDetails">
+
+    <NavigationPage.TitleView>
+        <Grid VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" >
+            <!--<Grid.ColumnDefinitions>
+                <ColumnDefinition Width="0.15"/>
+                <ColumnDefinition Width="0.7"/>
+                <ColumnDefinition Width="0.15"/>
+            </Grid.ColumnDefinitions>-->
+            
+            <Image VerticalOptions="Center" Margin="0,0,20,0" HorizontalOptions="Start" Source="back.png">
+                <Image.GestureRecognizers>
+                    <TapGestureRecognizer NumberOfTapsRequired="1" Tapped="XFImgBack_Tapped"/>
+                </Image.GestureRecognizers>
+            </Image>
+
+            <Label Grid.Column="1" x:Name="XFLabelPlanTitle" Text="Plans" VerticalOptions="Center" LineBreakMode="TailTruncation" FontAttributes="Bold" TextColor="White" HorizontalOptions="Center" Margin="-80,0,0,0" FontSize="Medium" />
+
+            <Image Grid.Column="2" VerticalOptions="Center" Margin="0,0,20,0" HorizontalOptions="End" Source="notification.png">
+                <Image.GestureRecognizers>
+                    <TapGestureRecognizer NumberOfTapsRequired="1" Tapped="XFImgNotification_Tapped"/>
+                </Image.GestureRecognizers>
+            </Image>
+        </Grid>
+    </NavigationPage.TitleView>
+    
     <ContentPage.Content>
         <Grid x:Name="RootLayout">
             <Grid.RowDefinitions>

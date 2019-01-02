@@ -1,15 +1,15 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             NavigationPage.HasBackButton="False"
+             NavigationPage.HasBackButton="True"
              x:Class="SqueezeBill.Views.ElectricityAndGas.ElectricityAndGasPlans">
     <NavigationPage.TitleView>
         <Grid VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
-            <Image VerticalOptions="Center" Margin="0,0,20,0" HorizontalOptions="Start" Source="back.png">
+            <!--<Image VerticalOptions="Center" Margin="0,0,20,0" HorizontalOptions="Start" Source="back.png">
                 <Image.GestureRecognizers>
                     <TapGestureRecognizer NumberOfTapsRequired="1" Tapped="XFImgBack_Tapped"/>
                 </Image.GestureRecognizers>
-            </Image>
+            </Image>-->
 
             <Label Text="Plans" VerticalOptions="Center" FontAttributes="Bold" TextColor="White" HorizontalOptions="Center" Margin="-80,0,0,0" FontSize="Medium" />
 
@@ -27,6 +27,7 @@
                 <RowDefinition Height="Auto"/>
                 <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
+            
             <Grid Grid.Row="0">
                 <!--<Frame HasShadow="True" Padding="10" Margin="0" BackgroundColor="White" HeightRequest="-1" CornerRadius="5">
                     <Grid>
@@ -77,20 +78,21 @@
                                         <Grid ColumnSpacing="5">
                                             <Grid.ColumnDefinitions>
                                                 <ColumnDefinition Width="0.3*"/>
-                                                <ColumnDefinition Width="0.45*"/>
-                                                <ColumnDefinition Width="0.25*"/>
+                                                <ColumnDefinition Width="0.4*"/>
+                                                <ColumnDefinition Width="0.3*"/>
                                             </Grid.ColumnDefinitions>
 
                                             <Grid Grid.Column="0" Padding="10">
                                                 <Image 
-                                                    VerticalOptions="FillAndExpand" 
-                                                    HorizontalOptions="FillAndExpand" 
-                                                    Aspect="AspectFill" 
-                                                    Source="{Binding imagePath}">
+                                                        VerticalOptions="FillAndExpand" 
+                                                        HorizontalOptions="FillAndExpand" 
+                                                        Aspect="AspectFit" 
+                                                        Source="{Binding imagePath}">
+
                                                     <Image.GestureRecognizers>
                                                         <TapGestureRecognizer 
-                                                            NumberOfTapsRequired="1"
-                                                            Tapped="XFPlanDetail_Clicked"/>
+                                                                NumberOfTapsRequired="1"
+                                                                Tapped="XFPlanDetail_Clicked"/>
                                                     </Image.GestureRecognizers>
                                                 </Image>
                                             </Grid>
@@ -102,11 +104,24 @@
                                                 </Grid.RowDefinitions>
 
                                                 <Grid Grid.Row="0">
-                                                    <Label Text="{Binding retailerName}" TextColor="#AB9A9A" VerticalOptions="Center" LineBreakMode="TailTruncation" HorizontalOptions="Start" FontSize="Small"/>
+                                                    <Label
+                                                        Text="{Binding retailerName}" 
+                                                        TextColor="#AB9A9A" 
+                                                        VerticalOptions="Center" 
+                                                        HorizontalOptions="Start" 
+                                                        LineBreakMode="TailTruncation" 
+                                                        VerticalTextAlignment="Center"
+                                                        FontSize="14"/>
                                                 </Grid>
 
                                                 <Grid Grid.Row="1">
-                                                    <Label Text="{Binding rate, StringFormat='{0:C2}c'}" TextColor="#AB9A9A" VerticalOptions="Center" HorizontalOptions="Start" FontSize="Small"/>
+                                                    <Label
+                                                        Text="{Binding rate, StringFormat='{0:F2}c'}" 
+                                                        TextColor="#AB9A9A" 
+                                                        VerticalOptions="Center" 
+                                                        HorizontalOptions="Start"
+                                                        VerticalTextAlignment="Center"
+                                                        FontSize="14"/>
                                                 </Grid>
                                             </Grid>
 
@@ -117,31 +132,51 @@
                                                 </Grid.RowDefinitions>
 
                                                 <Grid Grid.Row="0">
-                                                    <Button 
-                                                        Text="{Binding duration,StringFormat='{0} Months'}" 
-                                                        FontSize="Micro" 
-                                                        Padding="0,0,10,0"
-                                                        BorderRadius="10"
-                                                        TextColor="#AB9A9A"
-                                                        BackgroundColor="White"
-                                                        CornerRadius="10"
-                                                        HeightRequest="20"
-                                                        BorderWidth="1" 
-                                                        BorderColor="#AB9A9A"/>
+                                                    <Frame 
+                                                            Padding="5" 
+                                                            Margin="0" 
+                                                            HorizontalOptions="Center" 
+                                                            BackgroundColor="White" 
+                                                            BorderColor="#AB9A9A" 
+                                                            CornerRadius="5" 
+                                                            HeightRequest="-1">
+
+                                                        <Label 
+                                                                Margin="5,0,5,0" 
+                                                                Text="{Binding duration,StringFormat='{0} Months'}" 
+                                                                FontSize="14"
+                                                                TextColor="#AB9A9A" 
+                                                                HeightRequest="25"
+                                                                VerticalTextAlignment="Center"
+                                                                HorizontalOptions="Center" 
+                                                                VerticalOptions="Center"/>
+                                                    </Frame>
+
+                                                    <!--<Button 
+                                                            Text="{Binding duration,StringFormat='{0} Months'}" 
+                                                            FontSize="14" 
+                                                            Padding="0,0,10,0"
+                                                            BorderRadius="10"
+                                                            TextColor="#AB9A9A"
+                                                            BackgroundColor="White"
+                                                            CornerRadius="10"
+                                                            HeightRequest="30"
+                                                            BorderWidth="1" 
+                                                            BorderColor="#AB9A9A"/>-->
                                                 </Grid>
 
                                                 <Grid Grid.Row="1">
-                                                    <Button 
+                                                    <Button
+                                                        x:Name="XFBtnPlanDetail"
                                                         CornerRadius="5" 
                                                         BorderRadius="5" 
                                                         Text="Select" 
-                                                        x:Name="XFBtnPlanDetail"
                                                         TextColor="White"
-                                                        Image="next.png"                                           
-                                                        ContentLayout="Right,5"                      
-                                                        FontSize="Micro"
+                                                        Image="arrow_next.png"                                           
+                                                        ContentLayout="Right,0"                      
+                                                        FontSize="14"
                                                         Padding="0,0,10,0"
-                                                        HeightRequest="20" 
+                                                        HeightRequest="25" 
                                                         Clicked="XFBtnPlanDetail_Clicked"
                                                         BackgroundColor="#FF9408"/>
                                                 </Grid>
@@ -153,12 +188,14 @@
                         </DataTemplate>
                     </ListView.ItemTemplate>
                 </ListView>
-                <ActivityIndicator  Color="#F18601"
-                                    IsRunning="True"
-                                    x:Name="XFActivityIndicator"
-                                    IsVisible="False" 
-                                    VerticalOptions="Center"
-                                    HorizontalOptions="Center"/>
+                
+                <ActivityIndicator  
+                    Color="#F18601"
+                    IsRunning="True"
+                    x:Name="XFActivityIndicator"
+                    IsVisible="False" 
+                    VerticalOptions="Center"
+                    HorizontalOptions="Center"/>
             </Grid>
         </Grid>
     </ContentPage.Content>

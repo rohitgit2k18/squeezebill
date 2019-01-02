@@ -1,17 +1,17 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             NavigationPage.HasBackButton="False"
+             NavigationPage.HasBackButton="True"
              xmlns:range="clr-namespace:Syncfusion.SfRangeSlider.XForms;assembly=Syncfusion.SfRangeSlider.XForms"
              xmlns:ext="clr-namespace:XFCustomControls.Ext;assembly=XFCustomControls.Ext"
              x:Class="SqueezeBill.Views.ElectricityAndGas.ListingFilterPage">
     <NavigationPage.TitleView>
         <Grid VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
-            <Image VerticalOptions="Center" Margin="0,0,20,0" HorizontalOptions="Start" Source="back.png">
+            <!--<Image VerticalOptions="Center" Margin="0,0,20,0" HorizontalOptions="Start" Source="back.png">
                 <Image.GestureRecognizers>
                     <TapGestureRecognizer NumberOfTapsRequired="1" Tapped="XFImgBack_Tapped"/>
                 </Image.GestureRecognizers>
-            </Image>
+            </Image>-->
 
             <Label Text="Filter" VerticalOptions="Center" FontAttributes="Bold" TextColor="White" HorizontalOptions="Center" Margin="-80,0,0,0" FontSize="Medium" />
 

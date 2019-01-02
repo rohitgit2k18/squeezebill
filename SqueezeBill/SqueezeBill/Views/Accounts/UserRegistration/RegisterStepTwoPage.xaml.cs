@@ -1,4 +1,5 @@
 ﻿using SqueezeBill.Services.Models.RequestModels;
+using SqueezeBill.Services.Models.ResponseModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,13 +16,26 @@ namespace SqueezeBill.Views.Accounts.UserRegistration
 	{
         #region Variable Declaration        
         private UserRegistrationRequest _objUserRegistrationRequest;
+
+        private RetailerList _objRetailerList;
         #endregion
-        public RegisterStepTwoPage (UserRegistrationRequest objUserRegistrationRequest)
+        public RegisterStepTwoPage (UserRegistrationRequest objUserRegistrationRequest, RetailerList objRetailerList)
 		{
 			InitializeComponent ();
-            _objUserRegistrationRequest = new UserRegistrationRequest();
 
+            _objRetailerList = new RetailerList();
+            if (objRetailerList != null)
+            {
+                _objRetailerList = objRetailerList;
+
+                imgCompanyLogo.Source = objRetailerList.imagePath;
+                XFLBLCompanyRate.Text = $"{objRetailerList.rate:0.00}" + "c";
+                XFBTN_Duration.Text = objRetailerList.duration + " Months";
+            }
+
+            _objUserRegistrationRequest = new UserRegistrationRequest();
             _objUserRegistrationRequest = objUserRegistrationRequest;
+
             this.BindingContext = _objUserRegistrationRequest;
         }
 
@@ -39,9 +53,14 @@ namespace SqueezeBill.Views.Accounts.UserRegistration
             }
             else
             {
-                App.NavigationPage.Navigation.PushAsync(new RegisterStepThreePage(_objUserRegistrationRequest));
+                App.NavigationPage.Navigation.PushAsync(new RegisterStepThreePage(_objUserRegistrationRequest, _objRetailerList));
             }
            
+        }
+
+        private void XFBTNDisclosure_Click(object sender, EventArgs e)
+        {
+            App.NavigationPage.Navigation.PushAsync(new DisclousersPage());
         }
     }
 }

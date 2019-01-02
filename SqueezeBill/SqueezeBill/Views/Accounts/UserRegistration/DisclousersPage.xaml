@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             Title="Disclouser"
+             x:Class="SqueezeBill.Views.Accounts.UserRegistration.DisclousersPage">
+    <ContentPage.Content>
+        <StackLayout BackgroundColor="Green">
+            <WebView
+                BackgroundColor="Blue"
+                VerticalOptions="FillAndExpand"
+                HorizontalOptions="FillAndExpand"
+                Source="http://203.122.21.195:150/Home/Disclosure"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

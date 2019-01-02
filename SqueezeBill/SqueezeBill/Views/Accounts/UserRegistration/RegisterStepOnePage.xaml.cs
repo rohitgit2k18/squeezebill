@@ -1,5 +1,6 @@
 ﻿using Plugin.Connectivity;
 using SqueezeBill.Services.Models.RequestModels;
+using SqueezeBill.Services.Models.ResponseModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -20,10 +21,23 @@ namespace SqueezeBill.Views.Accounts.UserRegistration
           @"(?(\[)(\[(\d{1,3}\.){3}\d{1,3}\])|(([0-9a-z][-\w]*[0-9a-z]*\.)+[a-z0-9][\-a-z0-9]{0,22}[a-z0-9]))$";
         private bool IsValid { get; set; }
         private UserRegistrationRequest _objUserRegistrationRequest;
+
+        private RetailerList _objRetailerList;
         #endregion
-        public RegisterStepOnePage ()
+        public RegisterStepOnePage (RetailerList objRetailerList)
 		{
 			InitializeComponent ();
+
+            _objRetailerList = new RetailerList();
+            if (objRetailerList != null)
+            {
+                _objRetailerList = objRetailerList;
+
+                imgCompanyLogo.Source = objRetailerList.imagePath;
+                XFLBLCompanyRate.Text = $"{objRetailerList.rate:0.00}" + "c";
+                XFBTN_Duration.Text = objRetailerList.duration + " Months";
+            }
+
             _objUserRegistrationRequest = new UserRegistrationRequest();
             this.BindingContext = _objUserRegistrationRequest;
 
@@ -61,7 +75,7 @@ namespace SqueezeBill.Views.Accounts.UserRegistration
                     }
                     else
                     {
-                        App.NavigationPage.Navigation.PushAsync(new RegisterStepTwoPage(_objUserRegistrationRequest));
+                        App.NavigationPage.Navigation.PushAsync(new RegisterStepTwoPage(_objUserRegistrationRequest, _objRetailerList));
                     }
                 }
             }

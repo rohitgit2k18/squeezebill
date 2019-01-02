@@ -1,16 +1,16 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             NavigationPage.HasBackButton="False"
+             NavigationPage.HasBackButton="True"
              x:Class="SqueezeBill.Views.Accounts.UserRegistration.RegisterStepTwoPage">
     
     <NavigationPage.TitleView>
         <Grid VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
-            <Image VerticalOptions="Center" Margin="0,0,20,0" HorizontalOptions="Start" Source="back.png">
+            <!--<Image VerticalOptions="Center" Margin="0,0,20,0" HorizontalOptions="Start" Source="back.png">
                 <Image.GestureRecognizers>
                     <TapGestureRecognizer NumberOfTapsRequired="1" Tapped="XFImgBack_Tapped"/>
                 </Image.GestureRecognizers>
-            </Image>
+            </Image>-->
 
             <Label Text="Sign Up" VerticalOptions="Center" FontAttributes="Bold" TextColor="White" HorizontalOptions="Center" Margin="-80,0,0,0" FontSize="Medium" />
         </Grid>
@@ -25,56 +25,92 @@
                 <RowDefinition Height="40"/>
                 <RowDefinition Height="60"/>
             </Grid.RowDefinitions>
+            
             <Grid Grid.Row="0">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*"/>
                     <ColumnDefinition Width="1.5*"/>
                     <ColumnDefinition Width="*"/>
                 </Grid.ColumnDefinitions>
+                
                 <Grid Grid.Column="0">
-                    <Frame HeightRequest="-1" Margin="0" BackgroundColor="White" HasShadow="False" CornerRadius="5" Padding="5" BorderColor="LightGray">
-                        <Label Text="7.69c" 
-                               TextColor="LightGray" VerticalOptions="Center" HorizontalOptions="Center"
-                               FontSize="Micro" />
+                    <Frame HeightRequest="-1" Margin="0" BackgroundColor="White" HasShadow="False" CornerRadius="5" Padding="5" BorderColor="#D2D2D2">
+                        <Label 
+                            x:Name="XFLBLCompanyRate"
+                            Text="7.69c"
+                            TextColor="#D2D2D2" 
+                            VerticalOptions="Center" 
+                            HorizontalOptions="Center"
+                            FontSize="14" />
                     </Frame>
                 </Grid>
+
                 <Grid Grid.Column="1">
-                    <Image VerticalOptions="Center" HorizontalOptions="Center" Source="publicpower.png"/>
+                    <!--<Image VerticalOptions="Center" HorizontalOptions="Center" Source="publicpower.png"/>-->
+
+                    <Image
+                        x:Name="imgCompanyLogo"
+                        VerticalOptions="FillAndExpand" 
+                        HorizontalOptions="FillAndExpand" 
+                        HeightRequest="35"
+                        Margin="5,0,5,0"
+                        Aspect="AspectFit" 
+                        Source="publicpower.png"/>
                 </Grid>
+
                 <Grid Grid.Column="2">
-                    <Frame HeightRequest="-1" Margin="0" BackgroundColor="White" HasShadow="False" CornerRadius="5" Padding="5" BorderColor="LightGray">
-                        <Label Text="6 Month" 
-                               TextColor="LightGray" 
-                               FontSize="Micro" />
-                    </Frame>
+                    <Button 
+                        x:Name="XFBTN_Duration"
+                        FontSize="12"                                   
+                        BorderRadius="10"
+                        TextColor="Black" 
+                        BackgroundColor="#C5C5C5"
+                        CornerRadius="10"
+                        HorizontalOptions="Center"
+                        VerticalOptions="Center"                                                
+                        BorderWidth="0" 
+                        BorderColor="#AB9A9A"/>
+
+                    <!--<Frame HeightRequest="-1" Margin="0" BackgroundColor="White" HasShadow="False" CornerRadius="5" Padding="5" BorderColor="LightGray">
+                        <Label 
+                            Text="6 Month" 
+                            TextColor="LightGray" 
+                            FontSize="Micro" />
+                    </Frame>-->
                 </Grid>
             </Grid>
+            
             <Grid Grid.Row="1" RowSpacing="0">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="Auto"/>
                     <RowDefinition Height="Auto"/>
                 </Grid.RowDefinitions>
+                
                 <Grid Grid.Row="0">
                     <Image Source="part2.png" HorizontalOptions="FillAndExpand" VerticalOptions="Center"/>
                 </Grid>
+                
                 <Grid Grid.Row="1">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="*"/>
                         <ColumnDefinition Width="*"/>
                         <ColumnDefinition Width="*"/>
                     </Grid.ColumnDefinitions>
+                    
                     <Grid Grid.Column="0">
                         <Label VerticalOptions="Start"
                                HorizontalOptions="Center" 
                                Text="Personal Info." 
                                TextColor="#FF9408"/>
                     </Grid>
+                    
                     <Grid Grid.Column="1">
                         <Label VerticalOptions="Start"
                                HorizontalOptions="Center" 
                                Text="T And C" 
                                TextColor="#FF9408"/>
                     </Grid>
+                    
                     <Grid Grid.Column="2">
                         <Label VerticalOptions="Start"
                                HorizontalOptions="End" 
@@ -83,57 +119,74 @@
                     </Grid>
                 </Grid>
             </Grid>
+            
             <ScrollView  Grid.Row="2">
-            <Grid>
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="Auto"/>
-                    <RowDefinition Height="Auto"/>
-                    <RowDefinition Height="Auto"/>
-                </Grid.RowDefinitions>
-                <Grid Grid.Row="0">
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="Auto"/>
-                        <ColumnDefinition Width="*"/>
-                    </Grid.ColumnDefinitions>
-                    <Grid Grid.Column="0">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+                    
+                    <Grid Grid.Row="0">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        
+                        <Grid Grid.Column="0">
                             <Switch x:Name="XFSwitch1" IsToggled="{Binding termandCondition1}"/>
-                    </Grid>
-                    <Grid Grid.Column="1">
+                        </Grid>
+                        
+                        <Grid Grid.Column="1">
                             <Label Text="Mein Name ist Roger Rabbit. Ich bin einundzwanzig Jahre alt. Ich wohne in Birmingham. Ich lebe in Birmingham fur drei Monate. Ich komme aus London in England. Ich bin studentin (I'm male is studentin correct?) und ich studiere Erdkunde. Ich studiere erst zwei Monate. Ich habe keine Kinder. Ich habe zwei Hobbys, sind sie Leichtathletik und Fußball spielen." VerticalOptions="Center" HorizontalOptions="Start" HorizontalTextAlignment="Start"/>
+                        </Grid>
                     </Grid>
-                </Grid>
-                <Grid Grid.Row="1">
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="Auto"/>
-                        <ColumnDefinition Width="*"/>
-                    </Grid.ColumnDefinitions>
-                    <Grid Grid.Column="0">
+                    
+                    <Grid Grid.Row="1">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        
+                        <Grid Grid.Column="0">
                             <Switch x:Name="XFSwitch2" IsToggled="{Binding termandCondition2}"/>
-                    </Grid>
-                    <Grid Grid.Column="1">
+                        </Grid>
+                        
+                        <Grid Grid.Column="1">
                             <Label Text="Mein Name ist Roger Rabbit. Ich bin einundzwanzig Jahre alt. Ich wohne in Birmingham. Ich lebe in Birmingham fur drei Monate. Ich komme aus London in England. Ich bin studentin (I'm male is studentin correct?) und ich studiere Erdkunde. Ich studiere erst zwei Monate. Ich habe keine Kinder. Ich habe zwei Hobbys, sind sie Leichtathletik und Fußball spielen." VerticalOptions="Center" HorizontalOptions="Start" HorizontalTextAlignment="Start"/>
+                        </Grid>
                     </Grid>
-                </Grid>
-                <Grid Grid.Row="2">
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="Auto"/>
-                        <ColumnDefinition Width="*"/>
-                    </Grid.ColumnDefinitions>
-                    <Grid Grid.Column="0">
+                    
+                    <Grid Grid.Row="2">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+
+                        <Grid Grid.Column="0">
                             <Switch x:Name="XFSwitch3" IsToggled="{Binding termandCondition3}"/>
-                    </Grid>
-                    <Grid Grid.Column="1">
+                        </Grid>
+
+                        <Grid Grid.Column="1">
                             <Label Text="Mein Name ist Roger Rabbit. Ich bin einundzwanzig Jahre alt. Ich wohne in Birmingham. Ich lebe in Birmingham fur drei Monate. Ich komme aus London in England. Ich bin studentin (I'm male is studentin correct?) und ich studiere Erdkunde. Ich studiere erst zwei Monate. Ich habe keine Kinder. Ich habe zwei Hobbys, sind sie Leichtathletik und Fußball spielen." VerticalOptions="Center" HorizontalOptions="Start" HorizontalTextAlignment="Start"/>
+                        </Grid>
                     </Grid>
                 </Grid>
-            </Grid>
             </ScrollView>
+
             <Grid Grid.Row="3">
-                <Label Text="Disclousers"  
-                       HorizontalOptions="Center"
-                       VerticalOptions="Center"
-                       TextColor="#FF9408"/>
+                <Label 
+                    Text="Disclousers"
+                    HorizontalOptions="Center"
+                    VerticalOptions="Center"
+                    TextColor="#FF9408">
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer NumberOfTapsRequired="1" Tapped="XFBTNDisclosure_Click" />
+                    </Label.GestureRecognizers>
+                </Label>
             </Grid>
+            
             <Grid Grid.Row="4" Padding="0,20,10,0">
                 <Button CornerRadius="5" 
                             BorderRadius="5" 

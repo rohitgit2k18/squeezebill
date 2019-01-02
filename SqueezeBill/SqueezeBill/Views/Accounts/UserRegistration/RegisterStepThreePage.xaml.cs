@@ -22,14 +22,30 @@ namespace SqueezeBill.Views.Accounts.UserRegistration
         private UserRegistrationResponse _objUserRegistrationResponse;
         private RestApi _apiService;
         private string _baseUrl;
+
+        private RetailerList _objRetailerList;
         #endregion
-        public RegisterStepThreePage (UserRegistrationRequest objUserRegistrationRequest)
+        public RegisterStepThreePage (UserRegistrationRequest objUserRegistrationRequest, RetailerList objRetailerList)
 		{
 			InitializeComponent ();
+
+            _objRetailerList = new RetailerList();
+            if (objRetailerList != null)
+            {
+                _objRetailerList = objRetailerList;
+
+                imgCompanyLogo.Source = objRetailerList.imagePath;
+                XFLBLCompanyRate.Text = $"{objRetailerList.rate:0.00}" + "c";
+                XFBTN_Duration.Text = objRetailerList.duration + " Months";
+            }
+
             _objUserRegistrationRequest = new UserRegistrationRequest();
             _objUserRegistrationRequest = objUserRegistrationRequest;
+
             this.BindingContext = _objUserRegistrationRequest;
+
             _objUserRegistrationResponse = new UserRegistrationResponse();
+
             _apiService = new RestApi();
             _baseUrl = Domain.Url + Domain.UserSignUpApiConstant;
         }

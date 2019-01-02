@@ -140,9 +140,13 @@ namespace SqueezeBill.Views.ElectricityAndGas
             App.NavigationPage.Navigation.PushAsync(new ElectricityAndGasPlans(_objComapreRatesByZipcodeResponse));
         }
 
-        private void XFBtnPlanDetail_Clicked(object sender, EventArgs e)
+        private void XFBtnSelectPlan_Clicked(object sender, EventArgs e)
         {
-            App.NavigationPage.Navigation.PushAsync(new RegisterStepOnePage());
+            Button btn = (Button)sender;
+            object bindingContext = btn.BindingContext;
+            RetailerList objRetailerList = bindingContext as RetailerList;
+
+            App.NavigationPage.Navigation.PushAsync(new RegisterStepOnePage(objRetailerList));
         }
 
         private void XFImgFilter_Tapped(object sender, EventArgs e)

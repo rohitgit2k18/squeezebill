@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             NavigationPage.HasBackButton="False"
+             NavigationPage.HasBackButton="True"
              x:Class="SqueezeBill.Views.ElectricityAndGas.PlansDetails">
 
     <NavigationPage.TitleView>
@@ -12,11 +12,11 @@
                 <ColumnDefinition Width="0.15"/>
             </Grid.ColumnDefinitions>-->
             
-            <Image VerticalOptions="Center" Margin="0,0,20,0" HorizontalOptions="Start" Source="back.png">
+            <!--<Image VerticalOptions="Center" Margin="0,0,20,0" HorizontalOptions="Start" Source="back.png">
                 <Image.GestureRecognizers>
                     <TapGestureRecognizer NumberOfTapsRequired="1" Tapped="XFImgBack_Tapped"/>
                 </Image.GestureRecognizers>
-            </Image>
+            </Image>-->
 
             <Label Grid.Column="1" x:Name="XFLabelPlanTitle" Text="Plans" VerticalOptions="Center" LineBreakMode="TailTruncation" FontAttributes="Bold" TextColor="White" HorizontalOptions="Center" Margin="-80,0,0,0" FontSize="Medium" />
 
@@ -36,21 +36,32 @@
                 <RowDefinition Height="Auto"/>
                 <RowDefinition Height="Auto"/>
             </Grid.RowDefinitions>
-            <Grid Grid.Row="0" Padding="15">
-                <Image VerticalOptions="Center" HorizontalOptions="Center" Source="publicpower.png"/>
+            
+            <Grid Grid.Row="0" Padding="10">
+                <!--<Image x:Name="imgCompanyLogo" VerticalOptions="Center" HorizontalOptions="Center" Source="publicpower.png"/>-->
+
+                <Image
+                    x:Name="imgCompanyLogo"
+                    VerticalOptions="FillAndExpand" 
+                    HorizontalOptions="FillAndExpand" 
+                    HeightRequest="35"
+                    Aspect="AspectFit" 
+                    Source=""/>
             </Grid>
+            
             <Grid Grid.Row="1">
                 <Button Text="{Binding details.duration,StringFormat='{0} Month'}" 
-                        FontSize="Micro"                                   
+                        FontSize="14"                                   
                         BorderRadius="10"
-                        TextColor="#AB9A9A" 
-                        BackgroundColor="#C5C5C3"
+                        TextColor="Black" 
+                        BackgroundColor="#C5C5C5"
                         CornerRadius="10"
                         HorizontalOptions="Center"
                         VerticalOptions="Center"                                                
-                        BorderWidth="1" 
+                        BorderWidth="0" 
                         BorderColor="#AB9A9A"/>
             </Grid>
+            
             <ScrollView Grid.Row="2">
                 <Grid  BackgroundColor="LightGray" RowSpacing="1">
                 <Grid.RowDefinitions>

@@ -123,7 +123,7 @@ namespace SqueezeBill.Views.Accounts
         {
             try
             {
-                App.NavigationPage.Navigation.PushAsync(new RegisterStepOnePage());
+                App.NavigationPage.Navigation.PushAsync(new RegisterStepOnePage(null));
             }
             catch(Exception ex)
             {

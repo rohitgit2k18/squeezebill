@@ -26,12 +26,18 @@ namespace SqueezeBill.Views.ElectricityAndGas
         public PlansDetails(RetailerList objRetailerList)
         {
             InitializeComponent();
+
             _objRetailerList = new RetailerList();
             _objRetailerList = objRetailerList;
+
             _objElectricityAndGasPlanDetailsResponse = new ElectricityAndGasPlanDetailsResponse();
+
             _apiService = new RestApi();
             _baseUrl = Domain.Url + Domain.ElectricityAndGasDetailApiConstant;
+
             XFLabelPlanTitle.Text = objRetailerList.retailerName;
+            imgCompanyLogo.Source = objRetailerList.imagePath;
+
             GetPlanDetailsbyId();
         }
 
@@ -74,7 +80,7 @@ namespace SqueezeBill.Views.ElectricityAndGas
 
         private void XFBtnPlansDetails_Clicked(object sender, EventArgs e)
         {
-            App.NavigationPage.Navigation.PushAsync(new RegisterStepOnePage());
+            App.NavigationPage.Navigation.PushAsync(new RegisterStepOnePage(_objRetailerList));
         }
     }
 }

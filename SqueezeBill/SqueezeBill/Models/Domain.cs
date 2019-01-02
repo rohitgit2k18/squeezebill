@@ -13,7 +13,7 @@ namespace TargetTransport.Models
           
             get
             {
-                 return "http://180.151.232.92:149/";
+                 return "http://203.122.21.195:149/";
                
             }
         }

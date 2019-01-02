@@ -2,15 +2,15 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:SqueezeBill" 
-             NavigationPage.HasBackButton="False"
+             NavigationPage.HasBackButton="True"
              x:Class="SqueezeBill.Views.Accounts.UserRegistration.RegisterStepOnePage">
     <NavigationPage.TitleView>
         <Grid VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
-            <Image VerticalOptions="Center" Margin="0,0,20,0" HorizontalOptions="Start" Source="back.png">
+            <!--<Image VerticalOptions="Center" Margin="0,0,20,0" HorizontalOptions="Start" Source="back.png">
                 <Image.GestureRecognizers>
                     <TapGestureRecognizer NumberOfTapsRequired="1" Tapped="XFImgBack_Tapped"/>
                 </Image.GestureRecognizers>
-            </Image>
+            </Image>-->
 
             <Label Text="Sign Up" VerticalOptions="Center" FontAttributes="Bold" TextColor="White" HorizontalOptions="Center" Margin="-80,0,0,0" FontSize="Medium" />
         </Grid>
@@ -39,23 +39,49 @@
                 </Grid.ColumnDefinitions>
                 
                 <Grid Grid.Column="0">
-                    <Frame HeightRequest="-1" Margin="0" BackgroundColor="White" HasShadow="False" CornerRadius="5" Padding="5" BorderColor="LightGray">
-                        <Label Text="7.69c" 
-                               TextColor="LightGray" VerticalOptions="Center" HorizontalOptions="Center"
-                               FontSize="Micro" />
+                    <Frame HeightRequest="-1" Margin="0" BackgroundColor="White" HasShadow="False" CornerRadius="5" Padding="5" BorderColor="#D2D2D2">
+                        <Label 
+                            x:Name="XFLBLCompanyRate"
+                            Text="7.69c"
+                            TextColor="#D2D2D2" 
+                            VerticalOptions="Center" 
+                            HorizontalOptions="Center"
+                            FontSize="14" />
                     </Frame>
                 </Grid>
                 
                 <Grid Grid.Column="1">
-                    <Image VerticalOptions="Center" HorizontalOptions="Center" Source="publicpower.png"/>
+                    <!--<Image VerticalOptions="Center" HorizontalOptions="Center" Source="publicpower.png"/>-->
+                    
+                    <Image
+                        x:Name="imgCompanyLogo"
+                        VerticalOptions="FillAndExpand" 
+                        HorizontalOptions="FillAndExpand" 
+                        HeightRequest="35"
+                        Margin="5,0,5,0"
+                        Aspect="AspectFit" 
+                        Source="publicpower.png"/>
                 </Grid>
                 
                 <Grid Grid.Column="2">
-                    <Frame HeightRequest="-1" Margin="0" BackgroundColor="White" HasShadow="False" CornerRadius="5" Padding="5" BorderColor="LightGray">
-                        <Label Text="6 Month" 
-                               TextColor="LightGray" 
-                               FontSize="Micro" />
-                    </Frame>
+                    <Button 
+                        x:Name="XFBTN_Duration"
+                        FontSize="12"                                   
+                        BorderRadius="10"
+                        TextColor="Black" 
+                        BackgroundColor="#C5C5C5"
+                        CornerRadius="10"
+                        HorizontalOptions="Center"
+                        VerticalOptions="Center"                                                
+                        BorderWidth="0" 
+                        BorderColor="#AB9A9A"/>
+                    
+                    <!--<Frame HeightRequest="-1" Margin="0" BackgroundColor="White" HasShadow="False" CornerRadius="5" Padding="5" BorderColor="LightGray">
+                        <Label 
+                            Text="6 Month" 
+                            TextColor="LightGray" 
+                            FontSize="Micro" />
+                    </Frame>-->
                 </Grid>
             </Grid>
             

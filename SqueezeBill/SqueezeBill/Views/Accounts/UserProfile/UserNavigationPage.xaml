@@ -32,17 +32,22 @@
                         </StackLayout>
                         <Label HorizontalOptions="Center" VerticalOptions="Center" Margin="0,30,0,0" x:Name="lblUserName" HorizontalTextAlignment="Center" FontAttributes="Bold" Text="James Smith" TextColor="White" FontSize="Medium"/>
                     </StackLayout>
-                    <Label VerticalOptions="Center"
+                    <Button VerticalOptions="Center"
                            HorizontalOptions="Center"
-                           TextColor="#F4941C"
+                           TextColor="White"
                            x:Name="XFLblSignIn"
-                           FontSize="Small"
+                            BackgroundColor="#f4941c"
+                            WidthRequest="150"
+                            FontSize="Small"
+                            BorderRadius="05"
+                            CornerRadius="05"
+                            Clicked="XFLblLogin_Tapped"
                            IsVisible="False"
-                           Text="SignIn">
-                        <Label.GestureRecognizers>
+                           Text="Sign In">
+                        <!--<Button.GestureRecognizers>
                             <TapGestureRecognizer NumberOfTapsRequired="1" x:Name="XFLblLogin" Tapped="XFLblLogin_Tapped"/>
-                        </Label.GestureRecognizers>
-                    </Label>
+                        </Button.GestureRecognizers>-->
+                    </Button>
                 </Grid>
                 <ScrollView  Grid.Row="1" BackgroundColor="White" Margin="0,30,0,0" VerticalOptions="FillAndExpand">
                     <Grid BackgroundColor="White" Padding="30,0,0,0" RowSpacing="1">

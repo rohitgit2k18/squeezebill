@@ -17,8 +17,10 @@
     </NavigationPage.TitleView>
     
     <ContentPage.Content>
+        <ScrollView>
         <Grid x:Name="RootLayout" Margin="20">
             <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
                 <RowDefinition Height="Auto"/>
                 <RowDefinition Height="Auto"/>
                 <RowDefinition Height="Auto"/>
@@ -123,7 +125,7 @@
             <Grid Grid.Row="2">
                 <Frame HasShadow="False" Padding="0" Margin="0" HeightRequest="-1" BackgroundColor="White">
                     <local:BorderlessEntry 
-                        Placeholder="First Name"                                                                                    
+                        Placeholder="First Name*"                                                                                    
                         PlaceholderColor="LightGray" 
                         Text="{Binding firstName}" />
                 </Frame>
@@ -132,7 +134,7 @@
             <Grid Grid.Row="3">
                 <Frame HasShadow="False" Padding="0" Margin="0" HeightRequest="-1" BackgroundColor="White">
                     <local:BorderlessEntry 
-                        Placeholder="Last Name"                                                                                    
+                        Placeholder="Last Name*"                                                                                    
                         PlaceholderColor="LightGray" 
                         Text="{Binding lastName}" />
                 </Frame>
@@ -140,7 +142,7 @@
 
             <Grid Grid.Row="4">
                 <Frame HasShadow="False" Padding="0" Margin="0" HeightRequest="-1" BackgroundColor="White">
-                    <local:ImageEntry Placeholder="Email"
+                        <local:ImageEntry Placeholder="Email*"
                                           ImageAlignment="Right"
                                           ImageHeight="20"
                                           ImageWidth="20"
@@ -150,13 +152,17 @@
                                         x:Name="XFEntryEmail"
                                       TextChanged="XFEntryEmail_TextChanged"
                                        Text="{Binding email}"
-                                          Image="info"/>
-                </Frame>
+                                          Image="info">
+                            <!--<local:ImageEntry.GestureRecognizers >
+                                <TapGestureRecognizer NumberOfTapsRequired="2" x:Name="XFInfoLink" Tapped="XFInfoLink_Tapped"/>
+                            </local:ImageEntry.GestureRecognizers>-->
+                        </local:ImageEntry>
+                    </Frame>
             </Grid>
             
             <Grid Grid.Row="5">
                 <Frame HasShadow="False" Padding="0" Margin="0" HeightRequest="-1" BackgroundColor="White">
-                    <local:BorderlessEntry Placeholder="Mobile Number"                                                                                    
+                    <local:BorderlessEntry Placeholder="Mobile Number*"                                                                                    
                                            PlaceholderColor="LightGray"
                                            Keyboard="Telephone"
                                            Text="{Binding phoneNumber}"
@@ -166,7 +172,7 @@
             
             <Grid Grid.Row="6">
                 <Frame HasShadow="False" Padding="0" Margin="0" HeightRequest="-1" BackgroundColor="White">
-                    <local:ImageEntry Placeholder="Password"
+                    <local:ImageEntry Placeholder="Password*"
                                           ImageAlignment="Right"
                                           ImageHeight="20"
                                           ImageWidth="20"
@@ -177,24 +183,31 @@
                                           Image="info"/>
                 </Frame>
             </Grid>
-            
             <Grid Grid.Row="7">
                 <Frame HasShadow="False" Padding="0" Margin="0" HeightRequest="-1" BackgroundColor="White">
-                    <local:BorderlessEntry Placeholder="Zipcode"                                                                                    
+                    <local:BorderlessEntry 
+                        Placeholder="Address*"                                                                                    
+                        PlaceholderColor="LightGray" 
+                        Text="{Binding Address}" />
+                </Frame>
+            </Grid>
+            <Grid Grid.Row="8">
+                <Frame HasShadow="False" Padding="0" Margin="0" HeightRequest="-1" BackgroundColor="White">
+                    <local:BorderlessEntry Placeholder="Zipcode*"                                                                                    
                                            PlaceholderColor="LightGray"    
                                             Text="{Binding zipCode}"
                                           />
                 </Frame>
             </Grid>
             
-            <Grid Grid.Row="8">
+            <Grid Grid.Row="9">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*"/>
                     <ColumnDefinition Width="*"/>
                 </Grid.ColumnDefinitions>
                 <Grid Grid.Column="0">
                     <Frame HasShadow="False" Padding="0" Margin="0" HeightRequest="-1" BackgroundColor="White">
-                        <local:BorderlessEntry Placeholder="State"                                                                                    
+                        <local:BorderlessEntry Placeholder="State*"                                                                                    
                                            PlaceholderColor="LightGray" 
                                                 Text="{Binding state}"
                                           />
@@ -202,7 +215,7 @@
                 </Grid>
                 <Grid Grid.Column="1">
                     <Frame HasShadow="False" Padding="0" Margin="0" HeightRequest="-1" BackgroundColor="White">
-                        <local:BorderlessEntry Placeholder="City"                                                                                    
+                        <local:BorderlessEntry Placeholder="City*"                                                                                    
                                            PlaceholderColor="LightGray" 
                                                Text="{Binding city}"
                                           />
@@ -210,7 +223,7 @@
                 </Grid>
             </Grid>
             
-            <Grid Grid.Row="9" Padding="0,20,10,0">
+            <Grid Grid.Row="10" Padding="0,20,10,0">
                 <Button CornerRadius="5" 
                             BorderRadius="5" 
                         x:Name="XFBtnReg1"
@@ -220,5 +233,6 @@
                             BackgroundColor="#FF9408"/>
             </Grid>
         </Grid>
+        </ScrollView>
     </ContentPage.Content>
 </ContentPage>

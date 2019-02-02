@@ -41,6 +41,7 @@ namespace SqueezeBill.Views.ElectricityAndGas
             _objComapreRatesByZipcodeRequest = ObjComapreRatesByZipcodeRequest;
             _objComapreRatesByZipcodeResponse = new ComapreRatesByZipcodeResponse();
             _apiService = new RestApi();
+
             if (_objComapreRatesByZipcodeRequest.requestSearch.isElectricity)
             {
                 XFLabelTitle.Text = "Electricity";
@@ -193,6 +194,24 @@ namespace SqueezeBill.Views.ElectricityAndGas
 
             XFLBLCompanyName.Text = selectedCompany.companyName;
             XFLBKCompanyRate.Text = $"{selectedCompany.rate:0.00}" + "c";
+        }
+
+        private  void ImgInfo_Tapped(object sender, EventArgs e)
+        {
+            Device.BeginInvokeOnMainThread(
+           async () =>
+           {
+               try
+               {
+                   await DisplayAlert("Info!","info regarding savings","ok");
+                   
+               }
+              
+               catch (Exception ex)
+               { 
+                   var msg = ex.Message;
+               }
+           });
         }
     }
 }

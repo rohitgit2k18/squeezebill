@@ -29,12 +29,12 @@
                     <RowDefinition Height="Auto"/>
                     <RowDefinition Height="Auto"/>
                     <RowDefinition Height="Auto"/>
-                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="40"/>
                 </Grid.RowDefinitions>
 
                 <Grid Grid.Row="0">
                     <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="1.2*"/>
+                        <ColumnDefinition Width="*"/>
                         <ColumnDefinition Width="*"/>
                     </Grid.ColumnDefinitions>
 
@@ -47,7 +47,7 @@
                            FontSize="Small"/>
                     </Grid>
 
-                    <Grid Grid.Column="1" ColumnSpacing="15">
+                    <Grid Grid.Column="1" ColumnSpacing="10">
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="*"/>
                             <ColumnDefinition Width="*"/>
@@ -116,11 +116,15 @@
                     </Grid>
 
                     <Grid Grid.Column="2">
-                        <Image VerticalOptions="Center" HorizontalOptions="Center" Source="question.png"/>
+                        <Image VerticalOptions="Center" HorizontalOptions="Center" Source="question.png">
+                            <Image.GestureRecognizers>
+                                <TapGestureRecognizer NumberOfTapsRequired="1" x:Name="ImgInfo" Tapped="ImgInfo_Tapped"/>
+                            </Image.GestureRecognizers>
+                        </Image>
                     </Grid>
                 </Grid>
 
-                <Grid Grid.Row="2">
+                <Grid Grid.Row="2" HeightRequest="20">
                     <Label Text="Our Best Picks" TextColor="#6D5E61" FontSize="17" VerticalOptions="Center" HorizontalOptions="Center"/>
                 </Grid>
 

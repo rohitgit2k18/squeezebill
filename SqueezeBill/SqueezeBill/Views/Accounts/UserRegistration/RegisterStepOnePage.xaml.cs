@@ -88,5 +88,7 @@ namespace SqueezeBill.Views.Accounts.UserRegistration
         {
             IsValid = (Regex.IsMatch(e.NewTextValue, emailRegex, RegexOptions.IgnoreCase, TimeSpan.FromMilliseconds(250)));
         }
+
+       
     }
 }

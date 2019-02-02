@@ -61,6 +61,7 @@ namespace SqueezeBill.Views.Home
             _objComapreRatesByZipcodeRequest.requestSearch.isElectricity = true;
             _objComapreRatesByZipcodeRequest.requestFilterSearch.supplierName = string.Empty;
             _objComapreRatesByZipcodeRequest.requestFilterSearch.terms = 0;
+           // XFBtnCompareRates.Focus();
         }
 
         private void XFBtnCompareRates_Clicked(object sender, EventArgs e)

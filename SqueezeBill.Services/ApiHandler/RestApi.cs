@@ -86,7 +86,7 @@ namespace SqueezeBill.Services.ApiHandler
 
                     var responseContent = response.Content;
                     var ErrorResponse = await response.Content.ReadAsStringAsync();
-                    ErrorResponse = ErrorResponse.Insert(1, "\"Status\"" + _col + "\"fail\",");
+                   // ErrorResponse = ErrorResponse.Insert(1, "\"Status\"" + _col + "\"fail\",");
                     Tobject = JsonConvert.DeserializeObject<T>(ErrorResponse);
                     return Tobject;
 
@@ -599,36 +599,36 @@ namespace SqueezeBill.Services.ApiHandler
         /// <param name="objHeaderModel"></param>
         /// <param name="_objAddExerciseWorkoutRequest"></param>
         /// <returns></returns>
-        //public async Task<AddExerciseWorkoutResponse> AddExerciseWorkoutPostAsync(string uri, Boolean IsHeaderRequired, HeaderModel objHeaderModel, AddExerciseWorkoutRequest _objAddExerciseWorkoutRequest)
-        //{
+        public async Task<GetDetailsFromZipcodeResponse> GetDetailsFromZipcodePostAsync(string uri, Boolean IsHeaderRequired, HeaderModel objHeaderModel, ZipcodeUrlRequest _objZipcodeUrlRequest)
+        {
 
-        //    AddExerciseWorkoutResponse objAddExerciseWorkoutResponse;
-        //    string s = JsonConvert.SerializeObject(_objAddExerciseWorkoutRequest);
-        //    HttpResponseMessage response = null;
-        //    using (var stringContent = new StringContent(s, System.Text.Encoding.UTF8, "application/json"))
-        //    {
+            GetDetailsFromZipcodeResponse objGetDetailsFromZipcodeResponse;
+            string s = JsonConvert.SerializeObject(_objZipcodeUrlRequest);
+            HttpResponseMessage response = null;
+            using (var stringContent = new StringContent(s, System.Text.Encoding.UTF8, "application/json"))
+            {
 
-        //        if (IsHeaderRequired)
-        //        {
-        //            client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", objHeaderModel.TokenCode);
-        //        }
-        //        response = await client.PostAsync(uri, stringContent);
+                if (IsHeaderRequired)
+                {
+                    client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", objHeaderModel.TokenCode);
+                }
+                response = await client.PostAsync(uri, stringContent);
 
 
-        //        if (response.IsSuccessStatusCode)
-        //        {
-        //            var SucessResponse = await response.Content.ReadAsStringAsync();
-        //            objAddExerciseWorkoutResponse = JsonConvert.DeserializeObject<AddExerciseWorkoutResponse>(SucessResponse);
-        //            return objAddExerciseWorkoutResponse;
-        //        }
-        //        else
-        //        {
-        //            var ErrorResponse = await response.Content.ReadAsStringAsync();
-        //            objAddExerciseWorkoutResponse = JsonConvert.DeserializeObject<AddExerciseWorkoutResponse>(ErrorResponse);
-        //            return objAddExerciseWorkoutResponse;
-        //        }
-        //    }
-        //}
+                if (response.IsSuccessStatusCode)
+                {
+                    var SucessResponse = await response.Content.ReadAsStringAsync();
+                    objGetDetailsFromZipcodeResponse = JsonConvert.DeserializeObject<GetDetailsFromZipcodeResponse>(SucessResponse);
+                    return objGetDetailsFromZipcodeResponse;
+                }
+                else
+                {
+                    var ErrorResponse = await response.Content.ReadAsStringAsync();
+                    objGetDetailsFromZipcodeResponse = JsonConvert.DeserializeObject<GetDetailsFromZipcodeResponse>(ErrorResponse);
+                    return objGetDetailsFromZipcodeResponse;
+                }
+            }
+        }
 
         /// <summary>
         /// 

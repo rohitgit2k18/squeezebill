@@ -33,7 +33,7 @@ namespace SqueezeBill.Views.Accounts
         public LoginPage ()
 		{
 			InitializeComponent ();
-            NavigationPage.SetHasNavigationBar(this, false);
+           // NavigationPage.SetHasNavigationBar(this, false);
             _objLoginRequest = new LoginRequest();
             this.BindingContext = _objLoginRequest;
             _objLoginResponse = new LoginResponse();

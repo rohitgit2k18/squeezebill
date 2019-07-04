@@ -4,12 +4,11 @@
              Title="Disclouser"
              x:Class="SqueezeBill.Views.Accounts.UserRegistration.DisclousersPage">
     <ContentPage.Content>
-        <StackLayout BackgroundColor="Green">
-            <WebView
+        <WebView
                 BackgroundColor="Blue"
+            x:Name="WebViewDiscloser"
                 VerticalOptions="FillAndExpand"
                 HorizontalOptions="FillAndExpand"
-                Source="http://203.122.21.195:150/Home/Disclosure"/>
-        </StackLayout>
+                />
     </ContentPage.Content>
 </ContentPage>

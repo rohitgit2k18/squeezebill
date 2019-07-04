@@ -28,7 +28,7 @@
                     <RowDefinition Height="Auto"/>
                     <RowDefinition Height="Auto"/>
                     <RowDefinition Height="Auto"/>
-                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="*"/>
                     <RowDefinition Height="40"/>
                 </Grid.RowDefinitions>
 
@@ -105,7 +105,7 @@
                                         FontSize="13"
                                         TextColor="Black"/>
                                     <Span 
-                                        Text="{Binding compareListDetails.futureAnnualSavings, StringFormat='${0}'}"
+                                       x:Name="XFLblAnnualSavings"
                                         FontSize="14"
                                         TextColor="#F58C0E"/>
                                 </FormattedString>
@@ -132,9 +132,9 @@
                     <ListView x:Name="RateComparisionList" HasUnevenRows="True" SeparatorVisibility="None" SelectionMode="None" >
                         <ListView.ItemTemplate>
                             <DataTemplate>
-                                <ViewCell>
-                                    <Frame Margin="5" VerticalOptions="Center" CornerRadius="5" HasShadow="True" Padding="0,0,2,2" BackgroundColor="#a8aaa9">
-                                        <Frame VerticalOptions="Center" BackgroundColor="White" CornerRadius="5" HasShadow="True" Padding="5,10,5,10">
+                                <ViewCell Height="120">
+                                    <Frame Margin="5" VerticalOptions="Center" HeightRequest="-1" CornerRadius="5" HasShadow="True" Padding="0,0,2,2" BackgroundColor="#a8aaa9">
+                                        <Frame VerticalOptions="Center" BackgroundColor="White" HeightRequest="-1" CornerRadius="5" HasShadow="True" Padding="5,10,5,10">
                                             <Grid ColumnSpacing="5">
                                                 <Grid.ColumnDefinitions>
                                                     <ColumnDefinition Width="0.3*"/>

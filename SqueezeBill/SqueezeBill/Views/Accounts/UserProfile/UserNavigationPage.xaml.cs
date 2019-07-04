@@ -148,12 +148,18 @@ namespace SqueezeBill.Views.Accounts.UserProfile
             }
         }
 
-        private async void XFLblLogin_Tapped(object sender, EventArgs e)
+        private  void XFLblLogin_Tapped(object sender, EventArgs e)
         {
-            var otherPage = new LoginPage();
-            var homePage = App.NavigationPage.Navigation.NavigationStack.First();
-            App.NavigationPage.Navigation.InsertPageBefore(otherPage, homePage);
-            await App.NavigationPage.PopToRootAsync(false);
+            var detail = new NavigationPage(new LoginPage());
+            App.DetailPage = new LoginPage();
+            detail.Title = "Login";
+            App.Navigation = detail.Navigation;
+            Detail = detail;
+            IsPresented = false;
+            //var otherPage = new LoginPage();
+            //var homePage = App.NavigationPage.Navigation.NavigationStack.First();
+            //App.NavigationPage.Navigation.InsertPageBefore(otherPage, homePage);
+            //await App.NavigationPage.PopToRootAsync(false);
         }
 
         private void ImageProfile_Tapped(object sender, EventArgs e)

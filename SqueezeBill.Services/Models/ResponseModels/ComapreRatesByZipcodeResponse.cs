@@ -63,6 +63,7 @@ namespace SqueezeBill.Services.Models.ResponseModels
         public string companyName { get; set; }
         public int companyId { get; set; }
         public double rate { get; set; }
+        public double futureAnnualSavings { get; set; }
     }
 
     public class RetailerList

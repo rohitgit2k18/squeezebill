@@ -13,7 +13,7 @@ namespace TargetTransport.Models
           
             get
             {
-                 return "http://203.122.21.195:149/";
+                 return "http://125.63.101.163:149/";
                
             }
         }
@@ -53,7 +53,13 @@ namespace TargetTransport.Models
                 return "api/Registration/UserRegister";
             }
         }
-
+        public static string GetDetailsByZipCode
+        {
+            get
+            {
+                return "api/Product/GetZipCodeByCode";
+            }
+        }
         // for homepage
         public static string LoadDataByZipCodeApiConstant
         {

@@ -1,4 +1,5 @@
-﻿using SqueezeBill.Services.ApiHandler;
+﻿using SqueezeBill.Helpers;
+using SqueezeBill.Services.ApiHandler;
 using SqueezeBill.Services.Models;
 using SqueezeBill.Services.Models.RequestModels;
 using SqueezeBill.Services.Models.ResponseModels;
@@ -77,7 +78,7 @@ namespace SqueezeBill.Views.Home
                 if(!string.IsNullOrEmpty(Zipcode))
                 {
                     _objComapreRatesByZipcodeRequest.requestSearch.zipCode = Zipcode;
-
+                    Settings.Zipcode = Zipcode;
                 App.NavigationPage.Navigation.PushAsync(new ElectricityAndGasListing(_objComapreRatesByZipcodeRequest));
                 }
                 else

@@ -109,6 +109,7 @@
                     </Grid>
                     <Grid Grid.Column="1">
                         <Label VerticalOptions="Start"
+                               x:Name="XFLblTAC"
                                HorizontalOptions="Center" 
                                Text="T And C" 
                                TextColor="#4D4C49"/>
@@ -188,14 +189,14 @@
                     <local:BorderlessEntry 
                         Placeholder="Address*"                                                                                    
                         PlaceholderColor="LightGray" 
-                        Text="{Binding Address}" />
+                        Text="{Binding address1}" />
                 </Frame>
             </Grid>
             <Grid Grid.Row="8">
                 <Frame HasShadow="False" Padding="0" Margin="0" HeightRequest="-1" BackgroundColor="White">
                     <local:BorderlessEntry Placeholder="Zipcode*"                                                                                    
                                            PlaceholderColor="LightGray"    
-                                            Text="{Binding zipCode}"
+                                            Text="{Binding zipCode,Mode=TwoWay}"
                                           />
                 </Frame>
             </Grid>
@@ -209,7 +210,7 @@
                     <Frame HasShadow="False" Padding="0" Margin="0" HeightRequest="-1" BackgroundColor="White">
                         <local:BorderlessEntry Placeholder="State*"                                                                                    
                                            PlaceholderColor="LightGray" 
-                                                Text="{Binding state}"
+                                                Text="{Binding state,Mode=TwoWay}"
                                           />
                     </Frame>
                 </Grid>
@@ -217,7 +218,7 @@
                     <Frame HasShadow="False" Padding="0" Margin="0" HeightRequest="-1" BackgroundColor="White">
                         <local:BorderlessEntry Placeholder="City*"                                                                                    
                                            PlaceholderColor="LightGray" 
-                                               Text="{Binding city}"
+                                               Text="{Binding city,Mode=TwoWay}"
                                           />
                     </Frame>
                 </Grid>

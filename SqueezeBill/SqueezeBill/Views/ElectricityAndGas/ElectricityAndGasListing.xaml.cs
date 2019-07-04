@@ -101,7 +101,7 @@ namespace SqueezeBill.Views.ElectricityAndGas
                             selectedCompany = result.compareListDetails.supplierList.ElementAt(0);
                             XFLBKCompanyRate.Text = $"{selectedCompany.rate:0.00}" + "c";
                             XFLBLCompanyName.Text = result.compareListDetails.supplierList.ElementAt(0).companyName;
-
+                            XFLblAnnualSavings.Text= "$"+" "+result.compareListDetails.supplierList.ElementAt(0).futureAnnualSavings.ToString();
                             XFListCompanyName.ItemsSource = result.compareListDetails.supplierList;
                             
                             //select x.companyName;
@@ -113,7 +113,7 @@ namespace SqueezeBill.Views.ElectricityAndGas
                             }
                             else
                             {
-                                XFListCompanyName.HeightRequest = 250.0;
+                                XFListCompanyName.HeightRequest = 200.0;
                             }
                             
                             if (result.compareListDetails.retailerList.Count <= 0)
@@ -194,6 +194,7 @@ namespace SqueezeBill.Views.ElectricityAndGas
 
             XFLBLCompanyName.Text = selectedCompany.companyName;
             XFLBKCompanyRate.Text = $"{selectedCompany.rate:0.00}" + "c";
+            XFLblAnnualSavings.Text = "$" + " " + selectedCompany.futureAnnualSavings.ToString();
         }
 
         private  void ImgInfo_Tapped(object sender, EventArgs e)
@@ -203,7 +204,7 @@ namespace SqueezeBill.Views.ElectricityAndGas
            {
                try
                {
-                   await DisplayAlert("Info!","info regarding savings","ok");
+                   await DisplayAlert("Info!","Your annual estimated savings are based on your utility's price to compare and average monthly usage of estimated 1000KWH","ok");
                    
                }
               

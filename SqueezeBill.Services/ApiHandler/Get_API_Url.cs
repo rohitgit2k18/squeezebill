@@ -47,9 +47,9 @@ namespace SqueezeBill.Services.ApiHandler
         /// </summary>
         /// <param name="BaseUsrl"></param>
         /// <returns></returns>?WorkOutId={WorkOutId}
-        public string ExerciseDetailByWorkoutIDApi(string BaseUsrl,int WorkOutId)
+        public string GetDetailsFromZipCodeApi(string BaseUsrl,string Zipcode )
         {
-            return string.Format("{0}?WorkOutId={1}", BaseUsrl, WorkOutId);
+            return string.Format("{0}?ZipCode={1}", BaseUsrl, Zipcode);
         }
         /// <summary>
         /// Driver Signature

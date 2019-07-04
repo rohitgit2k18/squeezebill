@@ -121,23 +121,23 @@ namespace SqueezeBill.Helpers
             }
         }
         #endregion
-        #region Setting Gender
+        #region Setting Zipcode
 
-        private const string gender = "gender_key";
-        private static readonly string genderDefault = string.Empty;
-
-
+        private const string zipcode = "zipcode_key";
+        private static readonly string zipcodeDefault = string.Empty;
 
 
-        public static string Gender
+
+
+        public static string Zipcode
         {
             get
             {
-                return AppSettings.GetValueOrDefault(gender, genderDefault);
+                return AppSettings.GetValueOrDefault(zipcode, zipcodeDefault);
             }
             set
             {
-                AppSettings.AddOrUpdateValue(gender, value);
+                AppSettings.AddOrUpdateValue(zipcode, value);
             }
         }
         #endregion

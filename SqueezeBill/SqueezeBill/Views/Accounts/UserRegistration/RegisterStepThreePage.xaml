@@ -102,6 +102,7 @@
                     </Grid>
                     <Grid Grid.Column="1">
                         <Label VerticalOptions="Start"
+                               x:Name="XFLblTAC"
                                HorizontalOptions="Center" 
                                Text="T And C" 
                                TextColor="#4D4C49"/>

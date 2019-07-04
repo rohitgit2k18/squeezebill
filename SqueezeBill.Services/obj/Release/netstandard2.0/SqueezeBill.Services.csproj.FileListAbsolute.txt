@@ -1,0 +1,9 @@
+D:\ClientProject\SqueezeBills\squeezebill\SqueezeBill.Services\bin\Release\netstandard2.0\SqueezeBill.Services.deps.json
+D:\ClientProject\SqueezeBills\squeezebill\SqueezeBill.Services\bin\Release\netstandard2.0\SqueezeBill.Services.dll
+D:\ClientProject\SqueezeBills\squeezebill\SqueezeBill.Services\bin\Release\netstandard2.0\SqueezeBill.Services.pdb
+D:\ClientProject\SqueezeBills\squeezebill\SqueezeBill.Services\obj\Release\netstandard2.0\SqueezeBill.Services.csprojAssemblyReference.cache
+D:\ClientProject\SqueezeBills\squeezebill\SqueezeBill.Services\obj\Release\netstandard2.0\SqueezeBill.Services.csproj.CoreCompileInputs.cache
+D:\ClientProject\SqueezeBills\squeezebill\SqueezeBill.Services\obj\Release\netstandard2.0\SqueezeBill.Services.AssemblyInfoInputs.cache
+D:\ClientProject\SqueezeBills\squeezebill\SqueezeBill.Services\obj\Release\netstandard2.0\SqueezeBill.Services.AssemblyInfo.cs
+D:\ClientProject\SqueezeBills\squeezebill\SqueezeBill.Services\obj\Release\netstandard2.0\SqueezeBill.Services.dll
+D:\ClientProject\SqueezeBills\squeezebill\SqueezeBill.Services\obj\Release\netstandard2.0\SqueezeBill.Services.pdb

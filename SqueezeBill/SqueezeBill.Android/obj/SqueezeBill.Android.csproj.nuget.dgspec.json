@@ -1,0 +1,244 @@
+{
+  "format": 1,
+  "restore": {
+    "D:\\ClientProject\\SqueezeBills\\squeezebill\\SqueezeBill\\SqueezeBill.Android\\SqueezeBill.Android.csproj": {}
+  },
+  "projects": {
+    "D:\\ClientProject\\SqueezeBills\\squeezebill\\SqueezeBill.Services\\SqueezeBill.Services.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\ClientProject\\SqueezeBills\\squeezebill\\SqueezeBill.Services\\SqueezeBill.Services.csproj",
+        "projectName": "SqueezeBill.Services",
+        "projectPath": "D:\\ClientProject\\SqueezeBills\\squeezebill\\SqueezeBill.Services\\SqueezeBill.Services.csproj",
+        "packagesPath": "C:\\Users\\Rohit Kumar\\.nuget\\packages\\",
+        "outputPath": "D:\\ClientProject\\SqueezeBills\\squeezebill\\SqueezeBill.Services\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\ProgramData\\Xamarin\\NuGet\\",
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\Rohit Kumar\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netstandard2.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netstandard2.0": {
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netstandard2.0": {
+          "dependencies": {
+            "NETStandard.Library": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.0.3, )",
+              "autoReferenced": true
+            },
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[11.0.2, )"
+            }
+          },
+          "imports": [
+            "net461"
+          ],
+          "assetTargetFallback": true,
+          "warn": true
+        }
+      }
+    },
+    "D:\\ClientProject\\SqueezeBills\\squeezebill\\SqueezeBill\\SqueezeBill.Android\\SqueezeBill.Android.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\ClientProject\\SqueezeBills\\squeezebill\\SqueezeBill\\SqueezeBill.Android\\SqueezeBill.Android.csproj",
+        "projectName": "SqueezeBill.Android",
+        "projectPath": "D:\\ClientProject\\SqueezeBills\\squeezebill\\SqueezeBill\\SqueezeBill.Android\\SqueezeBill.Android.csproj",
+        "packagesPath": "C:\\Users\\Rohit Kumar\\.nuget\\packages\\",
+        "outputPath": "D:\\ClientProject\\SqueezeBills\\squeezebill\\SqueezeBill\\SqueezeBill.Android\\obj\\",
+        "projectStyle": "PackageReference",
+        "skipContentFileWrite": true,
+        "fallbackFolders": [
+          "C:\\ProgramData\\Xamarin\\NuGet\\"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\Rohit Kumar\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "monoandroid81"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "monoandroid81": {
+            "projectReferences": {
+              "D:\\ClientProject\\SqueezeBills\\squeezebill\\SqueezeBill\\SqueezeBill\\SqueezeBill.csproj": {
+                "projectPath": "D:\\ClientProject\\SqueezeBills\\squeezebill\\SqueezeBill\\SqueezeBill\\SqueezeBill.csproj"
+              }
+            }
+          }
+        }
+      },
+      "frameworks": {
+        "monoandroid81": {
+          "dependencies": {
+            "Rg.Plugins.Popup": {
+              "target": "Package",
+              "version": "[1.1.4.168, )"
+            },
+            "Syncfusion.Xamarin.SfRangeSlider": {
+              "target": "Package",
+              "version": "[16.1.0.37, )"
+            },
+            "Xam.Plugin.Connectivity": {
+              "target": "Package",
+              "version": "[3.2.0, )"
+            },
+            "Xam.Plugins.Forms.ImageCircle": {
+              "target": "Package",
+              "version": "[3.0.0.5, )"
+            },
+            "Xam.Plugins.Settings": {
+              "target": "Package",
+              "version": "[3.1.1, )"
+            },
+            "Xamarin.Android.Support.Design": {
+              "target": "Package",
+              "version": "[27.0.2.1, )"
+            },
+            "Xamarin.Android.Support.v4": {
+              "target": "Package",
+              "version": "[27.0.2.1, )"
+            },
+            "Xamarin.Android.Support.v7.AppCompat": {
+              "target": "Package",
+              "version": "[27.0.2.1, )"
+            },
+            "Xamarin.Android.Support.v7.CardView": {
+              "target": "Package",
+              "version": "[27.0.2.1, )"
+            },
+            "Xamarin.Android.Support.v7.MediaRouter": {
+              "target": "Package",
+              "version": "[27.0.2.1, )"
+            },
+            "Xamarin.Forms": {
+              "target": "Package",
+              "version": "[3.2.0.871581, )"
+            }
+          }
+        }
+      }
+    },
+    "D:\\ClientProject\\SqueezeBills\\squeezebill\\SqueezeBill\\SqueezeBill\\SqueezeBill.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\ClientProject\\SqueezeBills\\squeezebill\\SqueezeBill\\SqueezeBill\\SqueezeBill.csproj",
+        "projectName": "SqueezeBill",
+        "projectPath": "D:\\ClientProject\\SqueezeBills\\squeezebill\\SqueezeBill\\SqueezeBill\\SqueezeBill.csproj",
+        "packagesPath": "C:\\Users\\Rohit Kumar\\.nuget\\packages\\",
+        "outputPath": "D:\\ClientProject\\SqueezeBills\\squeezebill\\SqueezeBill\\SqueezeBill\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\ProgramData\\Xamarin\\NuGet\\",
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\Rohit Kumar\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netstandard2.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netstandard2.0": {
+            "projectReferences": {
+              "D:\\ClientProject\\SqueezeBills\\squeezebill\\SqueezeBill.Services\\SqueezeBill.Services.csproj": {
+                "projectPath": "D:\\ClientProject\\SqueezeBills\\squeezebill\\SqueezeBill.Services\\SqueezeBill.Services.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netstandard2.0": {
+          "dependencies": {
+            "NETStandard.Library": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.0.3, )",
+              "autoReferenced": true
+            },
+            "Rg.Plugins.Popup": {
+              "target": "Package",
+              "version": "[1.1.4.168, )"
+            },
+            "Syncfusion.Xamarin.SfRangeSlider": {
+              "target": "Package",
+              "version": "[16.1.0.37, )"
+            },
+            "XFControls": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[1.0.0.6, )"
+            },
+            "XFCustomControls": {
+              "target": "Package",
+              "version": "[1.0.0, )"
+            },
+            "Xam.Plugin.Connectivity": {
+              "target": "Package",
+              "version": "[3.2.0, )"
+            },
+            "Xam.Plugins.Forms.ImageCircle": {
+              "target": "Package",
+              "version": "[3.0.0.5, )"
+            },
+            "Xam.Plugins.Settings": {
+              "target": "Package",
+              "version": "[3.1.1, )"
+            },
+            "Xamarin.Forms": {
+              "target": "Package",
+              "version": "[3.2.0.871581, )"
+            }
+          },
+          "imports": [
+            "net461"
+          ],
+          "assetTargetFallback": true,
+          "warn": true
+        }
+      }
+    }
+  }
+}

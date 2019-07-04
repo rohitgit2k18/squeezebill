@@ -15,6 +15,8 @@ namespace SqueezeBill.Views.Accounts.UserRegistration
 		public DisclousersPage ()
 		{
 			InitializeComponent ();
-		}
+            WebViewDiscloser.Source = "http://125.63.101.163:150/Content/ConstellationTerms109491.pdf";
+
+        }
 	}
 }

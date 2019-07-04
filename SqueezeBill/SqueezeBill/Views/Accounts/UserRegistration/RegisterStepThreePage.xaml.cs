@@ -1,4 +1,5 @@
-﻿using SqueezeBill.Services.ApiHandler;
+﻿using SqueezeBill.Helpers;
+using SqueezeBill.Services.ApiHandler;
 using SqueezeBill.Services.Models;
 using SqueezeBill.Services.Models.RequestModels;
 using SqueezeBill.Services.Models.ResponseModels;
@@ -22,13 +23,14 @@ namespace SqueezeBill.Views.Accounts.UserRegistration
         private UserRegistrationResponse _objUserRegistrationResponse;
         private RestApi _apiService;
         private string _baseUrl;
+        private HeaderModel _objHeaderModel;
 
         private RetailerList _objRetailerList;
         #endregion
         public RegisterStepThreePage (UserRegistrationRequest objUserRegistrationRequest, RetailerList objRetailerList)
 		{
 			InitializeComponent ();
-
+            XFLblTAC.Text = $"T&C";
             _objRetailerList = new RetailerList();
             if (objRetailerList != null)
             {
@@ -48,6 +50,7 @@ namespace SqueezeBill.Views.Accounts.UserRegistration
 
             _apiService = new RestApi();
             _baseUrl = Domain.Url + Domain.UserSignUpApiConstant;
+            _objHeaderModel = new HeaderModel();
         }
 
         private void XFImgBack_Tapped(object sender, EventArgs e)
@@ -72,22 +75,45 @@ namespace SqueezeBill.Views.Accounts.UserRegistration
                     }
                     else
                     {
-                        _objUserRegistrationResponse = await _apiService.UserRegistrationAsync(new Get_API_Url().CommonBaseApi(_baseUrl), false, new HeaderModel(), _objUserRegistrationRequest);
+                        _objHeaderModel.TokenCode = Settings.TokenCode;
+                        _objUserRegistrationResponse = await _apiService.UserRegistrationAsync(new Get_API_Url().CommonBaseApi(_baseUrl), true, _objHeaderModel, _objUserRegistrationRequest);
                         var Response = _objUserRegistrationResponse.response;
                         if (Response.statusCode == 200)
                         {
-                            await DisplayAlert("Alert!","Registeration Successful!", "Ok");
-                          await  App.NavigationPage.Navigation.PushAsync(new LoginPage());
+                            Device.BeginInvokeOnMainThread(() => {
+
+                                DisplayAlert("Info!", Response.message, "OK");
+                            });
+
+                            await  App.NavigationPage.Navigation.PushAsync(new LoginPage());
                         }
                         else
                         {
-                            await DisplayAlert("Alert!", "Some error occured! ", "Ok");
+                            Device.BeginInvokeOnMainThread(() => {
+                               
+                                DisplayAlert("Error!", Response.message, "OK");
+                            });
+                           
                         }
                     }
                 }
                 else
                 {
+                    _objHeaderModel.TokenCode = Settings.TokenCode;
+                    _objUserRegistrationResponse = await _apiService.UserRegistrationAsync(new Get_API_Url().CommonBaseApi(_baseUrl), true, _objHeaderModel, _objUserRegistrationRequest);
+                    var Response = _objUserRegistrationResponse.response;
+                    if (Response.statusCode == 200)
+                    {
+                        await DisplayAlert("Alert!", "Registeration Successful without MedEdAccount!", "Ok");
+                        await App.NavigationPage.Navigation.PushAsync(new LoginPage());
+                    }
+                    else
+                    {
+                        Device.BeginInvokeOnMainThread(() => {
 
+                            DisplayAlert("Error!", Response.message, "OK");
+                        });
+                    }
                 }
                 
             }
@@ -104,12 +130,20 @@ namespace SqueezeBill.Views.Accounts.UserRegistration
 
         private void XFBtnYes_Clicked(object sender, EventArgs e)
         {
+            XFBtnYes.BackgroundColor = Color.FromHex("#FF9408");
+            XFBtnYes.TextColor = Color.White;
+            XFBtnNo.BackgroundColor = Color.White;
+            XFBtnNo.TextColor = Color.FromHex("#FF9408");
             _objUserRegistrationRequest.isMedEdAccountat = true;
             XFGridAccountInfo.IsVisible = true;
         }
 
         private void XFBtnNo_Clicked(object sender, EventArgs e)
         {
+            XFBtnYes.BackgroundColor = Color.White;
+            XFBtnYes.TextColor = Color.FromHex("#FF9408");
+            XFBtnNo.BackgroundColor = Color.FromHex("#FF9408");
+            XFBtnNo.TextColor = Color.White;
             _objUserRegistrationRequest.isMedEdAccountat = false;
             XFGridAccountInfo.IsVisible = false;
         }

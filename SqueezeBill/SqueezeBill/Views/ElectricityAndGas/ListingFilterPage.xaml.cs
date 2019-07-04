@@ -27,7 +27,7 @@ namespace SqueezeBill.Views.ElectricityAndGas
             List<string> list2 = (from x in list
                                   select x.retailerName).Distinct().ToList();
             dropdownLoadType.ItemsSource = list2;
-            //dropdownLoadType.SelectedItem = list2.ElementAt(0);
+            dropdownLoadType.SelectedItem = list2.ElementAt(0);
             IReadOnlyList<Page> navigationStack = App.NavigationPage.Navigation.NavigationStack;
             ElectricityAndGasListing electricityAndGasListing = (ElectricityAndGasListing)navigationStack.ElementAt(navigationStack.Count - 1);
             if (electricityAndGasListing.startDuration != 0)

@@ -22,7 +22,7 @@ namespace SqueezeBill.Views.Accounts.UserRegistration
         public RegisterStepTwoPage (UserRegistrationRequest objUserRegistrationRequest, RetailerList objRetailerList)
 		{
 			InitializeComponent ();
-
+            XFLblTAC.Text = $"T&C";
             _objRetailerList = new RetailerList();
             if (objRetailerList != null)
             {
@@ -58,9 +58,16 @@ namespace SqueezeBill.Views.Accounts.UserRegistration
            
         }
 
-        private void XFBTNDisclosure_Click(object sender, EventArgs e)
+        private  void XFBTNDisclosure_Click(object sender, EventArgs e)
         {
-            App.NavigationPage.Navigation.PushAsync(new DisclousersPage());
+            // App.NavigationPage.Navigation.PushAsync(new DisclousersPage());
+            OpenURlAsync();
         }
+        public async Task OpenURlAsync()
+        {
+            await Task.Run(() => { Device.OpenUri(new Uri("http://125.63.101.163:150/Content/ConstellationTerms109491.pdf")); });
+        }
+
+        
     }
 }

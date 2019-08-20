@@ -158,6 +158,12 @@
     <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Contents.json">
       <Visible>false</Visible>
     </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\LaunchImage-1.launchimage\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\LaunchImage-1.launchimage\Default.png" />
+    <ImageAsset Include="Assets.xcassets\LaunchImage-1.launchimage\Default%402x.png" />
+    <ImageAsset Include="Assets.xcassets\LaunchImage-1.launchimage\Default-568h%402x.png" />
+    <ImageAsset Include="Assets.xcassets\LaunchImage-1.launchimage\Default-Portrait.png" />
+    <ImageAsset Include="Assets.xcassets\LaunchImage-1.launchimage\Default-Portrait%402x.png" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -186,7 +192,7 @@
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
   <ItemGroup>
     <ProjectReference Include="..\SqueezeBill\SqueezeBill.csproj">
-      <Project>{3DF552FA-1370-45AA-ADB0-C187B06DDE3C}</Project>
+      <Project>{DFF5240A-8DF2-41D5-A695-444D5072CA63}</Project>
       <Name>SqueezeBill</Name>
     </ProjectReference>
   </ItemGroup>
@@ -266,15 +272,6 @@
     <BundleResource Include="Resources\commercial%403x.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\commercialwhite.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <BundleResource Include="Resources\commercialwhite%402x.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <BundleResource Include="Resources\commercialwhite%403x.png" />
-  </ItemGroup>
-  <ItemGroup>
     <BundleResource Include="Resources\constellation.png" />
   </ItemGroup>
   <ItemGroup>
@@ -291,24 +288,6 @@
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Resources\dropdown%403x.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <BundleResource Include="Resources\electicitywhite.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <BundleResource Include="Resources\electicitywhite%402x.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <BundleResource Include="Resources\electicitywhite%403x.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <BundleResource Include="Resources\electricity.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <BundleResource Include="Resources\electricity%402x.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <BundleResource Include="Resources\electricity%403x.png" />
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Resources\eye.png" />
@@ -336,15 +315,6 @@
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Resources\gas%403x.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <BundleResource Include="Resources\gaswhite.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <BundleResource Include="Resources\gaswhite%402x.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <BundleResource Include="Resources\gaswhite%403x.png" />
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Resources\hamburger.png" />
@@ -464,15 +434,6 @@
     <BundleResource Include="Resources\residence%403x.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\residencewhite.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <BundleResource Include="Resources\residencewhite%402x.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <BundleResource Include="Resources\residencewhite%403x.png" />
-  </ItemGroup>
-  <ItemGroup>
     <BundleResource Include="Resources\scroll.png" />
   </ItemGroup>
   <ItemGroup>
@@ -534,21 +495,6 @@
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Resources\splash%403x.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <BundleResource Include="Resources\Default%402x.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <BundleResource Include="Resources\Default.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <BundleResource Include="Resources\Default-568h%402x.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <BundleResource Include="Resources\Default-Portrait.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <BundleResource Include="Resources\Default-Portrait%402x.png" />
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Resources\logo%402x.png" />

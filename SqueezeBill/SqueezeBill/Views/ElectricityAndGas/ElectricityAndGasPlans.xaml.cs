@@ -41,12 +41,12 @@ namespace SqueezeBill.Views.ElectricityAndGas
                         }
                         else
                         {
-                            DisplayAlert("Alert", "No Retailer is Available", "Ok");
+                            DisplayAlert("", "No Retailer is Available", "(X)");
                         }
                     }
                     else
                     {
-                        DisplayAlert("Alert", "No Supplier is Available", "Ok");
+                        DisplayAlert("", "No Supplier is Available", "(X)");
                     }
                 }
             }

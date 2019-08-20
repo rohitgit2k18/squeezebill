@@ -1,0 +1,238 @@
+{
+  "runtimeTarget": {
+    "name": ".NETStandard,Version=v2.0/",
+    "signature": "9440873434fa61d640a072d94135d02f91a88f0a"
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETStandard,Version=v2.0": {},
+    ".NETStandard,Version=v2.0/": {
+      "SqueezeBill/1.0.0": {
+        "dependencies": {
+          "NETStandard.Library": "2.0.3",
+          "Rg.Plugins.Popup": "1.1.4.168",
+          "SqueezeBill.Services": "1.0.0",
+          "Syncfusion.Xamarin.SfRangeSlider": "16.1.0.37",
+          "XFControls": "1.0.0.6",
+          "XFCustomControls": "1.0.0",
+          "Xam.Plugin.Connectivity": "3.2.0",
+          "Xam.Plugins.Forms.ImageCircle": "3.0.0.5",
+          "Xam.Plugins.Settings": "3.1.1",
+          "Xamarin.Forms": "3.2.0.871581"
+        },
+        "runtime": {
+          "SqueezeBill.dll": {}
+        }
+      },
+      "Microsoft.NETCore.Platforms/1.1.0": {},
+      "NETStandard.Library/2.0.3": {
+        "dependencies": {
+          "Microsoft.NETCore.Platforms": "1.1.0"
+        }
+      },
+      "Newtonsoft.Json/11.0.2": {
+        "runtime": {
+          "lib/netstandard2.0/Newtonsoft.Json.dll": {
+            "assemblyVersion": "11.0.0.0",
+            "fileVersion": "11.0.2.21924"
+          }
+        }
+      },
+      "Rg.Plugins.Popup/1.1.4.168": {
+        "dependencies": {
+          "Xamarin.Forms": "3.2.0.871581"
+        },
+        "runtime": {
+          "lib/netstandard1.0/Rg.Plugins.Popup.dll": {
+            "assemblyVersion": "1.1.4.168",
+            "fileVersion": "1.1.4.168"
+          }
+        }
+      },
+      "Syncfusion.Xamarin.SfRangeSlider/16.1.0.37": {
+        "dependencies": {
+          "Xamarin.Forms": "3.2.0.871581"
+        },
+        "runtime": {
+          "lib/netstandard1.0/Syncfusion.SfRangeSlider.XForms.dll": {
+            "assemblyVersion": "16.1451.0.37",
+            "fileVersion": "16.1451.0.37"
+          }
+        }
+      },
+      "Xam.Plugin.Connectivity/3.2.0": {
+        "dependencies": {
+          "NETStandard.Library": "2.0.3"
+        },
+        "runtime": {
+          "lib/netstandard1.0/Plugin.Connectivity.Abstractions.dll": {
+            "assemblyVersion": "3.2.0.0",
+            "fileVersion": "3.2.0.0"
+          },
+          "lib/netstandard1.0/Plugin.Connectivity.dll": {
+            "assemblyVersion": "3.2.0.0",
+            "fileVersion": "3.2.0.0"
+          }
+        }
+      },
+      "Xam.Plugins.Forms.ImageCircle/3.0.0.5": {
+        "dependencies": {
+          "Xamarin.Forms": "3.2.0.871581"
+        },
+        "runtime": {
+          "lib/netstandard2.0/ImageCircle.Forms.Plugin.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
+      "Xam.Plugins.Settings/3.1.1": {
+        "dependencies": {
+          "NETStandard.Library": "2.0.3"
+        },
+        "runtime": {
+          "lib/netstandard1.0/Plugin.Settings.Abstractions.dll": {
+            "assemblyVersion": "3.1.1.0",
+            "fileVersion": "3.1.1.0"
+          },
+          "lib/netstandard1.0/Plugin.Settings.dll": {
+            "assemblyVersion": "3.1.1.0",
+            "fileVersion": "3.1.1.0"
+          }
+        }
+      },
+      "Xamarin.Forms/3.2.0.871581": {
+        "runtime": {
+          "lib/netstandard2.0/Xamarin.Forms.Core.dll": {
+            "assemblyVersion": "2.0.0.0",
+            "fileVersion": "2.0.0.0"
+          },
+          "lib/netstandard2.0/Xamarin.Forms.Platform.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          },
+          "lib/netstandard2.0/Xamarin.Forms.Xaml.dll": {
+            "assemblyVersion": "2.0.0.0",
+            "fileVersion": "2.0.0.0"
+          }
+        }
+      },
+      "XFControls/1.0.0.6": {
+        "dependencies": {
+          "Xamarin.Forms": "3.2.0.871581"
+        },
+        "runtime": {
+          "lib/portable-net45+win8+wp8+wpa81+MonoAndroid10+Xamarin.iOS10+MonoTouch10/AsNum.XFControls.dll": {
+            "assemblyVersion": "1.0.0.6",
+            "fileVersion": "1.0.0.6"
+          }
+        }
+      },
+      "XFCustomControls/1.0.0": {
+        "runtime": {
+          "lib/portable45-net45+win8+wp8+wpa81/XFCustomControls.Ext.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
+      "SqueezeBill.Services/1.0.0": {
+        "dependencies": {
+          "Newtonsoft.Json": "11.0.2"
+        },
+        "runtime": {
+          "SqueezeBill.Services.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "SqueezeBill/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Microsoft.NETCore.Platforms/1.1.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-kz0PEW2lhqygehI/d6XsPCQzD7ff7gUJaVGPVETX611eadGsA3A877GdSlU0LRVMCTH/+P3o2iDTak+S08V2+A==",
+      "path": "microsoft.netcore.platforms/1.1.0",
+      "hashPath": "microsoft.netcore.platforms.1.1.0.nupkg.sha512"
+    },
+    "NETStandard.Library/2.0.3": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-st47PosZSHrjECdjeIzZQbzivYBJFv6P2nv4cj2ypdI204DO+vZ7l5raGMiX4eXMJ53RfOIg+/s4DHVZ54Nu2A==",
+      "path": "netstandard.library/2.0.3",
+      "hashPath": "netstandard.library.2.0.3.nupkg.sha512"
+    },
+    "Newtonsoft.Json/11.0.2": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-IvJe1pj7JHEsP8B8J8DwlMEx8UInrs/x+9oVY+oCD13jpLu4JbJU2WCIsMRn5C4yW9+DgkaO8uiVE5VHKjpmdQ==",
+      "path": "newtonsoft.json/11.0.2",
+      "hashPath": "newtonsoft.json.11.0.2.nupkg.sha512"
+    },
+    "Rg.Plugins.Popup/1.1.4.168": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-pARxyFFrnOoCZfRbAiE8v3+8py/sH5SX8NJAjfaydJJO3cm13yNaNw8EelEONJVQY2T0zFhCfZSc4CDjjaSylQ==",
+      "path": "rg.plugins.popup/1.1.4.168",
+      "hashPath": "rg.plugins.popup.1.1.4.168.nupkg.sha512"
+    },
+    "Syncfusion.Xamarin.SfRangeSlider/16.1.0.37": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-6UTO5ySJUxnBdB13aQiKvy+GzqpkE1WSxnJjXKMCdPphRPgmOjMTL7tAjLY7y2sn//TKuRaB+vdDEq0xlyRThQ==",
+      "path": "syncfusion.xamarin.sfrangeslider/16.1.0.37",
+      "hashPath": "syncfusion.xamarin.sfrangeslider.16.1.0.37.nupkg.sha512"
+    },
+    "Xam.Plugin.Connectivity/3.2.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-ZV45TaBTCJg7XQNEl3fPyyJcuMMhdDEQ6BCLc/5pMuTv38M226ER0WTu5sbmba8jlliDuzeRqkRFHwrGdWAgyg==",
+      "path": "xam.plugin.connectivity/3.2.0",
+      "hashPath": "xam.plugin.connectivity.3.2.0.nupkg.sha512"
+    },
+    "Xam.Plugins.Forms.ImageCircle/3.0.0.5": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-59HyuAaUzuloQmu/PVCDCJQMRuuhqmIpCQ+d5hH5Qp8AZsa/vDi5ulrXDKRMZSZt/xbXsyZV+aZ/W/SZaYt2Mg==",
+      "path": "xam.plugins.forms.imagecircle/3.0.0.5",
+      "hashPath": "xam.plugins.forms.imagecircle.3.0.0.5.nupkg.sha512"
+    },
+    "Xam.Plugins.Settings/3.1.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-EQEYQJ64ZLqui5GWkLMavgqitHxwUHZHryTzUD1021UBuz1XwDSjPL45W0K4pPXjz9oKbg7YpRXKPR1luPr/5Q==",
+      "path": "xam.plugins.settings/3.1.1",
+      "hashPath": "xam.plugins.settings.3.1.1.nupkg.sha512"
+    },
+    "Xamarin.Forms/3.2.0.871581": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-PI+BD/fzCvpH/iKlLd6N8z+gN3ZrhOaoaLg4JmMF0eaLhrWinlzNFLYo+QsNCoIE0biSa7GU88YcyNiCoQO+7Q==",
+      "path": "xamarin.forms/3.2.0.871581",
+      "hashPath": "xamarin.forms.3.2.0.871581.nupkg.sha512"
+    },
+    "XFControls/1.0.0.6": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-hOSwCtw46yYz55jWzldtRREjWkzWrWnxZfILMpl/PAo/WbDeSeJFBjPdXm7f/AuzHbsWVI32tYJic5HaBkbwIA==",
+      "path": "xfcontrols/1.0.0.6",
+      "hashPath": "xfcontrols.1.0.0.6.nupkg.sha512"
+    },
+    "XFCustomControls/1.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-JCdQEFe9/WcL/oDM34w3bfslM6XcPQuYQS049+9ttBDg2WACksaT87NCUu0+LdTC7j4jkm59Wxhp0UPWebxb0A==",
+      "path": "xfcustomcontrols/1.0.0",
+      "hashPath": "xfcustomcontrols.1.0.0.nupkg.sha512"
+    },
+    "SqueezeBill.Services/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

@@ -33,6 +33,7 @@ namespace SqueezeBill.Views.Home
 		{
 			InitializeComponent ();
             //NavigationPage.SetHasNavigationBar(this, false);
+           
             _objComapreRatesByZipcodeRequest = new ComapreRatesByZipcodeRequest();
 
             selectedConsumer = 0;
@@ -83,7 +84,7 @@ namespace SqueezeBill.Views.Home
                 }
                 else
                 {
-                    DisplayAlert("Alert", "Please Enter the ZipCode", "Ok");
+                    DisplayAlert("", "Please Enter the ZipCode", "(X)");
                 }
             }
             catch(Exception ex)

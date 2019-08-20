@@ -18,7 +18,8 @@ namespace SqueezeBill
         {
             InitializeComponent();
             NavigationPage= new NavigationPage(new UserNavigationPage());
-            MainPage = NavigationPage;
+             MainPage = NavigationPage;
+            //MainPage = new UserNavigationPage();
         }
 
         protected override void OnStart()

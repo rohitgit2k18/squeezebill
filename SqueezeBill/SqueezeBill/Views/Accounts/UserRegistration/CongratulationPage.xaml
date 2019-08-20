@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             x:Class="SqueezeBill.Views.Accounts.UserRegistration.CongratulationPage">
+    
+    <ContentPage.Content>
+        <Grid x:Name="RootLayout" Margin="20">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <Grid Grid.Row="0" Padding="20">
+                <StackLayout Orientation="Vertical">
+                    <Image Source="idea.png" VerticalOptions="Start" HorizontalOptions="Center"/>
+                    <Label Text="SqueezeBill"
+                           FontSize="Large" 
+                           FontAttributes="Bold" 
+                           HorizontalOptions="Center" 
+                           HorizontalTextAlignment="Center" 
+                           TextColor="Black"/>
+                    <Label Text="Smart way to save"
+                           FontSize="Small" 
+                           FontAttributes="None" 
+                           Margin="40,0,-40,0"
+                           HorizontalOptions="Center" 
+                           HorizontalTextAlignment="Center"
+                           TextColor="Gray"/>
+                </StackLayout>
+            </Grid>
+            <Grid Grid.Row="1" RowSpacing="20">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+                    <Grid Grid.Row="0">
+                    <Label VerticalOptions="Center" HorizontalOptions="Center" HorizontalTextAlignment="Center"
+                          FontAttributes="Bold" Text="Congratulation!!!" FontSize="Large" TextColor="Black" />
+                </Grid>
+
+                   <Grid Grid.Row="1">
+                    <Label VerticalOptions="Center" HorizontalOptions="Center" HorizontalTextAlignment="Center"
+                           Text="We shared your purchase request with the supplier." FontSize="Medium" TextColor="Black" />
+                </Grid>
+                   <Grid Grid.Row="2">
+                    <Label VerticalOptions="Center" HorizontalOptions="Center" HorizontalTextAlignment="Center"
+                           Text="Look for an email confirming your enrollment status and any next steps." FontSize="Small" TextColor="Black" />
+                </Grid>
+        </Grid>
+            </Grid>
+    </ContentPage.Content>
+</ContentPage>

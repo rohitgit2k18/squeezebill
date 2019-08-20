@@ -12,7 +12,14 @@
                 </Image.GestureRecognizers>
             </Image>-->
 
-            <Label Text="Sign Up" VerticalOptions="Center" FontAttributes="Bold" TextColor="White" HorizontalOptions="Center" Margin="-80,0,0,0" FontSize="Medium" />
+            <Label Text="Sign Up" VerticalOptions="Center" FontAttributes="Bold" TextColor="White" HorizontalOptions="Center"  FontSize="Medium" >
+                <Label.Margin>
+                   <OnPlatform x:TypeArguments="Thickness">
+                        <On Platform="Android">-80,0,0,0</On>
+                        <On Platform="iOS">0</On>
+                    </OnPlatform> 
+                </Label.Margin>
+            </Label>
         </Grid>
     </NavigationPage.TitleView>
     
@@ -140,7 +147,7 @@
                         </Grid>
                         
                         <Grid Grid.Column="1">
-                            <Label Text="Mein Name ist Roger Rabbit. Ich bin einundzwanzig Jahre alt. Ich wohne in Birmingham. Ich lebe in Birmingham fur drei Monate. Ich komme aus London in England. Ich bin studentin (I'm male is studentin correct?) und ich studiere Erdkunde. Ich studiere erst zwei Monate. Ich habe keine Kinder. Ich habe zwei Hobbys, sind sie Leichtathletik und Fußball spielen." VerticalOptions="Center" HorizontalOptions="Start" HorizontalTextAlignment="Start"/>
+                            <Label x:Name="TCfirst" VerticalOptions="Center" HorizontalOptions="Start" HorizontalTextAlignment="Start"/>
                         </Grid>
                     </Grid>
                     
@@ -155,7 +162,7 @@
                         </Grid>
                         
                         <Grid Grid.Column="1">
-                            <Label Text="Mein Name ist Roger Rabbit. Ich bin einundzwanzig Jahre alt. Ich wohne in Birmingham. Ich lebe in Birmingham fur drei Monate. Ich komme aus London in England. Ich bin studentin (I'm male is studentin correct?) und ich studiere Erdkunde. Ich studiere erst zwei Monate. Ich habe keine Kinder. Ich habe zwei Hobbys, sind sie Leichtathletik und Fußball spielen." VerticalOptions="Center" HorizontalOptions="Start" HorizontalTextAlignment="Start"/>
+                            <Label x:Name="TCsecond" VerticalOptions="Center" HorizontalOptions="Start" HorizontalTextAlignment="Start"/>
                         </Grid>
                     </Grid>
                     
@@ -170,7 +177,7 @@
                         </Grid>
 
                         <Grid Grid.Column="1">
-                            <Label Text="Mein Name ist Roger Rabbit. Ich bin einundzwanzig Jahre alt. Ich wohne in Birmingham. Ich lebe in Birmingham fur drei Monate. Ich komme aus London in England. Ich bin studentin (I'm male is studentin correct?) und ich studiere Erdkunde. Ich studiere erst zwei Monate. Ich habe keine Kinder. Ich habe zwei Hobbys, sind sie Leichtathletik und Fußball spielen." VerticalOptions="Center" HorizontalOptions="Start" HorizontalTextAlignment="Start"/>
+                            <Label x:Name="TCThird" VerticalOptions="Center" HorizontalOptions="Start" HorizontalTextAlignment="Start"/>
                         </Grid>
                     </Grid>
                 </Grid>

@@ -26,8 +26,6 @@
 	<string>com.companyname.SqueezeBill</string>
 	<key>CFBundleVersion</key>
 	<string>1.0</string>
-	<key>UILaunchStoryboardName</key>
-	<string>(not set)</string>
 	<key>CFBundleName</key>
 	<string>SqueezeBill</string>
 	<key>XSAppIconAssets</key>

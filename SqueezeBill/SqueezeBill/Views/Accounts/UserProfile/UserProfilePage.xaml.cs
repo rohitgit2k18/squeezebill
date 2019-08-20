@@ -47,7 +47,7 @@ namespace SqueezeBill.Views.Accounts.UserProfile
                 _objHeadermodel.TokenCode = Settings.TokenCode;
                 if (!CrossConnectivity.Current.IsConnected)
                 {
-                    await DisplayAlert("Alert", "No Network Connection", "Ok");
+                    await DisplayAlert("", "No Network Connection", "(X)");
                 }
                 else
                 {
@@ -59,7 +59,7 @@ namespace SqueezeBill.Views.Accounts.UserProfile
                     }
                     else
                     {
-                        await DisplayAlert("Alert", "No Data is Available", "Ok");
+                        await DisplayAlert("", "No Data is Available", "(X)");
                     }
                 }
             }
@@ -80,19 +80,19 @@ namespace SqueezeBill.Views.Accounts.UserProfile
             {
                 if (!CrossConnectivity.Current.IsConnected)
                 {
-                    await DisplayAlert("Alert", "No Network Connection", "Ok");
+                    await DisplayAlert("", "No Network Connection", "(X)");
                 }
                 else
                 {
                     if (string.IsNullOrEmpty(_objUserDetailsResponse.response.details.email))
                     {
-                        await DisplayAlert("Alert", "Email can not be null!", "Ok");
+                        await DisplayAlert("", "Email can not be null!", "(X)");
                     }
                     else
                     {
                         if (!IsValid)
                         {
-                            await DisplayAlert("Alert", "Email is not in a valid format!", "Ok");
+                            await DisplayAlert("", "Email is not in a valid format!", "(X)");
                         }
                         else
                         {
@@ -101,11 +101,11 @@ namespace SqueezeBill.Views.Accounts.UserProfile
                             var result = _objobjUpdateUserResponse.response;
                             if (result.statusCode == 200)
                             {
-                                await DisplayAlert("Alert", "User Updated Sucessfully!", "Ok");
+                                await DisplayAlert("", "User Updated Sucessfully!", "(X)");
                             }
                             else
                             {
-                                await DisplayAlert("Alert", "No Data is Available", "Ok");
+                                await DisplayAlert("", "No Data is Available", "(X)");
                             }
                         }
                     }

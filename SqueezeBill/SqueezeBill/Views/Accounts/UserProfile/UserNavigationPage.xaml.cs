@@ -12,18 +12,25 @@ using Xamarin.Forms.Xaml;
 
 namespace SqueezeBill.Views.Accounts.UserProfile
 {
-	[XamlCompilation(XamlCompilationOptions.Compile)]
-	public partial class UserNavigationPage : MasterDetailPage
+    [XamlCompilation(XamlCompilationOptions.Compile)]
+    public partial class UserNavigationPage : MasterDetailPage
     {
-		public UserNavigationPage ()
-		{
-			InitializeComponent ();
+
+        public UserNavigationPage()
+        {
+            InitializeComponent();
             NavigationPage.SetHasNavigationBar(this, false);
         }
+
+        //[Obsolete]
+        //public static string Resolver(string image)
+        //{
+        //    return string.Format(Device.OnPlatform("{0}", "{0}", "Assets/{0}"), image);
+        //}
         protected override void OnAppearing()
         {
             base.OnAppearing();
-            if(Settings.IsLoggedIn)
+            if (Settings.IsLoggedIn)
             {
                 XFStackProfilePic.IsVisible = true;
                 XFLblSignIn.IsVisible = false;
@@ -38,23 +45,34 @@ namespace SqueezeBill.Views.Accounts.UserProfile
         }
         private void GridHome_Tapped(object sender, EventArgs e)
         {
+            try
+            {
+                var detail = new NavigationPage(new HomePage());
+                App.Navigation = detail.Navigation;
+                Detail = detail;
+                IsPresented = false;
+            }
+            catch (Exception ex)
+            {
+                var msg = ex.Message;
+            }
 
-            var detail = new NavigationPage(new HomePage());
-            App.DetailPage = new HomePage();
-            detail.Title = "HomePage";
-            App.Navigation = detail.Navigation;
-            Detail = detail;
-            IsPresented = false;
         }
 
         private void GridNews_Tapped(object sender, EventArgs e)
         {
-            var detail = new NavigationPage(new NewsPage());
-            App.DetailPage = new NewsPage();
-            detail.Title = "NewsPage";
-            App.Navigation = detail.Navigation;
-            Detail = detail;
-            IsPresented = false;
+            try
+            {
+                var detail = new NavigationPage( new NewsPage());
+                App.Navigation = detail.Navigation;
+                Detail = detail;
+                IsPresented = false;
+            }
+            catch (Exception ex)
+            {
+                var msg = ex.Message;
+            }
+
             //var detail4 = new NavigationPage(new NewsPage());
             //var detail = App.NavigationPage = detail4;
             //App.DetailPage = new NewsPage();
@@ -66,12 +84,18 @@ namespace SqueezeBill.Views.Accounts.UserProfile
 
         private void GridHowSwitchWork_Tapped(object sender, EventArgs e)
         {
-            var detail = new NavigationPage(new HowSwitchingWorksPage());
-            App.DetailPage = new HowSwitchingWorksPage();
-            detail.Title = "HowSwitchingWorksPage";
-            App.Navigation = detail.Navigation;
-            Detail = detail;
-            IsPresented = false;
+            try
+            {
+                var detail = new NavigationPage(new HowSwitchingWorksPage());
+                App.Navigation = detail.Navigation;
+                Detail = detail;
+                IsPresented = false;
+            }
+            catch (Exception ex)
+            {
+                var msg = ex.Message;
+            }
+
             //var detail4 = new NavigationPage(new HowSwitchingWorksPage());
             //var detail = App.NavigationPage = detail4;
             //App.DetailPage = new HowSwitchingWorksPage();
@@ -83,79 +107,128 @@ namespace SqueezeBill.Views.Accounts.UserProfile
 
         private void GridWhySwitch_Tapped(object sender, EventArgs e)
         {
-            var detail = new NavigationPage(new WhySwitchPage());
-            App.DetailPage = new WhySwitchPage();
-            detail.Title = "WhySwitchPage";
-            App.Navigation = detail.Navigation;
-            Detail = detail;
-            IsPresented = false;
+            try
+            {
+                var detail = new NavigationPage(new WhySwitchPage());
+                App.Navigation = detail.Navigation;
+                Detail = detail;
+                IsPresented = false;
+            }
+            catch (Exception ex)
+            {
+                var msg = ex.Message;
+            }
+
         }
 
         private void GridServiceArea_Tapped(object sender, EventArgs e)
         {
-            var detail = new NavigationPage(new ServiceAreaPage());
-            App.DetailPage = new ServiceAreaPage();
-            detail.Title = "ServiceAreaPage";
-            App.Navigation = detail.Navigation;
-            Detail = detail;
-            IsPresented = false;
+            try
+            {
+                var detail = new NavigationPage(new ServiceAreaPage());
+                App.Navigation = detail.Navigation;
+                Detail = detail;
+                IsPresented = false;
+            }
+            catch (Exception ex)
+            {
+                var msg = ex.Message;
+            }
+
         }
 
         private void GridEnergyGlossary_Tapped(object sender, EventArgs e)
         {
-            var detail = new NavigationPage(new EnergyGlossaryPage());
-            App.DetailPage = new EnergyGlossaryPage();
-            detail.Title = "EnergyGlossaryPage";
-            App.Navigation = detail.Navigation;
-            Detail = detail;
-            IsPresented = false;
+            try
+            {
+                var detail = new NavigationPage(new EnergyGlossaryPage());
+                App.Navigation = detail.Navigation;
+                Detail = detail;
+                IsPresented = false;
+            }
+            catch (Exception ex)
+            {
+                var msg = ex.Message;
+            }
+
         }
 
         private void GridFaq_Tapped(object sender, EventArgs e)
         {
-            var detail = new NavigationPage(new FaqPage());
-            App.DetailPage = new FaqPage();
-            detail.Title = "FaqPage";
-            App.Navigation = detail.Navigation;
-            Detail = detail;
-            IsPresented = false;
+            try
+            {
+                var detail = new NavigationPage(new FaqPage());
+                App.Navigation = detail.Navigation;
+                Detail = detail;
+                IsPresented = false;
+            }
+            catch (Exception ex)
+            {
+                var msg = ex.Message;
+            }
+
         }
 
         private void GridContactUs_Tapped(object sender, EventArgs e)
         {
-            var detail = new NavigationPage(new ContactUsPage());
-            App.DetailPage = new ContactUsPage();
-            detail.Title = "ContactUsPage";
-            App.Navigation = detail.Navigation;
-            Detail = detail;
-            IsPresented = false;
+            try
+            {
+                var detail = new NavigationPage(new ContactUsPage());
+                App.Navigation = detail.Navigation;
+                Detail = detail;
+                IsPresented = false;
+            }
+            catch (Exception ex)
+            {
+                var msg = ex.Message;
+            }
+
         }
 
         private async void GridLogout_Tapped(object sender, EventArgs e)
         {
-            if (Settings.IsLoggedIn)
+            try
             {
-                Settings.IsLoggedIn = false;
-                Settings.TokenCode = string.Empty;
-                var otherPage = new LoginPage();
-                var homePage = App.NavigationPage.Navigation.NavigationStack.First();
-                App.NavigationPage.Navigation.InsertPageBefore(otherPage, homePage);
-                await App.NavigationPage.PopToRootAsync(false);
+                var result = await DisplayAlert("", "Are You Sure want to logout!", "Ok", "No");
+                if(result)
+                {
+                    if (Settings.IsLoggedIn)
+                    {
+                        Settings.IsLoggedIn = false;
+                        Settings.TokenCode = string.Empty;
+                        var otherPage = new LoginPage();
+                        var homePage = App.NavigationPage.Navigation.NavigationStack.First();
+                        App.NavigationPage.Navigation.InsertPageBefore(otherPage, homePage);
+                        await App.NavigationPage.PopToRootAsync(false);
+                    }
+                    else
+                    {
+                        await DisplayAlert("", "please Click on sign in first!", "(X)");
+                    }
+                }
+               
             }
-            else
+            catch (Exception ex)
             {
-                await DisplayAlert("Alert", "please Click on sign in first!", "ok");
+                var msg = ex.Message;
             }
+
         }
 
-        private  void XFLblLogin_Tapped(object sender, EventArgs e)
+        private void XFLblLogin_Tapped(object sender, EventArgs e)
         {
-            var detail = new NavigationPage(new LoginPage());
-            App.DetailPage = new LoginPage();
-            detail.Title = "Login";
-            App.Navigation = detail.Navigation;
-            Detail = detail;
-            IsPresented = false;
+            try
+            {
+                var detail = new NavigationPage(new LoginPage());
+                App.Navigation = detail.Navigation;
+                Detail = detail;
+                IsPresented = false;
+            }
+            catch (Exception ex)
+            {
+                var msg = ex.Message;
+            }
+
             //var otherPage = new LoginPage();
             //var homePage = App.NavigationPage.Navigation.NavigationStack.First();
             //App.NavigationPage.Navigation.InsertPageBefore(otherPage, homePage);
@@ -164,12 +237,19 @@ namespace SqueezeBill.Views.Accounts.UserProfile
 
         private void ImageProfile_Tapped(object sender, EventArgs e)
         {
-            var detail = new NavigationPage(new UserProfilePage());
-            App.DetailPage = new UserProfilePage();
-            detail.Title = "UserProfilePage";
-            App.Navigation = detail.Navigation;
-            Detail = detail;
-            IsPresented = false;
+            try
+            {
+                var detail = new NavigationPage(new UserProfilePage());
+                App.Navigation = detail.Navigation;
+                Detail = detail;
+                IsPresented = false;
+            }
+
+            catch (Exception ex)
+            {
+                var msg = ex.Message;
+            }
+
         }
     }
 }

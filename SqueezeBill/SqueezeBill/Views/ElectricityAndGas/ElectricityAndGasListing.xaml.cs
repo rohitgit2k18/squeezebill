@@ -36,7 +36,7 @@ namespace SqueezeBill.Views.ElectricityAndGas
         public ElectricityAndGasListing(ComapreRatesByZipcodeRequest ObjComapreRatesByZipcodeRequest)
         {
             InitializeComponent();
-            NavigationPage.SetBackButtonTitle(this, "Back");
+            NavigationPage.SetBackButtonTitle(this, "");
             _objComapreRatesByZipcodeRequest = new ComapreRatesByZipcodeRequest();
             _objComapreRatesByZipcodeRequest = ObjComapreRatesByZipcodeRequest;
             _objComapreRatesByZipcodeResponse = new ComapreRatesByZipcodeResponse();
@@ -44,11 +44,11 @@ namespace SqueezeBill.Views.ElectricityAndGas
 
             if (_objComapreRatesByZipcodeRequest.requestSearch.isElectricity)
             {
-                XFLabelTitle.Text = "Electricity";
+               // XFLabelTitle.Text = "Electricity";
             }
             else
             {
-                XFLabelTitle.Text = "Gas";
+               // XFLabelTitle.Text = "Gas";
             }
             _baseUrl = Domain.Url + Domain.LoadDataByZipCodeApiConstant;
             LoadSupplierAndRetailerList();
@@ -66,6 +66,12 @@ namespace SqueezeBill.Views.ElectricityAndGas
                                                         select x;
                 RateComparisionList.ItemsSource = itemsSource;
             }
+            //else
+            //{
+            //    var retailer = result.compareListDetails.retailerList[0];
+            //    RateComparisionList.ItemsSource = result.compareListDetails.retailerList.Where(x => x.companyId == retailer.companyId);
+               
+            //}
         }
 
         private async void LoadSupplierAndRetailerList()
@@ -74,7 +80,7 @@ namespace SqueezeBill.Views.ElectricityAndGas
             {
                 if (!CrossConnectivity.Current.IsConnected)
                 {
-                    await DisplayAlert("Alert", "No Network Connection", "Ok");
+                    await DisplayAlert("", "No Network Connection", "(X)");
                 }
                 else
                 {
@@ -85,7 +91,7 @@ namespace SqueezeBill.Views.ElectricityAndGas
                     {
                         if (result.compareListDetails.supplierList.Count <= 0)
                         {
-                            await DisplayAlert("Alert", "No Supplier is Available", "Ok");
+                            await DisplayAlert("", "We don't have any rate plans in your area !!", "(X)");
                         }
                         else
                         {
@@ -100,8 +106,8 @@ namespace SqueezeBill.Views.ElectricityAndGas
 
                             selectedCompany = result.compareListDetails.supplierList.ElementAt(0);
                             XFLBKCompanyRate.Text = $"{selectedCompany.rate:0.00}" + "c";
-                            XFLBLCompanyName.Text = result.compareListDetails.supplierList.ElementAt(0).companyName;
-                            XFLblAnnualSavings.Text= "$"+" "+result.compareListDetails.supplierList.ElementAt(0).futureAnnualSavings.ToString();
+                            XFLBLCompanyName.Source = result.compareListDetails.supplierList.ElementAt(0).logo;
+                           // XFLblAnnualSavings.Text= "$"+" "+result.compareListDetails.supplierList.ElementAt(0).futureAnnualSavings.ToString();
                             XFListCompanyName.ItemsSource = result.compareListDetails.supplierList;
                             
                             //select x.companyName;
@@ -118,12 +124,12 @@ namespace SqueezeBill.Views.ElectricityAndGas
                             
                             if (result.compareListDetails.retailerList.Count <= 0)
                             {
-                                await DisplayAlert("Alert", "No Retailer is Available", "Ok");
+                                await DisplayAlert("", "No Retailer is Available in your area!", "(X)");
                             }
                             else
                             {
                                 base.BindingContext = result;
-                                RateComparisionList.ItemsSource = result.compareListDetails.retailerList;
+                                RateComparisionList.ItemsSource = result.compareListDetails.retailerList.Where(x=>x.companyId== selectedCompany.companyId).ToList();
                                 XFActivityIndicator.IsVisible = false;
                             }
                         }
@@ -176,14 +182,14 @@ namespace SqueezeBill.Views.ElectricityAndGas
             }
             else
             {
-                DisplayAlert("Alert", "No Supplier is Available", "Ok");
+                DisplayAlert("", "We don't have any rate plans in your area !!", "(X)");
             }
         }
 
-        private void XFPopupCancel_Clicked(object sender, EventArgs e)
-        {
-            XFCVCompanyPopup.IsVisible = false;
-        }
+        //private void XFPopupCancel_Clicked(object sender, EventArgs e)
+        //{
+        //    XFCVCompanyPopup.IsVisible = false;
+        //}
 
         private void XFListView_ItemSelected(object sender, SelectedItemChangedEventArgs e)
         {
@@ -192,9 +198,9 @@ namespace SqueezeBill.Views.ElectricityAndGas
             selectedCompany = result.compareListDetails.supplierList.Where(x => x.companyName == sl.companyName).FirstOrDefault();
             RateComparisionList.ItemsSource = result.compareListDetails.retailerList.Where(x => x.companyId == selectedCompany.companyId);
 
-            XFLBLCompanyName.Text = selectedCompany.companyName;
+            XFLBLCompanyName.Source = selectedCompany.logo;
             XFLBKCompanyRate.Text = $"{selectedCompany.rate:0.00}" + "c";
-            XFLblAnnualSavings.Text = "$" + " " + selectedCompany.futureAnnualSavings.ToString();
+           // XFLblAnnualSavings.Text = "$" + " " + selectedCompany.futureAnnualSavings.ToString();
         }
 
         private  void ImgInfo_Tapped(object sender, EventArgs e)
@@ -204,7 +210,7 @@ namespace SqueezeBill.Views.ElectricityAndGas
            {
                try
                {
-                   await DisplayAlert("Info!","Your annual estimated savings are based on your utility's price to compare and average monthly usage of estimated 1000KWH","ok");
+                   await DisplayAlert("Info!","Your annual estimated savings are based on your utility's price to compare and average monthly usage of estimated 1000KWH","(X)");
                    
                }
               

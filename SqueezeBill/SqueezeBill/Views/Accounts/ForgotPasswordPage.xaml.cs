@@ -30,7 +30,8 @@ namespace SqueezeBill.Views.Accounts
         public ForgotPasswordPage ()
 		{
 			InitializeComponent ();
-            NavigationPage.SetHasNavigationBar(this, false);
+            // NavigationPage.SetHasNavigationBar(this, false);
+            NavigationPage.SetBackButtonTitle(this, "");
             _objForgotPasswordRequest = new ForgotPasswordRequest();
             this.BindingContext = _objForgotPasswordRequest;
             _objForgotPasswordResponse = new ForgotPasswordResponse();
@@ -49,20 +50,20 @@ namespace SqueezeBill.Views.Accounts
             {
                 if (!CrossConnectivity.Current.IsConnected)
                 {
-                    await DisplayAlert("Alert", "No Network Connection!", "ok");
+                    await DisplayAlert("", "No Network Connection!", "(X)");
                 }
                 else
                 {
                     if (string.IsNullOrEmpty(_objForgotPasswordRequest.emailId))
                        
                     {
-                        await DisplayAlert("Alert", "please fill the email first!", "ok");
+                        await DisplayAlert("", "please fill the email first!", "(X)");
                     }
                     else
                     {
                         if(!IsValid)
                         {
-                            await DisplayAlert("Alert", "Invalid Email!", "ok");
+                            await DisplayAlert("", "Invalid Email!", "(X)");
                         }
                         else
 
@@ -72,12 +73,12 @@ namespace SqueezeBill.Views.Accounts
                             var Response = _objForgotPasswordResponse.response;
                             if (Response.statusCode == 200)
                             {
-                                await DisplayAlert("Alert!", " OTP has been sent to your register emailid !!", "Ok");
+                                await DisplayAlert("", " OTP has been sent to your register emailid !!", "(X)");
                                 await App.NavigationPage.Navigation.PushAsync(new ResetPasswordPage());
                             }
                             else
                             {
-                                await DisplayAlert("Alert!", "Please try again!", "Ok");
+                                await DisplayAlert("", "Please try again!", "(X)");
                             }
                         }
                         

@@ -1,0 +1,106 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+              xmlns:local="clr-namespace:SqueezeBill"
+             x:Class="SqueezeBill.Views.Accounts.UserRegistration.AddUser">
+    <NavigationPage.TitleView>
+        <Grid VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+            <!--<Image VerticalOptions="Center" Margin="0,0,20,0" HorizontalOptions="Start" Source="back.png">
+                <Image.GestureRecognizers>
+                    <TapGestureRecognizer NumberOfTapsRequired="1" Tapped="XFImgBack_Tapped"/>
+                </Image.GestureRecognizers>
+            </Image>-->
+
+            <Label Text="Sign Up" VerticalOptions="Center" FontAttributes="Bold" TextColor="White" HorizontalOptions="Center"  FontSize="Medium">
+            <Label.Margin>
+                   <OnPlatform x:TypeArguments="Thickness">
+                        <On Platform="Android">-80,0,0,0</On>
+                        <On Platform="iOS">0</On>
+                    </OnPlatform> 
+                </Label.Margin>    
+            </Label>
+        </Grid>
+    </NavigationPage.TitleView>
+    <ContentPage.Content>
+        
+        <Grid x:Name="RootLayout" Margin="20,20,20,20">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="2*"/>
+            </Grid.RowDefinitions>
+            <Grid Grid.Row="0" Padding="20,10,20,10">
+                <Image VerticalOptions="Center" HorizontalOptions="Center" Source="logo.png"/>
+                <!--<StackLayout Orientation="Vertical">
+                    <Image Source="idea.png" VerticalOptions="Start" HeightRequest="100" WidthRequest="100" HorizontalOptions="Center"/>
+                  
+                </StackLayout>-->
+            </Grid>
+            <Grid Grid.Row="1" RowSpacing="10">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="0.8*"/>
+                    </Grid.RowDefinitions>
+                    <Frame Grid.Row="0" HasShadow="False" Padding="0" Margin="0" HeightRequest="-1" BackgroundColor="White">
+                        <local:BorderlessEntry Placeholder="FirstName"
+                                          Text="{Binding firstName}"
+                                          
+                                          x:Name="EntryFirstName"
+                                          
+                                          Keyboard="Default"
+                                          PlaceholderColor="LightGray"
+                                          />
+                    </Frame>
+                    <Frame Grid.Row="1" HasShadow="False" Padding="0" Margin="0" HeightRequest="-1" BackgroundColor="White">
+                        <local:BorderlessEntry Placeholder="LastName"
+                                          Text="{Binding lastName}"
+                                         
+                                          x:Name="EntryLastName"
+                                         
+                                          Keyboard="Email"
+                                          PlaceholderColor="LightGray"
+                                          />
+                    </Frame>
+                    <Frame Grid.Row="2" HasShadow="False" Padding="0" Margin="0" HeightRequest="-1" BackgroundColor="White">
+                        <local:ImageEntry Placeholder="Email"
+                                          Text="{Binding email}"
+                                          ImageAlignment="Right"
+                                          ImageHeight="20"
+                                          x:Name="EntryEmail"
+                                          TextChanged="EntryEmail_TextChanged"
+                                          ImageWidth="20"
+                                          Keyboard="Email"
+                                          PlaceholderColor="LightGray"
+                                          LineColor="White"
+                                          Image="info"/>
+                    </Frame>
+
+                    <Frame Grid.Row="3" HasShadow="False" Padding="0" Margin="0" HeightRequest="-1" BackgroundColor="White">
+                        <local:ImageEntry Placeholder="Password"
+                                          Text="{Binding password}"
+                                          ImageAlignment="Right"
+                                          ImageHeight="20"
+                                          IsPassword="True"
+                                          ImageWidth="20"
+                                          PlaceholderColor="LightGray"
+                                          LineColor="White"
+                                          Image="info"/>
+                    </Frame>
+
+                    
+                <Grid Grid.Row="4">
+                    <Button CornerRadius="5" 
+                            BorderRadius="5" 
+                            x:Name="XFBtnLogin"
+                            Text="Sign Up" 
+                            TextColor="White"
+                            Clicked="XFBtnRegisterUser_Clicked"
+                            BackgroundColor="#FF9408"/>
+                </Grid>
+            </Grid>
+        </Grid>
+        
+    </ContentPage.Content>
+</ContentPage>

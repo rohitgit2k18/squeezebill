@@ -40,7 +40,7 @@ namespace SqueezeBill.Views.OtherPages
             {
                 if (!CrossConnectivity.Current.IsConnected)
                 {
-                    await DisplayAlert("Alert", "No Network Connection", "Ok");
+                    await DisplayAlert("", "No Network Connection", "(X)");
                 }
                 else
                 {
@@ -56,7 +56,7 @@ namespace SqueezeBill.Views.OtherPages
                     }
                     else
                     {
-                        await DisplayAlert("Alert", "No Data is Available", "Ok");
+                        await DisplayAlert("", "No Data is Available", "(X)");
                         XFActivityIndicator.IsVisible = false;
                     }
 

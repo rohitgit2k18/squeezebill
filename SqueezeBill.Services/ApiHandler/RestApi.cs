@@ -430,7 +430,7 @@ namespace SqueezeBill.Services.ApiHandler
         //    }
 
         //}
-        ///// <summary>
+        /// <summary>
         /// Reset Password Api
         /// </summary>
         /// <param name="uri"></param>

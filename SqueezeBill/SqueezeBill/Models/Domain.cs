@@ -13,7 +13,8 @@ namespace TargetTransport.Models
           
             get
             {
-                 return "http://125.63.101.163:149/";
+                return "http://61.247.235.93:149/";
+               // return "http://125.63.101.163:149/";
                
             }
         }
@@ -133,7 +134,7 @@ namespace TargetTransport.Models
             }
         }
         //User Detail
-        public static string USerDetailsApiConstant
+        public static string  USerDetailsApiConstant
         {
             get
             {

@@ -33,12 +33,17 @@ namespace SqueezeBill.Views.Accounts.UserRegistration
         public RegisterStepOnePage (RetailerList objRetailerList)
 		{
 			InitializeComponent ();
+            NavigationPage.SetBackButtonTitle(this, "");
             XFLblTAC.Text = $"T&C";
             _objGetDetailsFromZipcodeResponse = new GetDetailsFromZipcodeResponse();
             _baseUrl = Domain.Url + Domain.GetDetailsByZipCode;
             _objHeaderModel = new HeaderModel();
             _apiService = new RestApi();
             _objRetailerList = new RetailerList();
+            if (Settings.IsLoggedIn)
+            {
+                xfGridPass.IsVisible = false;
+            }
             if (objRetailerList != null)
             {
                 _objRetailerList = objRetailerList;
@@ -68,7 +73,7 @@ namespace SqueezeBill.Views.Accounts.UserRegistration
             }
             else
             {
-                await DisplayAlert("Error!", "Please Enter a Valid Zipcode!", "ok");
+                await DisplayAlert("", "Please Enter a Valid Zipcode!", "(X)");
                 this.BindingContext = _objUserRegistrationRequest;
             }
         }
@@ -81,26 +86,25 @@ namespace SqueezeBill.Views.Accounts.UserRegistration
         {
             if (!CrossConnectivity.Current.IsConnected)
             {
-                DisplayAlert("Alert", "Network Not Connected!", "OK");
+                DisplayAlert("", "Network Not Connected!", "(X)");
             }
             else
             {
              if(!IsValid)
                 {
-                    DisplayAlert("Alert", "please enter valid email!", "OK");
+                    DisplayAlert("", "please enter valid email!", "(X)");
                 }
                 else
                 {
                     if(string.IsNullOrEmpty(_objUserRegistrationRequest.firstName) ||
                         string.IsNullOrEmpty(_objUserRegistrationRequest.email) ||
-                        string.IsNullOrEmpty(_objUserRegistrationRequest.password) ||
                         string.IsNullOrEmpty(_objUserRegistrationRequest.phoneNumber) ||
                         string.IsNullOrEmpty(_objUserRegistrationRequest.zipCode) ||
                         string.IsNullOrEmpty(_objUserRegistrationRequest.state)||
                         string.IsNullOrEmpty(_objUserRegistrationRequest.city)
                         )
                     {
-                        DisplayAlert("Alert", "please fill all the field!", "OK");
+                        DisplayAlert("", "please fill all the field!", "(X)");
                     }
                     else
                     {

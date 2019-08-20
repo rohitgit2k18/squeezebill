@@ -12,13 +12,26 @@
                 </Image.GestureRecognizers>
             </Image>-->
 
-            <Label Text="Sign Up" VerticalOptions="Center" FontAttributes="Bold" TextColor="White" HorizontalOptions="Center" Margin="-80,0,0,0" FontSize="Medium" />
+            <Label Text="Sign Up" VerticalOptions="Center" FontAttributes="Bold" TextColor="White" HorizontalOptions="Center" FontSize="Medium" >
+            <Label.Margin>
+                   <OnPlatform x:TypeArguments="Thickness">
+                        <On Platform="Android">-80,0,0,0</On>
+                        <On Platform="iOS">0</On>
+                    </OnPlatform> 
+                </Label.Margin>    
+            </Label>
         </Grid>
     </NavigationPage.TitleView>
     
     <ContentPage.Content>
         <ScrollView>
-        <Grid x:Name="RootLayout" Margin="20">
+        <Grid x:Name="RootLayout" Margin="20,20,20,0">
+                <Grid.RowSpacing>
+                    <OnPlatform x:TypeArguments="x:Double">
+                                            <On Platform="iOS">20</On>
+                                            <On Platform="Android">10</On>
+                                        </OnPlatform>
+                </Grid.RowSpacing>
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto"/>
                 <RowDefinition Height="Auto"/>
@@ -70,6 +83,7 @@
                         x:Name="XFBTN_Duration"
                         FontSize="12"                                   
                         BorderRadius="10"
+                            Padding="5,5,5,5"
                         TextColor="Black" 
                         BackgroundColor="#C5C5C5"
                         CornerRadius="10"
@@ -104,19 +118,23 @@
                     <Grid Grid.Column="0">
                         <Label VerticalOptions="Start"
                                HorizontalOptions="Center" 
-                               Text="Personal Info." 
+                               Text="Personal Info."
+                               FontSize="Small"
                                TextColor="#FF9408"/>
+                                
                     </Grid>
                     <Grid Grid.Column="1">
                         <Label VerticalOptions="Start"
                                x:Name="XFLblTAC"
                                HorizontalOptions="Center" 
+                               FontSize="Small"
                                Text="T And C" 
                                TextColor="#4D4C49"/>
                     </Grid>
                     <Grid Grid.Column="2">
                         <Label VerticalOptions="Start"
                                HorizontalOptions="End" 
+                               FontSize="Small"
                                Text="Enroll" 
                                TextColor="#4D4C49"/>
                     </Grid>
@@ -171,7 +189,7 @@
                 </Frame>
             </Grid>
             
-            <Grid Grid.Row="6">
+            <Grid Grid.Row="6" x:Name="xfGridPass">
                 <Frame HasShadow="False" Padding="0" Margin="0" HeightRequest="-1" BackgroundColor="White">
                     <local:ImageEntry Placeholder="Password*"
                                           ImageAlignment="Right"

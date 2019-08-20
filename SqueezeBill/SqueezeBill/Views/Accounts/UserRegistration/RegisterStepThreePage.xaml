@@ -13,7 +13,14 @@
                 </Image.GestureRecognizers>
             </Image>-->
 
-            <Label Text="Sign Up" VerticalOptions="Center" FontAttributes="Bold" TextColor="White" HorizontalOptions="Center" Margin="-80,0,0,0" FontSize="Medium" />
+            <Label Text="Sign Up" VerticalOptions="Center" FontAttributes="Bold" TextColor="White" HorizontalOptions="Center"  FontSize="Medium" >
+                <Label.Margin>
+                   <OnPlatform x:TypeArguments="Thickness">
+                        <On Platform="Android">-80,0,0,0</On>
+                        <On Platform="iOS">0</On>
+                    </OnPlatform> 
+                </Label.Margin>
+            </Label>
         </Grid>
     </NavigationPage.TitleView>
     
@@ -176,24 +183,34 @@
                            HorizontalOptions="Center"
                            VerticalOptions="Center"/>
                     </Grid>
-                    <Grid Grid.Row="1">
-                        <Label Text="Mein Name ist Roger Rabbit. Ich bin einundzwanzig Jahre alt. Ich wohne in Birmingham. Ich lebe in Birmingham fur drei Monate. Ich komme aus London in England. Ich bin studentin (I'm male is studentin correct?) und ich studiere Erdkunde."
+                    <Grid Grid.Row="1" IsVisible="false" x:Name="xfGridmdAccount">
+                        <Label Text="Enter your 20-digit number from your monthly bill to complete your order."
                            TextColor="LightGray"
+                               FontSize="Small"
+                           HorizontalOptions="Center"
+                           VerticalOptions="Center"/>
+                    </Grid>
+                    <Grid Grid.Row="1" IsVisible="false" x:Name="xfgridNoAccount">
+                        <Label Text="Haven't started electric service at this address yet? Call Met-Ed at 800-545-7741 and set up an account for this address. Then enter the 20-digit number to complete your order."
+                           TextColor="LightGray"
+                               x:Name="xflblnoAccounttext"
+                               FontSize="Small"
                            HorizontalOptions="Center"
                            VerticalOptions="Center"/>
                     </Grid>
                 </Grid>
-                <Grid Grid.Row="1">
+                <Grid Grid.Row="1" x:Name="xfcentryaccountnum" Padding="0,5,0,5">
                     <!--<Entry Placeholder="Account Number" PlaceholderColor="LightGray"/>-->
-                    <Frame HasShadow="False" Padding="0" Margin="0" HeightRequest="-1" BackgroundColor="White">
+                    <Frame HasShadow="false" Padding="0" Margin="0" HeightRequest="-1" BackgroundColor="White">
                         <local:BorderlessEntry Placeholder="Account Number"                                                                                    
-                                           PlaceholderColor="LightGray"    
+                                           PlaceholderColor="LightGray"
+                                               x:Name="xfentryacc"
                                             Text="{Binding medEdAccountatthisAddress}"
                                           />
                     </Frame>
                 </Grid>
                 <Grid Grid.Row="2">
-                    <Label Text="You must supply a 20-digit account number" TextColor="#FF9408" VerticalOptions="Center" HorizontalOptions="Center" HorizontalTextAlignment="Center" FontSize="Small"/>
+                    <Label x:Name="xflblaccountinfo" Text="You must supply a 20-digit account number" TextColor="#FF9408" VerticalOptions="Center" HorizontalOptions="Center" HorizontalTextAlignment="Center" FontSize="Small"/>
                 </Grid>
             </Grid>
             

@@ -4,28 +4,63 @@
              NavigationPage.HasBackButton="True"
              x:Class="SqueezeBill.Views.ElectricityAndGas.ElectricityAndGasListing">
     <NavigationPage.TitleView>
-        <Grid VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" BackgroundColor="Transparent" Padding="0" Margin="0">
-            <!--<Image VerticalOptions="Center" BackgroundColor="Green" Margin="0,0,20,0" HorizontalOptions="Start" Source="back.png">
+       <!-- <Grid VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" BackgroundColor="Transparent" Padding="0" Margin="0">
+            <Image VerticalOptions="Center" BackgroundColor="Green" Margin="0,0,20,0" HorizontalOptions="Start" Source="back.png">
                 <Image.GestureRecognizers>
                     <TapGestureRecognizer NumberOfTapsRequired="1" Tapped="XFImgBack_Tapped"/>
                 </Image.GestureRecognizers>
-            </Image>-->
-
-            <Label x:Name="XFLabelTitle" Text="Electricity" BackgroundColor="Transparent" VerticalOptions="Center" FontAttributes="Bold" TextColor="White" HorizontalOptions="Center" Margin="-80,0,0,0" FontSize="Medium" />
-
-            <Image VerticalOptions="Center" Margin="0,0,20,0" BackgroundColor="Transparent" HorizontalOptions="End" Source="filter.png">
+            </Image>
+          <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="40"/>
+                </Grid.ColumnDefinitions>-->
+          <Grid RowSpacing="0" ColumnSpacing="2" Padding="0" BackgroundColor="Transparent">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" />
+                
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="Auto" />
+            </Grid.ColumnDefinitions>
+           
+           <!-- <Entry Grid.Column="1" HeightRequest="38" BackgroundColor="White" FontSize="14" TextColor="#000000" Placeholder="Search here"
+                                   Margin="5" WidthRequest="500" />-->
+            <Label WidthRequest="500" Grid.Column="1" x:Name="XFLabelTitle"  Text="Electricity" BackgroundColor="Transparent" VerticalOptions="Center" FontAttributes="Bold" TextColor="White" HorizontalOptions="Center" HorizontalTextAlignment="Center" FontSize="Medium">
+                <Label.Margin>
+                   <OnPlatform x:TypeArguments="Thickness">
+                        <On Platform="Android">-50,0,0,0</On>
+                        <On Platform="iOS">0</On>
+                    </OnPlatform> 
+                </Label.Margin>    
+            </Label>
+            
+         
+            <!-- <Button Grid.Column="2" Text="+" FontAttributes="Bold" FontSize="16" TextColor="Black"  HeightRequest="30" WidthRequest="30" />-->
+       <Image Grid.Column="2" VerticalOptions="Center"  BackgroundColor="Transparent"  Source="filter.png">
+                <Image.Margin>
+                   <OnPlatform x:TypeArguments="Thickness">
+                        <On Platform="Android">0,0,20,0</On>
+                        <On Platform="iOS">0</On>
+                    </OnPlatform> 
+                </Image.Margin>    
                 <Image.GestureRecognizers>
                     <TapGestureRecognizer NumberOfTapsRequired="1" Tapped="XFImgFilter_Tapped"/>
                 </Image.GestureRecognizers>
             </Image>
         </Grid>
+          <!--  <Label  x:Name="XFLabelTitle" Text="Electricity" BackgroundColor="Transparent" VerticalOptions="Center" FontAttributes="Bold" TextColor="White" HorizontalOptions="Center"  FontSize="Medium" />
+          WidthRequest="500"
+            <Image  VerticalOptions="Center" Margin="0,0,0,0" BackgroundColor="Transparent"  Source="filter.png">
+                <Image.GestureRecognizers>
+                    <TapGestureRecognizer NumberOfTapsRequired="1" Tapped="XFImgFilter_Tapped"/>
+                </Image.GestureRecognizers>
+            </Image>-->
+        <!--</Grid>-->
     </NavigationPage.TitleView>
     
     <ContentPage.Content>
         <RelativeLayout>
-            <Grid x:Name="RootLayout" Margin="10" RowSpacing="20">
+            <Grid x:Name="RootLayout" Margin="5" RowSpacing="10">
                 <Grid.RowDefinitions>
-                    <RowDefinition Height="Auto"/>
                     <RowDefinition Height="Auto"/>
                     <RowDefinition Height="Auto"/>
                     <RowDefinition Height="*"/>
@@ -54,16 +89,15 @@
                         </Grid.ColumnDefinitions>
 
                         <Grid Grid.Column="0">
-                            <Frame Padding="5" Margin="0" BackgroundColor="LightGray" CornerRadius="5" HeightRequest="-1">
+                            <Frame Padding="2" Margin="0" BackgroundColor="LightGray" CornerRadius="5" HeightRequest="-1">
                                 <!--<Label Text="8.50c" TextColor="White" HorizontalOptions="Center" VerticalOptions="Center"/>-->
                                 <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
-                                    <Label
+                                    <Image
                                         x:Name="XFLBLCompanyName"
-                                        Text="{Binding selectedCompany.companyName}"
-                                        TextColor="#858585"
-                                        LineBreakMode="TailTruncation"
-                                        HorizontalTextAlignment="Center"
-                                        BackgroundColor="Transparent" />
+                                        HeightRequest="30"
+                                        WidthRequest="50"
+                                        Aspect="AspectFit"
+                                        />
                                     
                                     <Image 
                                         Source="drop_down.png" 
@@ -85,7 +119,7 @@
                     </Grid>
                 </Grid>
 
-                <Grid Grid.Row="1">
+                <!--<Grid Grid.Row="1">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="0.15*"/>
                         <ColumnDefinition Width="0.60*"/>
@@ -122,13 +156,13 @@
                             </Image.GestureRecognizers>
                         </Image>
                     </Grid>
+                </Grid>-->
+
+                <Grid Grid.Row="1" HeightRequest="20">
+                    <Label Text="Our Best Picks" TextColor="#6D5E61" FontSize="17" VerticalOptions="Start" HorizontalOptions="Center"/>
                 </Grid>
 
-                <Grid Grid.Row="2" HeightRequest="20">
-                    <Label Text="Our Best Picks" TextColor="#6D5E61" FontSize="17" VerticalOptions="Center" HorizontalOptions="Center"/>
-                </Grid>
-
-                <Grid Grid.Row="3">
+                <Grid Grid.Row="2">
                     <ListView x:Name="RateComparisionList" HasUnevenRows="True" SeparatorVisibility="None" SelectionMode="None" >
                         <ListView.ItemTemplate>
                             <DataTemplate>
@@ -204,7 +238,7 @@
                                                             <Label 
                                                                 Margin="5,0,5,0" 
                                                                 Text="{Binding duration,StringFormat='{0} Months'}" 
-                                                                FontSize="14"
+                                                                FontSize="12"
                                                                 TextColor="#AB9A9A" 
                                                                 HeightRequest="25"
                                                                 VerticalTextAlignment="Center"
@@ -257,14 +291,15 @@
                                     HorizontalOptions="Center"/>
                 </Grid>
 
-                <Grid Grid.Row="4">
-                    <Button 
+                <Grid Grid.Row="3">
+                    
+                   <!-- <Button 
                     CornerRadius="5" 
                     BorderRadius="5" 
                     Text="More Plans" 
                     TextColor="White" 
                     Clicked="XFBtnLoadPlans_Clicked"
-                    BackgroundColor="#FF9408"/>
+                    BackgroundColor="#FF9408"/>-->  
                 </Grid>
             </Grid>
 
@@ -301,9 +336,9 @@
                     </ListView.ItemTemplate>
                 </ListView>
 
-                <ContentView.GestureRecognizers>
+                <!--<ContentView.GestureRecognizers>
                     <TapGestureRecognizer NumberOfTapsRequired="1" Tapped="XFPopupCancel_Clicked" />
-                </ContentView.GestureRecognizers>
+                </ContentView.GestureRecognizers>-->
             </ContentView>
         </RelativeLayout>
     </ContentPage.Content>

@@ -53,7 +53,7 @@ namespace SqueezeBill.Views.OtherPages
                 else
                 {
                     XFActivityIndicator.IsVisible = false;
-                    await DisplayAlert("Alert", "No Supplier is Available", "Ok");
+                    await DisplayAlert("", "No Supplier is Available", "(X)");
                 }
             }
             catch(Exception ex)

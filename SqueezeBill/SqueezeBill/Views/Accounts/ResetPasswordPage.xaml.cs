@@ -27,11 +27,13 @@ namespace SqueezeBill.Views.Accounts
         public ResetPasswordPage ()
 		{
 			InitializeComponent ();
-            NavigationPage.SetHasNavigationBar(this, false);
+            NavigationPage.SetBackButtonTitle(this, "");
+            //NavigationPage.SetHasNavigationBar(this, false);
             _objResetPasswordRequest = new ResetPasswordRequest();
             this.BindingContext = _objResetPasswordRequest;
             _objResetPasswordResponse = new ResetPasswordResponse();
             _apiService = new RestApi();
+           
             _baseUrl = Domain.Url + Domain.ResetPasswordApiConstant;
         }
 
@@ -47,7 +49,7 @@ namespace SqueezeBill.Views.Accounts
             {
                 if (!CrossConnectivity.Current.IsConnected)
                 {
-                    await DisplayAlert("Alert", "No Network Connection!", "ok");
+                    await DisplayAlert("", "No Network Connection!", "(X)");
                 }
                 else
                 {
@@ -56,13 +58,13 @@ namespace SqueezeBill.Views.Accounts
                         string.IsNullOrEmpty(_objResetPasswordRequest.confirmPassword))
 
                     {
-                        await DisplayAlert("Alert", "please fill all field first!", "ok");
+                        await DisplayAlert("", "please fill all field first!", "(X)");
                     }
                     else
                     {
                         if (_objResetPasswordRequest.newPassword!= _objResetPasswordRequest.confirmPassword)
                         {
-                            await DisplayAlert("Alert", "Confirm Password did not match!", "ok");
+                            await DisplayAlert("", "Confirm Password did not match!", "(X)");
                         }
                         else
                         {
@@ -70,12 +72,12 @@ namespace SqueezeBill.Views.Accounts
                             var Response = _objResetPasswordResponse.response;
                             if (Response.statusCode == 200)
                             {
-                                await DisplayAlert("Alert!", " Password Chnaged Successfully!!", "Ok");
+                                await DisplayAlert("", " Password Chnaged Successfully!!", "(X)");
                                 await App.NavigationPage.Navigation.PushAsync(new LoginPage());
                             }
                             else
                             {
-                                await DisplayAlert("Alert!", "Please try again!", "Ok");
+                                await DisplayAlert("", "Please try again!", "(X)");
                             }
                         }
 

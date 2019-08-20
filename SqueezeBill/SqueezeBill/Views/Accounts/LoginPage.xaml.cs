@@ -55,7 +55,7 @@ namespace SqueezeBill.Views.Accounts
                
                 if (!CrossConnectivity.Current.IsConnected)
                 {
-                    await DisplayAlert("Alert", "No Network Connection!", "ok");
+                    await DisplayAlert("", "No Network Connection!", "(X)");
 
                 }
                 else
@@ -63,13 +63,13 @@ namespace SqueezeBill.Views.Accounts
                     if(string.IsNullOrEmpty(_objLoginRequest.email) || 
                         string.IsNullOrEmpty(_objLoginRequest.password))
                     {
-                        await DisplayAlert("Alert", "please fill the details first!", "ok");
+                        await DisplayAlert("", "please fill the details first!", "(X)");
                     }
                     else
                     {
                         if (!IsValid)
                         {
-                            await DisplayAlert("Alert", "Email is not in valid formate!", "ok");
+                            await DisplayAlert("", "Email is not in valid formate!", "(X)");
                         }
                         else
                         {
@@ -78,7 +78,7 @@ namespace SqueezeBill.Views.Accounts
                             var Response = _objLoginResponse;
                             if (Response.statusCode == 200)
                             {
-                                await DisplayAlert("Alert!", "Login Successful!", "Ok");
+                                await DisplayAlert("", "Login Successful!", "(X)");
                                 Settings.TokenCode = Response.token;
                                 Settings.IsLoggedIn = true;
                                 var otherPage = new UserNavigationPage();
@@ -88,7 +88,7 @@ namespace SqueezeBill.Views.Accounts
                             }
                             else
                             {
-                                await DisplayAlert("Alert!", "Please try again!", "Ok");
+                                await DisplayAlert("", "Sorry, we can not recognize e-mail or password!!!", "(X)");
                             }
                         }
                     }
@@ -123,7 +123,7 @@ namespace SqueezeBill.Views.Accounts
         {
             try
             {
-                App.NavigationPage.Navigation.PushAsync(new RegisterStepOnePage(null));
+                App.NavigationPage.Navigation.PushAsync(new AddUser());
             }
             catch(Exception ex)
             {

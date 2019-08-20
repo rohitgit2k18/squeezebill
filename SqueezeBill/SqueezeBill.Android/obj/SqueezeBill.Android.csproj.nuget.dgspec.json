@@ -1,32 +1,28 @@
 {
   "format": 1,
   "restore": {
-    "D:\\ClientProject\\SqueezeBills\\squeezebill\\SqueezeBill\\SqueezeBill.Android\\SqueezeBill.Android.csproj": {}
+    "/Users/rohitkumar/Desktop/SqueezeBillNew/squeezebill/SqueezeBill/SqueezeBill.Android/SqueezeBill.Android.csproj": {}
   },
   "projects": {
-    "D:\\ClientProject\\SqueezeBills\\squeezebill\\SqueezeBill.Services\\SqueezeBill.Services.csproj": {
+    "/Users/rohitkumar/Desktop/SqueezeBillNew/squeezebill/SqueezeBill.Services/SqueezeBill.Services.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\ClientProject\\SqueezeBills\\squeezebill\\SqueezeBill.Services\\SqueezeBill.Services.csproj",
+        "projectUniqueName": "/Users/rohitkumar/Desktop/SqueezeBillNew/squeezebill/SqueezeBill.Services/SqueezeBill.Services.csproj",
         "projectName": "SqueezeBill.Services",
-        "projectPath": "D:\\ClientProject\\SqueezeBills\\squeezebill\\SqueezeBill.Services\\SqueezeBill.Services.csproj",
-        "packagesPath": "C:\\Users\\Rohit Kumar\\.nuget\\packages\\",
-        "outputPath": "D:\\ClientProject\\SqueezeBills\\squeezebill\\SqueezeBill.Services\\obj\\",
+        "projectPath": "/Users/rohitkumar/Desktop/SqueezeBillNew/squeezebill/SqueezeBill.Services/SqueezeBill.Services.csproj",
+        "packagesPath": "/Users/rohitkumar/.nuget/packages/",
+        "outputPath": "/Users/rohitkumar/Desktop/SqueezeBillNew/squeezebill/SqueezeBill.Services/obj/",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\ProgramData\\Xamarin\\NuGet\\",
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+          "/usr/local/share/dotnet/sdk/NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\Rohit Kumar\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+          "/Users/rohitkumar/.config/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "netstandard2.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -62,36 +58,30 @@
         }
       }
     },
-    "D:\\ClientProject\\SqueezeBills\\squeezebill\\SqueezeBill\\SqueezeBill.Android\\SqueezeBill.Android.csproj": {
+    "/Users/rohitkumar/Desktop/SqueezeBillNew/squeezebill/SqueezeBill/SqueezeBill.Android/SqueezeBill.Android.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\ClientProject\\SqueezeBills\\squeezebill\\SqueezeBill\\SqueezeBill.Android\\SqueezeBill.Android.csproj",
+        "projectUniqueName": "/Users/rohitkumar/Desktop/SqueezeBillNew/squeezebill/SqueezeBill/SqueezeBill.Android/SqueezeBill.Android.csproj",
         "projectName": "SqueezeBill.Android",
-        "projectPath": "D:\\ClientProject\\SqueezeBills\\squeezebill\\SqueezeBill\\SqueezeBill.Android\\SqueezeBill.Android.csproj",
-        "packagesPath": "C:\\Users\\Rohit Kumar\\.nuget\\packages\\",
-        "outputPath": "D:\\ClientProject\\SqueezeBills\\squeezebill\\SqueezeBill\\SqueezeBill.Android\\obj\\",
+        "projectPath": "/Users/rohitkumar/Desktop/SqueezeBillNew/squeezebill/SqueezeBill/SqueezeBill.Android/SqueezeBill.Android.csproj",
+        "packagesPath": "/Users/rohitkumar/.nuget/packages/",
+        "outputPath": "/Users/rohitkumar/Desktop/SqueezeBillNew/squeezebill/SqueezeBill/SqueezeBill.Android/obj/",
         "projectStyle": "PackageReference",
         "skipContentFileWrite": true,
-        "fallbackFolders": [
-          "C:\\ProgramData\\Xamarin\\NuGet\\"
-        ],
         "configFilePaths": [
-          "C:\\Users\\Rohit Kumar\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+          "/Users/rohitkumar/.config/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "monoandroid81"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "monoandroid81": {
             "projectReferences": {
-              "D:\\ClientProject\\SqueezeBills\\squeezebill\\SqueezeBill\\SqueezeBill\\SqueezeBill.csproj": {
-                "projectPath": "D:\\ClientProject\\SqueezeBills\\squeezebill\\SqueezeBill\\SqueezeBill\\SqueezeBill.csproj"
+              "/Users/rohitkumar/Desktop/SqueezeBillNew/squeezebill/SqueezeBill/SqueezeBill/SqueezeBill.csproj": {
+                "projectPath": "/Users/rohitkumar/Desktop/SqueezeBillNew/squeezebill/SqueezeBill/SqueezeBill/SqueezeBill.csproj"
               }
             }
           }
@@ -148,36 +138,32 @@
         }
       }
     },
-    "D:\\ClientProject\\SqueezeBills\\squeezebill\\SqueezeBill\\SqueezeBill\\SqueezeBill.csproj": {
+    "/Users/rohitkumar/Desktop/SqueezeBillNew/squeezebill/SqueezeBill/SqueezeBill/SqueezeBill.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\ClientProject\\SqueezeBills\\squeezebill\\SqueezeBill\\SqueezeBill\\SqueezeBill.csproj",
+        "projectUniqueName": "/Users/rohitkumar/Desktop/SqueezeBillNew/squeezebill/SqueezeBill/SqueezeBill/SqueezeBill.csproj",
         "projectName": "SqueezeBill",
-        "projectPath": "D:\\ClientProject\\SqueezeBills\\squeezebill\\SqueezeBill\\SqueezeBill\\SqueezeBill.csproj",
-        "packagesPath": "C:\\Users\\Rohit Kumar\\.nuget\\packages\\",
-        "outputPath": "D:\\ClientProject\\SqueezeBills\\squeezebill\\SqueezeBill\\SqueezeBill\\obj\\",
+        "projectPath": "/Users/rohitkumar/Desktop/SqueezeBillNew/squeezebill/SqueezeBill/SqueezeBill/SqueezeBill.csproj",
+        "packagesPath": "/Users/rohitkumar/.nuget/packages/",
+        "outputPath": "/Users/rohitkumar/Desktop/SqueezeBillNew/squeezebill/SqueezeBill/SqueezeBill/obj/",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\ProgramData\\Xamarin\\NuGet\\",
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+          "/usr/local/share/dotnet/sdk/NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\Rohit Kumar\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+          "/Users/rohitkumar/.config/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "netstandard2.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "netstandard2.0": {
             "projectReferences": {
-              "D:\\ClientProject\\SqueezeBills\\squeezebill\\SqueezeBill.Services\\SqueezeBill.Services.csproj": {
-                "projectPath": "D:\\ClientProject\\SqueezeBills\\squeezebill\\SqueezeBill.Services\\SqueezeBill.Services.csproj"
+              "/Users/rohitkumar/Desktop/SqueezeBillNew/squeezebill/SqueezeBill.Services/SqueezeBill.Services.csproj": {
+                "projectPath": "/Users/rohitkumar/Desktop/SqueezeBillNew/squeezebill/SqueezeBill.Services/SqueezeBill.Services.csproj"
               }
             }
           }

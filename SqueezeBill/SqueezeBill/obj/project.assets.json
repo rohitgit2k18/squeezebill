@@ -760,40 +760,35 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Rohit Kumar\\.nuget\\packages\\": {},
-    "C:\\ProgramData\\Xamarin\\NuGet\\": {},
-    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
+    "/Users/rohitkumar/.nuget/packages/": {},
+    "/usr/local/share/dotnet/sdk/NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\ClientProject\\SqueezeBills\\squeezebill\\SqueezeBill\\SqueezeBill\\SqueezeBill.csproj",
+      "projectUniqueName": "/Users/rohitkumar/Desktop/SqueezeBillNew/squeezebill/SqueezeBill/SqueezeBill/SqueezeBill.csproj",
       "projectName": "SqueezeBill",
-      "projectPath": "D:\\ClientProject\\SqueezeBills\\squeezebill\\SqueezeBill\\SqueezeBill\\SqueezeBill.csproj",
-      "packagesPath": "C:\\Users\\Rohit Kumar\\.nuget\\packages\\",
-      "outputPath": "D:\\ClientProject\\SqueezeBills\\squeezebill\\SqueezeBill\\SqueezeBill\\obj\\",
+      "projectPath": "/Users/rohitkumar/Desktop/SqueezeBillNew/squeezebill/SqueezeBill/SqueezeBill/SqueezeBill.csproj",
+      "packagesPath": "/Users/rohitkumar/.nuget/packages/",
+      "outputPath": "/Users/rohitkumar/Desktop/SqueezeBillNew/squeezebill/SqueezeBill/SqueezeBill/obj/",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
-        "C:\\ProgramData\\Xamarin\\NuGet\\",
-        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        "/usr/local/share/dotnet/sdk/NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\Rohit Kumar\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+        "/Users/rohitkumar/.config/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "netstandard2.0"
       ],
       "sources": {
-        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "netstandard2.0": {
           "projectReferences": {
-            "D:\\ClientProject\\SqueezeBills\\squeezebill\\SqueezeBill.Services\\SqueezeBill.Services.csproj": {
-              "projectPath": "D:\\ClientProject\\SqueezeBills\\squeezebill\\SqueezeBill.Services\\SqueezeBill.Services.csproj"
+            "/Users/rohitkumar/Desktop/SqueezeBillNew/squeezebill/SqueezeBill.Services/SqueezeBill.Services.csproj": {
+              "projectPath": "/Users/rohitkumar/Desktop/SqueezeBillNew/squeezebill/SqueezeBill.Services/SqueezeBill.Services.csproj"
             }
           }
         }

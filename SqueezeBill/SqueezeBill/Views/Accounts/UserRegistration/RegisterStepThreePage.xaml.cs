@@ -30,6 +30,7 @@ namespace SqueezeBill.Views.Accounts.UserRegistration
         public RegisterStepThreePage (UserRegistrationRequest objUserRegistrationRequest, RetailerList objRetailerList)
 		{
 			InitializeComponent ();
+            NavigationPage.SetBackButtonTitle(this, "");
             XFLblTAC.Text = $"T&C";
             _objRetailerList = new RetailerList();
             if (objRetailerList != null)
@@ -39,6 +40,8 @@ namespace SqueezeBill.Views.Accounts.UserRegistration
                 imgCompanyLogo.Source = objRetailerList.imagePath;
                 XFLBLCompanyRate.Text = $"{objRetailerList.rate:0.00}" + "c";
                 XFBTN_Duration.Text = objRetailerList.duration + " Months";
+                xflblnoAccounttext.Text = "Haven't started electric service at this address yet? Call " + objRetailerList.retailerName +"at "+ objRetailerList .phoneNumber+ " and set up an account for this address. Then enter the 20-digit number to complete your order.";
+                          
             }
 
             _objUserRegistrationRequest = new UserRegistrationRequest();
@@ -71,7 +74,7 @@ namespace SqueezeBill.Views.Accounts.UserRegistration
                 {
                    if(string.IsNullOrEmpty(_objUserRegistrationRequest.medEdAccountatthisAddress))
                     {
-                        await DisplayAlert("Alert!", "Please provide Account Number!", "Ok");
+                        await DisplayAlert("", "Please provide Account Number!", "(X)");
                     }
                     else
                     {
@@ -82,16 +85,16 @@ namespace SqueezeBill.Views.Accounts.UserRegistration
                         {
                             Device.BeginInvokeOnMainThread(() => {
 
-                                DisplayAlert("Info!", Response.message, "OK");
+                                DisplayAlert("", Response.message, "(X)");
                             });
 
-                            await  App.NavigationPage.Navigation.PushAsync(new LoginPage());
+                            await  App.NavigationPage.Navigation.PushAsync(new CongratulationPage());
                         }
                         else
                         {
                             Device.BeginInvokeOnMainThread(() => {
                                
-                                DisplayAlert("Error!", Response.message, "OK");
+                                DisplayAlert("", Response.message, "(X)");
                             });
                            
                         }
@@ -104,14 +107,14 @@ namespace SqueezeBill.Views.Accounts.UserRegistration
                     var Response = _objUserRegistrationResponse.response;
                     if (Response.statusCode == 200)
                     {
-                        await DisplayAlert("Alert!", "Registeration Successful without MedEdAccount!", "Ok");
+                        await DisplayAlert("", "Registeration Successful without MedEdAccount!", "(X)");
                         await App.NavigationPage.Navigation.PushAsync(new LoginPage());
                     }
                     else
                     {
                         Device.BeginInvokeOnMainThread(() => {
 
-                            DisplayAlert("Error!", Response.message, "OK");
+                            DisplayAlert("", Response.message, "(X)");
                         });
                     }
                 }
@@ -136,6 +139,12 @@ namespace SqueezeBill.Views.Accounts.UserRegistration
             XFBtnNo.TextColor = Color.FromHex("#FF9408");
             _objUserRegistrationRequest.isMedEdAccountat = true;
             XFGridAccountInfo.IsVisible = true;
+            xfGridmdAccount.IsVisible = true;
+            xfgridNoAccount.IsVisible = false;
+            xfcentryaccountnum.IsVisible = true;
+            xflblaccountinfo.IsVisible = true;
+            XFBtnRegisterUser.IsVisible = true;
+            xfentryacc.Focus();
         }
 
         private void XFBtnNo_Clicked(object sender, EventArgs e)
@@ -145,7 +154,12 @@ namespace SqueezeBill.Views.Accounts.UserRegistration
             XFBtnNo.BackgroundColor = Color.FromHex("#FF9408");
             XFBtnNo.TextColor = Color.White;
             _objUserRegistrationRequest.isMedEdAccountat = false;
-            XFGridAccountInfo.IsVisible = false;
+            XFGridAccountInfo.IsVisible = true;
+            xfGridmdAccount.IsVisible = false;
+            xfgridNoAccount.IsVisible = true;
+            xfcentryaccountnum.IsVisible = false;
+            xflblaccountinfo.IsVisible = false;
+            XFBtnRegisterUser.IsVisible = true;
         }
     }
 }

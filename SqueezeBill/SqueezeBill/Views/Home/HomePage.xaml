@@ -2,11 +2,21 @@
 <ContentPage 
     xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-              xmlns:local="clr-namespace:SqueezeBill"    
-             x:Class="SqueezeBill.Views.Home.HomePage">
+              xmlns:local="clr-namespace:SqueezeBill"
+             x:Class="SqueezeBill.Views.Home.HomePage"
+               Icon="hamburger.png"
+                  >
     <NavigationPage.TitleView>
         <Grid VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
-            <Label Text="Home" VerticalOptions="Center" FontAttributes="Bold" TextColor="White" HorizontalOptions="Center" Margin="-80,0,0,0" FontSize="Medium" />
+            <Label Text="Home" VerticalOptions="Center" FontAttributes="Bold" TextColor="White" HorizontalOptions="Center"  FontSize="Medium">
+                <Label.Margin>
+                   <OnPlatform x:TypeArguments="Thickness">
+                        <On Platform="Android">-80,0,0,0</On>
+                        <On Platform="iOS">0</On>
+                    </OnPlatform> 
+                </Label.Margin>
+            </Label>
+       
         </Grid>
     </NavigationPage.TitleView>
     <ContentPage.Content>

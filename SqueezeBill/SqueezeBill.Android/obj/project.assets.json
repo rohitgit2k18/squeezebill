@@ -1187,39 +1187,32 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Rohit Kumar\\.nuget\\packages\\": {},
-    "C:\\ProgramData\\Xamarin\\NuGet\\": {}
+    "/Users/rohitkumar/.nuget/packages/": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\ClientProject\\SqueezeBills\\squeezebill\\SqueezeBill\\SqueezeBill.Android\\SqueezeBill.Android.csproj",
+      "projectUniqueName": "/Users/rohitkumar/Desktop/SqueezeBillNew/squeezebill/SqueezeBill/SqueezeBill.Android/SqueezeBill.Android.csproj",
       "projectName": "SqueezeBill.Android",
-      "projectPath": "D:\\ClientProject\\SqueezeBills\\squeezebill\\SqueezeBill\\SqueezeBill.Android\\SqueezeBill.Android.csproj",
-      "packagesPath": "C:\\Users\\Rohit Kumar\\.nuget\\packages\\",
-      "outputPath": "D:\\ClientProject\\SqueezeBills\\squeezebill\\SqueezeBill\\SqueezeBill.Android\\obj\\",
+      "projectPath": "/Users/rohitkumar/Desktop/SqueezeBillNew/squeezebill/SqueezeBill/SqueezeBill.Android/SqueezeBill.Android.csproj",
+      "packagesPath": "/Users/rohitkumar/.nuget/packages/",
+      "outputPath": "/Users/rohitkumar/Desktop/SqueezeBillNew/squeezebill/SqueezeBill/SqueezeBill.Android/obj/",
       "projectStyle": "PackageReference",
       "skipContentFileWrite": true,
-      "fallbackFolders": [
-        "C:\\ProgramData\\Xamarin\\NuGet\\"
-      ],
       "configFilePaths": [
-        "C:\\Users\\Rohit Kumar\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+        "/Users/rohitkumar/.config/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "monoandroid81"
       ],
       "sources": {
-        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "monoandroid81": {
           "projectReferences": {
-            "D:\\ClientProject\\SqueezeBills\\squeezebill\\SqueezeBill\\SqueezeBill\\SqueezeBill.csproj": {
-              "projectPath": "D:\\ClientProject\\SqueezeBills\\squeezebill\\SqueezeBill\\SqueezeBill\\SqueezeBill.csproj"
+            "/Users/rohitkumar/Desktop/SqueezeBillNew/squeezebill/SqueezeBill/SqueezeBill/SqueezeBill.csproj": {
+              "projectPath": "/Users/rohitkumar/Desktop/SqueezeBillNew/squeezebill/SqueezeBill/SqueezeBill/SqueezeBill.csproj"
             }
           }
         }

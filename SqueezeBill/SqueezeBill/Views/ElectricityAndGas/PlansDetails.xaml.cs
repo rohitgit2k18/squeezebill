@@ -47,7 +47,7 @@ namespace SqueezeBill.Views.ElectricityAndGas
             {
                 if (!CrossConnectivity.Current.IsConnected)
                 {
-                    await DisplayAlert("Alert", "No Network Connection", "Ok");
+                    await DisplayAlert("", "No Network Connection", "(X)");
                 }
                 else
                 {
@@ -55,7 +55,7 @@ namespace SqueezeBill.Views.ElectricityAndGas
                     EANDGPResponse result = _objElectricityAndGasPlanDetailsResponse.response;
                     if (result.statusCode != 200)
                     {
-                        await DisplayAlert("Alert", "No Supplier is Available", "Ok");
+                        await DisplayAlert("", "No Supplier is Available", "(X)");
                     }
                     else
                     {
